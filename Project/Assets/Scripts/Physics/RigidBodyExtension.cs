@@ -10,6 +10,7 @@ public class RigidBodyExtension : MonoBehaviour
     //public float SleepThreshold = 0.001f;
     public int SolverIterations = 6;
     public int SolverVelocityIterations = 1;
+    public float SleepThreshold = 0.005f;
 
     public Rigidbody Rigidbody { get; private set; }
 
@@ -24,5 +25,6 @@ public class RigidBodyExtension : MonoBehaviour
         //Rigidbody.sleepThreshold = SleepThreshold;
         Rigidbody.solverIterations = SolverIterations;
         Rigidbody.solverVelocityIterations = SolverVelocityIterations;
+        Rigidbody.sleepThreshold = SleepThreshold;
     }
 }

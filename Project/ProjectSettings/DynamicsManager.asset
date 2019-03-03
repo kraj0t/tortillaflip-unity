@@ -8,7 +8,7 @@ PhysicsManager:
   m_DefaultMaterial: {fileID: 13400000, guid: 2e3e7ce3f9d089147be3c6c3e6d82a3a, type: 2}
   m_BounceThreshold: 0.5
   m_SleepThreshold: 0.005
-  m_DefaultContactOffset: 0.001
+  m_DefaultContactOffset: 0.005
   m_DefaultSolverIterations: 255
   m_DefaultSolverVelocityIterations: 255
   m_QueriesHitBackfaces: 0
