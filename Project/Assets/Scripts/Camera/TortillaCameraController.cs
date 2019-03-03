@@ -1,19 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TortillaCameraController : MonoBehaviour
 {
     // NOTE: THIS IS A QUICK DIRTY HACK.
 
     public Tortilla Target;
-    public AnimationCurve LocalZBySpeed;
-    [Min(.1f)] public float SmoothSpeed = 10;
+    public AnimationCurve DistanceBySpeed;
+    [Min(.1f)] public float Smoothness = .1f;
+
+
+    private float _dist;
+
 
     void Update()
     {
         var speed = Target.Rigidbody.velocity.magnitude;
-        var localPos = transform.localPosition;
-        var targetZ = LocalZBySpeed.Evaluate(speed);
-        localPos.z = Mathf.SmoothStep(localPos.z, targetZ, Time.deltaTime * SmoothSpeed);
-        transform.localPosition = localPos;
+        var idealDist = DistanceBySpeed.Evaluate(speed);
+        _dist = Mathf.Lerp(_dist, idealDist, Time.deltaTime / Smoothness);
+
+        var targetPos = Target.transform.position;
+        var dir = transform.forward;
+        transform.position = targetPos + dir * _dist;
     }
 }

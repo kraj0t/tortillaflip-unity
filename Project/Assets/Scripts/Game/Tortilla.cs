@@ -27,13 +27,13 @@ public class Tortilla : MonoBehaviour
     {
         if (!RespawnPoint || _respawning)
             return;
+        _respawning = true;
         StartCoroutine(RespawnCoroutine());        
     }
 
 
     private IEnumerator RespawnCoroutine()
     {
-        _respawning = true;
         yield return new WaitForSeconds(WaitBeforeRespawn);
         Rigidbody.position = RespawnPoint.position;
         Rigidbody.rotation = Quaternion.identity;
@@ -42,6 +42,7 @@ public class Tortilla : MonoBehaviour
         yield return new WaitForSeconds(WaitAfterRespawn);
         _respawning = false;
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {

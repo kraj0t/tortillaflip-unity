@@ -7,8 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HotRustyMetal
-  dynamicFriction: 0.78
-  staticFriction: 0.82
+  dynamicFriction: 0.85
+  staticFriction: 0.86
   bounciness: 0
   frictionCombine: 0
   bounceCombine: 0

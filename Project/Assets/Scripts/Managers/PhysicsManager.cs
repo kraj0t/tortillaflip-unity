@@ -13,9 +13,14 @@ public class PhysicsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         if (Instance == null)
+        {
             Instance = this;
+        }
         else
-            Debug.Log("Warning: multiple " + this + " in scene!");
+        {
+            Debug.LogError("Multiple " + this + " in scene!");
+            Destroy(this);
+        }
     }
 
 
