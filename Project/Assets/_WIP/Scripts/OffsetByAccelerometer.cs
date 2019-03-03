@@ -5,8 +5,9 @@ public class OffsetByAccelerometer : MonoBehaviour
     public float Multiplier = 1;
 
     [Tooltip("Tweak this to reduce accelerometer jitter.")]
-    [Range(0.01f, 1f)]
-    public float JitterSmoothingFactor = 0.5f;
+
+    [Min(0.01f)]
+    public float JitterSmoothingFactor = 1;
 
     public Vector3 Rotation;
     
