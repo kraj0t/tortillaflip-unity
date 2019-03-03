@@ -287,7 +287,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168628562693002238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 25df055f603fb1c418d97f55504f88e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -317,7 +316,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168628562693002238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: ffb1c6fb2c5e339449408bf730ae0d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -333,14 +331,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168628562693002238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Density: 2000
-  MaxAngularVelocity: 222
-  SolverIterations: 222
-  SolverVelocityIterations: 222
+  MaxAngularVelocity: 100
+  SolverIterations: 255
+  SolverVelocityIterations: 255
 --- !u!1 &1502211695514559421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,11 +1024,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168628560809892806}
     m_Modifications:
-    - target: {fileID: 5676454903331753367, guid: a70eaae137fad444ea20da0e12aa412a,
-        type: 3}
-      propertyPath: m_Name
-      value: VISUALS_rustyPan
-      objectReference: {fileID: 0}
     - target: {fileID: 2680683977567968667, guid: a70eaae137fad444ea20da0e12aa412a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1101,6 +1093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676454903331753367, guid: a70eaae137fad444ea20da0e12aa412a,
+        type: 3}
+      propertyPath: m_Name
+      value: VISUALS_rustyPan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70eaae137fad444ea20da0e12aa412a, type: 3}
