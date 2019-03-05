@@ -21,6 +21,7 @@ public class SoftBodyCreator : MonoBehaviour
     public int Height = 2;
     public int Depth = 3;
     public float Offset = 1;
+    public bool OmitCorners = true;
 
     [Header("Joints")]
     public bool ConnectDiagonals = false;
@@ -35,6 +36,8 @@ public class SoftBodyCreator : MonoBehaviour
     public float Bounciness = 0;
     public float ContactDistance = 0.001f;
     public float RotationSpring = 500;
+    public float BreakForce = Mathf.Infinity;
+    public float BreakTorque = Mathf.Infinity;
 
     [Space(60)]
     public bool DEBUG_RECREATE_BUTTON;
@@ -78,6 +81,9 @@ public class SoftBodyCreator : MonoBehaviour
 
         foreach (var rb in _particles)
         {
+            if (!rb)
+                continue;
+
             if (Application.isPlaying)
                 Destroy(rb.gameObject);
             else
@@ -99,6 +105,9 @@ public class SoftBodyCreator : MonoBehaviour
             {
                 for (int k = 0; k < Depth; k++)
                 {
+                    if (OmitCorners && (i == 0 || i == Width - 1) && (j == 0 || j == Height - 1) && (k == 0 || k == Depth - 1))
+                        continue;
+
                     var localPos = new Vector3(i * Offset, j * Offset, k * Offset);
                     var rb = Instantiate<Rigidbody>(Prefab, transform);
                     rb.transform.localPosition = localPos;
@@ -121,6 +130,9 @@ public class SoftBodyCreator : MonoBehaviour
             {
                 for (int k = 0; k < Depth; k++)
                 {
+                    if (OmitCorners && (i == 0 || i == Width - 1) && (j == 0 || j == Height - 1) && (k == 0 || k == Depth - 1))
+                        continue;
+
                     var rb = Get(i, j, k);
 
                     if (i < Width - 1)
@@ -199,6 +211,9 @@ public class SoftBodyCreator : MonoBehaviour
 
     private Joint ConnectConfigurable(Rigidbody a, Rigidbody b)
     {
+        if (!a || !b)
+            return null;
+
         var joint = a.gameObject.AddComponent<ConfigurableJoint>();
         joint.connectedBody = b;
 
@@ -239,11 +254,16 @@ public class SoftBodyCreator : MonoBehaviour
         joint.xDrive = new JointDrive() { positionSpring = Spring, positionDamper = Damper, maximumForce = Mathf.Infinity };
         joint.angularYZDrive = new JointDrive() { positionSpring = RotationSpring, positionDamper = Damper, maximumForce = Mathf.Infinity };
 
+        joint.breakForce = BreakForce;
+        joint.breakTorque = BreakTorque;
+
 
         //HARDCODING
         joint.projectionMode = JointProjectionMode.PositionAndRotation;
         joint.projectionDistance = Limit;
         joint.projectionAngle = AngularLimit;
+
+
 
 Debug.Log(" QUE NO CHOQUEN ENTRE LAS PARTICULAS!! MOSTARAR UN MENSAJE DE ERROR SI OCURRE!!");
 
