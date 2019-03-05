@@ -5,7 +5,7 @@ public class TortillaCameraController : MonoBehaviour
 {
     // NOTE: THIS IS A QUICK DIRTY HACK.
 
-    public Tortilla Target;
+    public Rigidbody Target;
     public AnimationCurve DistanceBySpeed;
     [Min(.1f)] public float Smoothness = .1f;
 
@@ -15,7 +15,7 @@ public class TortillaCameraController : MonoBehaviour
 
     void Update()
     {
-        var speed = Target.Rigidbody.velocity.magnitude;
+        var speed = Target.velocity.magnitude;
         var idealDist = DistanceBySpeed.Evaluate(speed);
         _dist = Mathf.Lerp(_dist, idealDist, Time.deltaTime / Smoothness);
 

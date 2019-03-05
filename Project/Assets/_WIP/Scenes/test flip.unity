@@ -5271,11 +5271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1395870274, guid: 5346e5b131ed4304c9c1076ed164f42c, type: 3}
       propertyPath: MovementSmoothness
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1395870274, guid: 5346e5b131ed4304c9c1076ed164f42c, type: 3}
       propertyPath: MovementMagnitude
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 953748814, guid: 5346e5b131ed4304c9c1076ed164f42c, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
