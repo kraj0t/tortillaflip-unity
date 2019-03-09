@@ -11,10 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_WIP/Soft Body Test/TestFlipSoftBody.unity
     guid: cd0f786ff6bc1a84caacc3f36f330a3b
-  - enabled: 1
-    path: Assets/_WIP/Soft Body Test/TestSoftBody.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/_WIP/Scenes/test flip.unity
-    guid: 7056528dc5e787f46b3011fec6e04d07
   m_configObjects: {}
