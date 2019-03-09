@@ -16,8 +16,8 @@ public class SoftBody : MonoBehaviour
     [Tooltip("The linear limit will equal the distance between each pair of bodies multiplied by this factor.")]
     [BoxGroup("Joints")] [MinValue(0)] public float LinearLimitFactor = .9f;
 
-    [BoxGroup("Joints")] [MinValue(0)] public float AngularSpring = 2;
-    [BoxGroup("Joints")] [MinValue(0)] public float AngularDamper = .05f;
+    [BoxGroup("Joints")] [MinValue(0)] public float AngularSpring = 10;
+    [BoxGroup("Joints")] [MinValue(0)] public float AngularDamper = .2f;
     [BoxGroup("Joints")] [MinValue(0)] public float AngularLimit = 45f;
 
     [Tooltip("The projection limit will equal the distance between each pair of bodies multiplied by this factor.")]

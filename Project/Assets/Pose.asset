@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Pose
+  m_EditorClassIdentifier: Assembly-CSharp::RigPose
+  bonePoses:
+  - name: bone001
+    position: {x: 0.00013664245, y: 0, z: -0.00032982317}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone004
+    position: {x: -0.026913676, y: 0, z: 0.06497536}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone003
+    position: {x: -0.06516856, y: 0, z: 0.026720472}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone005
+    position: {x: 0.027186899, y: 0, z: 0.06497536}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone002
+    position: {x: -0.06516856, y: 0, z: -0.027380118}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone009
+    position: {x: -0.026913676, y: 0, z: -0.06563501}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone008
+    position: {x: 0.027186913, y: 0, z: -0.065635}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone007
+    position: {x: 0.0654418, y: 0, z: -0.027380118}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone006
+    position: {x: 0.065441795, y: 0, z: 0.026720475}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone010
+    position: {x: -0.12811337, y: 0, z: -0.0003298235}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone021
+    position: {x: -0.110931136, y: 0, z: -0.064454824}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone020
+    position: {x: -0.06398838, y: 0, z: -0.11139757}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone019
+    position: {x: 0.00013662338, y: 0, z: -0.12857981}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone018
+    position: {x: 0.064261615, y: 0, z: -0.11139757}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone017
+    position: {x: 0.11120436, y: 0, z: -0.06445483}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone016
+    position: {x: 0.1283866, y: 0, z: -0.00032984256}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone015
+    position: {x: 0.11120437, y: 0, z: 0.06379514}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone014
+    position: {x: 0.06426165, y: 0, z: 0.11073791}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone013
+    position: {x: 0.0001366806, y: 0, z: 0.12792018}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone012
+    position: {x: -0.06398831, y: 0, z: 0.11073797}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
+  - name: bone011
+    position: {x: -0.1109311, y: 0, z: 0.06379525}
+    rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+    scale: {x: 1, y: 1, z: 1}
