@@ -99,7 +99,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: 6a100dee698191b47ac648891cb6bc3e,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -225,7 +225,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -233,12 +233,12 @@ ConfigurableJoint:
     maximumForce: 3.402823e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 500
+    positionSpring: 0
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
+    positionSpring: 1000
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -290,7 +290,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 112673820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -448,7 +447,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 128153224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7cb34738a3032f843bed66c4fb7d2e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -765,7 +763,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 431480536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -783,7 +780,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 431480536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7cb34738a3032f843bed66c4fb7d2e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -941,7 +937,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 548955274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1069,7 +1064,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 566531218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1363,7 +1357,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1371,12 +1365,12 @@ ConfigurableJoint:
     maximumForce: 3.402823e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 500
+    positionSpring: 0
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
+    positionSpring: 1000
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -1428,7 +1422,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 863268357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1698,7 +1691,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1706,12 +1699,12 @@ ConfigurableJoint:
     maximumForce: 3.402823e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 500
+    positionSpring: 0
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
+    positionSpring: 1000
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -1763,7 +1756,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1005069943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -2251,7 +2243,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342869225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -2880,7 +2871,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651236178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7cb34738a3032f843bed66c4fb7d2e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -2926,7 +2916,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651236178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3128,7 +3117,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1934716144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3226,7 +3214,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1966791885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3448,7 +3435,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146070026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7cb34738a3032f843bed66c4fb7d2e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3973,7 +3959,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5538684528808785410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7cb34738a3032f843bed66c4fb7d2e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
