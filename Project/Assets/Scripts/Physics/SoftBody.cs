@@ -92,9 +92,13 @@ public class SoftBody : MonoBehaviour
         var a = j.GetComponent<Rigidbody>();
         var b = j.connectedBody;
         if (!a || !b)
-            throw new InvalidOperationException("Joints must have two bodies defined!");        
+            throw new InvalidOperationException("Joints must have two bodies defined!");
 
-        j.autoConfigureConnectedAnchor = false;
+        //j.autoConfigureConnectedAnchor = false;
+        j.autoConfigureConnectedAnchor = true;
+        j.connectedBody = null;
+        j.connectedBody = b;
+
         j.configuredInWorldSpace = true;
         j.enablePreprocessing = EnablePreprocessing;
 
@@ -104,7 +108,16 @@ public class SoftBody : MonoBehaviour
         j.axis = dir;
         j.secondaryAxis = Quaternion.LookRotation(dir) * Vector3.right;
 
-Debug.Log(" QUE NO CHOQUEN ENTRE LAS PARTICULAS!! MOSTARAR UN MENSAJE DE ERROR SI OCURRE!!");
+        var thirdAxis = Vector3.Cross(dir, j.secondaryAxis);
+        //var jointSpace = Quaternion.LookRotation(thirdAxis, j.secondaryAxis);
+        //var jointSpace = Quaternion.LookRotation(dir, j.secondaryAxis);
+        //var jointSpace = Quaternion.LookRotation(dir, thirdAxis);
+        //var jointSpace = Quaternion.LookRotation(thirdAxis, dir);
+        //var jointSpace = Quaternion.LookRotation(-thirdAxis, j.secondaryAxis);
+        //var jointSpace = Quaternion.LookRotation(thirdAxis, -j.secondaryAxis);
+        //j.connectedAnchor = jointSpace * AtoB;
+
+        Debug.Log(" QUE NO CHOQUEN ENTRE LAS PARTICULAS!! MOSTARAR UN MENSAJE DE ERROR SI OCURRE!!");
 
         j.xMotion = ConfigurableJointMotion.Limited;
         j.yMotion = ConfigurableJointMotion.Locked;
