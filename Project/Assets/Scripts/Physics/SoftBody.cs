@@ -94,30 +94,20 @@ public class SoftBody : MonoBehaviour
         if (!a || !b)
             throw new InvalidOperationException("Joints must have two bodies defined!");
 
-        //j.autoConfigureConnectedAnchor = false;
+        j.configuredInWorldSpace = true;
+
+        j.enablePreprocessing = EnablePreprocessing;
+
+        // This lets PhysX configure the anchor.
         j.autoConfigureConnectedAnchor = true;
         j.connectedBody = null;
         j.connectedBody = b;
-
-        j.configuredInWorldSpace = true;
-        j.enablePreprocessing = EnablePreprocessing;
 
         var AtoB = b.position - a.position;
         var dir = AtoB.normalized;
         var dist = Vector3.Dot(AtoB, dir);
         j.axis = dir;
         j.secondaryAxis = Quaternion.LookRotation(dir) * Vector3.right;
-
-        var thirdAxis = Vector3.Cross(dir, j.secondaryAxis);
-        //var jointSpace = Quaternion.LookRotation(thirdAxis, j.secondaryAxis);
-        //var jointSpace = Quaternion.LookRotation(dir, j.secondaryAxis);
-        //var jointSpace = Quaternion.LookRotation(dir, thirdAxis);
-        //var jointSpace = Quaternion.LookRotation(thirdAxis, dir);
-        //var jointSpace = Quaternion.LookRotation(-thirdAxis, j.secondaryAxis);
-        //var jointSpace = Quaternion.LookRotation(thirdAxis, -j.secondaryAxis);
-        //j.connectedAnchor = jointSpace * AtoB;
-
-        Debug.Log(" QUE NO CHOQUEN ENTRE LAS PARTICULAS!! MOSTARAR UN MENSAJE DE ERROR SI OCURRE!!");
 
         j.xMotion = ConfigurableJointMotion.Limited;
         j.yMotion = ConfigurableJointMotion.Locked;
