@@ -1,28 +1,25 @@
 ﻿using System.Collections;
 using UnityEngine;
+using NaughtyAttributes;
 
-[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
-public class Tortilla : MonoBehaviour
+public class Respawner : MonoBehaviour
 {
+    [InfoBox("If the object has a Rigidbody it will be reset as well.", InfoBoxType.Normal)]
+    [InfoBox("The rotation of the RespawnPoint is also applied, but not the scale.", InfoBoxType.Normal)]
     public Transform RespawnPoint;
+
+    [InfoBox("If the object has no collider, you still can respawn it manually (via code or the button below).", InfoBoxType.Normal)]
     public LayerMask DeathTriggers;
+
     public float WaitBeforeRespawn = 1;
     public float WaitAfterRespawn = 1;
-
-
-    public Rigidbody Rigidbody { get; private set; }
 
 
     private bool _respawning;
 
 
-    private void Start()
-    {
-        Rigidbody = GetComponent<Rigidbody>();
-    }
-
-
+    [Button]
     public void Respawn()
     {
         if (!RespawnPoint || _respawning)
@@ -35,10 +32,19 @@ public class Tortilla : MonoBehaviour
     private IEnumerator RespawnCoroutine()
     {
         yield return new WaitForSeconds(WaitBeforeRespawn);
-        Rigidbody.position = RespawnPoint.position;
-        Rigidbody.rotation = Quaternion.identity;
-        Rigidbody.velocity = Vector3.zero;
-        Rigidbody.angularVelocity = Vector3.zero;
+
+        transform.position = RespawnPoint.position;
+        transform.rotation = Quaternion.identity;
+
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            rb.position = RespawnPoint.position;
+            rb.rotation = Quaternion.identity;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         yield return new WaitForSeconds(WaitAfterRespawn);
         _respawning = false;
     }

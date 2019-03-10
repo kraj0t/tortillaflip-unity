@@ -57,6 +57,9 @@ public class SoftBody : MonoBehaviour
             if (!p)
                 continue;
 
+            foreach (var col in p.GetComponents<SphereCollider>())
+                col.radius = ColliderRadius;
+
             foreach (var j in p.GetComponents<ConfigurableJoint>())
                 _ResetJoint(j);
             p.WakeUp();
@@ -69,10 +72,7 @@ public class SoftBody : MonoBehaviour
         var a = j.GetComponent<Rigidbody>();
         var b = j.connectedBody;
         if (!a || !b)
-            throw new InvalidOperationException("Joints must have two bodies defined!");
-
-        var col = a.GetComponent<SphereCollider>();
-        col.radius = ColliderRadius;
+            throw new InvalidOperationException("Joints must have two bodies defined!");        
 
         j.configuredInWorldSpace = true;
         //joint.autoConfigureConnectedAnchor = true;

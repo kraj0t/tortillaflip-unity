@@ -39,10 +39,6 @@ public class PhysicsManager : MonoBehaviour
 
         Physics.autoSimulation = false;
         Physics.autoSyncTransforms = false;
-        //Physics.
-
-        //Physics.
-        //GameManager
     }
 
 
