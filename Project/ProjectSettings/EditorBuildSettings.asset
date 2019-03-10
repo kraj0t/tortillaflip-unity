@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TortillaFlipSoftBody.unity
     guid: cd0f786ff6bc1a84caacc3f36f330a3b
+  - enabled: 1
+    path: Assets/Scenes/TortillaRunSoftBody.unity
+    guid: 80ca2e6cdca8c75459b1fb468d6f971d
   m_configObjects: {}
