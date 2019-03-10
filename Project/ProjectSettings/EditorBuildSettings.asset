@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/_PreloadScene.unity
     guid: 2ef75f8388519da4c978cf61bca33c2f
   - enabled: 1
-    path: Assets/_WIP/Soft Body Test/TortillaFlipSoftBody.unity
+    path: Assets/Scenes/TortillaFlipSoftBody.unity
     guid: cd0f786ff6bc1a84caacc3f36f330a3b
   m_configObjects: {}
