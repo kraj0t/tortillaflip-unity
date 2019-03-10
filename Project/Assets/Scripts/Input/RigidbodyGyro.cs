@@ -92,8 +92,12 @@ public class RigidbodyGyro : MonoBehaviour
         var yAxisFactors = Vector3.one - Vector3Abs(gyroFwd.x, gyroFwd.y, 0);
         var zAxisFactors = Vector3.one - Vector3Abs(gyroFwd.x, 0, gyroFwd.z);
         var clampedRotRateFactors = Vector3.one - Vector3AbsClamp01(factoredRotRate.x, factoredRotRate.y, factoredRotRate.z);
-        var accelFactors = Vector3.Scale(Vector3.Scale(Vector3.Scale(clampedRotRateFactors, xAxisFactors), yAxisFactors), zAxisFactors);
         //var accelFactors = Vector3.one - new Vector3(Mathf.Clamp01(factoredRotRate.x), Mathf.Clamp01(factoredRotRate.y), Mathf.Clamp01(factoredRotRate.z));
+        //var accelFactors = Vector3.Scale(Vector3.Scale(Vector3.Scale(clampedRotRateFactors, xAxisFactors), yAxisFactors), zAxisFactors);
+        var x = Vector3.Lerp(xAxisFactors, Vector3.one, clampedRotRateFactors.x);
+        var y = Vector3.Lerp(yAxisFactors, Vector3.one, clampedRotRateFactors.y);
+        var z = Vector3.Lerp(zAxisFactors, Vector3.one, clampedRotRateFactors.z);
+        var accelFactors = Vector3.Scale(Vector3.Scale(Vector3.Scale(clampedRotRateFactors, x), y), z);
         gyroAccel.Scale(accelFactors);
         _accelFactors = accelFactors;
         // end TEST

@@ -455,9 +455,9 @@ MonoBehaviour:
   LocalRotate: {x: 0, y: 0, z: 180}
   WorldRotate: {x: 90, y: 180, z: 0}
   RotationSmoothness: 0.03
-  MovementSmoothness: 0.45
-  MovementMagnitude: 0.6
-  TEST_DividerToLimitAccelerationWhenRotatingFast: 7
+  MovementSmoothness: 0.3
+  MovementMagnitude: 0.5
+  TEST_DividerToLimitAccelerationWhenRotatingFast: 3
 --- !u!1 &1502211695514559421
 GameObject:
   m_ObjectHideFlags: 0
