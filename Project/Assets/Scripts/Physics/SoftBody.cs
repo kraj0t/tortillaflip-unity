@@ -30,6 +30,19 @@ public class SoftBody : MonoBehaviour
 
     // This code updates the component according to the changes in the inspector.
 #if UNITY_EDITOR
+    private Vector3[] _startPositions;
+    private Quaternion[] _startRotations;
+    private void Start()
+    {
+        _startPositions = new Vector3[Particles.Length];
+        _startRotations = new Quaternion[Particles.Length];
+        for (int i = 0; i < Particles.Length; i++)
+        {
+            _startPositions[i] = Particles[i].transform.position;
+            _startRotations[i] = Particles[i].transform.rotation;
+        }
+    }
+
     public bool DEBUG_LiveUpdate = false;
     [MinValue(0)] public int DEBUG_UpdateFrameSkip = 60;
     private int _updatesToSkip = 0;
@@ -42,6 +55,12 @@ public class SoftBody : MonoBehaviour
         if (_updatesToSkip >= 0)
             return;
         _updatesToSkip = DEBUG_UpdateFrameSkip;
+
+        for (int i = 0; i < Particles.Length; i++)
+        {
+            Particles[i].transform.position = _startPositions[i];
+            Particles[i].transform.rotation = _startRotations[i];
+        }
 
         ResetAllJointValues();
     }
@@ -62,6 +81,7 @@ public class SoftBody : MonoBehaviour
 
             foreach (var j in p.GetComponents<ConfigurableJoint>())
                 _ResetJoint(j);
+
             p.WakeUp();
         }
     }
@@ -74,8 +94,8 @@ public class SoftBody : MonoBehaviour
         if (!a || !b)
             throw new InvalidOperationException("Joints must have two bodies defined!");        
 
+        j.autoConfigureConnectedAnchor = false;
         j.configuredInWorldSpace = true;
-        //joint.autoConfigureConnectedAnchor = true;
         j.enablePreprocessing = EnablePreprocessing;
 
         var AtoB = b.position - a.position;
@@ -87,8 +107,8 @@ public class SoftBody : MonoBehaviour
 Debug.Log(" QUE NO CHOQUEN ENTRE LAS PARTICULAS!! MOSTARAR UN MENSAJE DE ERROR SI OCURRE!!");
 
         j.xMotion = ConfigurableJointMotion.Limited;
-        j.yMotion = ConfigurableJointMotion.Limited;
-        j.zMotion = ConfigurableJointMotion.Limited;
+        j.yMotion = ConfigurableJointMotion.Locked;
+        j.zMotion = ConfigurableJointMotion.Locked;
         j.angularXMotion = ConfigurableJointMotion.Limited;
         j.angularYMotion = ConfigurableJointMotion.Limited;
         j.angularZMotion = ConfigurableJointMotion.Limited;
