@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[ExecuteAfter(typeof(PhysicsManager))]
 public class RigidbodyGyro : MonoBehaviour
 {
     public Rigidbody Body { get; private set; }
@@ -67,7 +68,7 @@ public class RigidbodyGyro : MonoBehaviour
         var gyroAccel = Input.gyro.userAcceleration;
 
 
-        // TEST
+        // TEST LIMIT ACCEL IF ROTATING FAST
         // Trying to limit accelerometer input when the user is rotating quickly.
         // This is causing the frying pan to jerk forwards unrealistically.
 
@@ -83,7 +84,9 @@ public class RigidbodyGyro : MonoBehaviour
         ////var accelFactors = Vector3.one - new Vector3(Mathf.Clamp01(factoredRotRate.x), Mathf.Clamp01(factoredRotRate.y), Mathf.Clamp01(factoredRotRate.z));
         ////gyroAccel.Scale(accelFactors);
 
-        var gyroRot = GetConvertedGyro(LocalRotate, WorldRotate);
+        //var gyroRot = GetConvertedGyro(LocalRotate, WorldRotate);
+        //var gyroRot = smoothedRot;
+        var gyroRot = Body.rotation;
         var gyroEuler = gyroRot.eulerAngles;
         var gyroFwd = gyroRot * Vector3.forward;
         var rotRate = Input.gyro.rotationRateUnbiased;
@@ -100,7 +103,8 @@ public class RigidbodyGyro : MonoBehaviour
         var accelFactors = Vector3.Scale(Vector3.Scale(Vector3.Scale(clampedRotRateFactors, x), y), z);
         gyroAccel.Scale(accelFactors);
         _accelFactors = accelFactors;
-        // end TEST
+        // end TEST LIMIT ACCEL IF ROTATING FAST
+
 
 
         var originPos = transform.parent ? transform.parent.position : Vector3.zero;
