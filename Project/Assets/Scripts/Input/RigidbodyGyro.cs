@@ -6,9 +6,6 @@ public class RigidbodyGyro : MonoBehaviour
 {
     public Rigidbody Body { get; private set; }
 
-    public Vector3 LocalRotate = new Vector3(0, 0, 180);
-    public Vector3 WorldRotate = new Vector3(90, 180, 0);
-
     public float RotationSmoothness = .5f;
     public float MovementSmoothness = .5f;
 
@@ -31,18 +28,9 @@ public class RigidbodyGyro : MonoBehaviour
     }
 
 
-    public static Quaternion GetConvertedGyro(Vector3 localRotate, Vector3 worldRotate)
-    {
-        var gyroRot = Input.gyro.attitude;
-        var localAdjust = Quaternion.Euler(localRotate);
-        var worldAdjust = Quaternion.Euler(worldRotate);
-        return worldAdjust * gyroRot * localAdjust;
-    }
-
-    
     void UpdateRotation()
     {
-        var targetRot = GetConvertedGyro(LocalRotate, WorldRotate);
+        var targetRot = GyroInput.GetCorrectedGyro();
 
         var currentRot = Body.rotation;
         var smoothedRot = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime / RotationSmoothness);
@@ -84,7 +72,7 @@ public class RigidbodyGyro : MonoBehaviour
         ////var accelFactors = Vector3.one - new Vector3(Mathf.Clamp01(factoredRotRate.x), Mathf.Clamp01(factoredRotRate.y), Mathf.Clamp01(factoredRotRate.z));
         ////gyroAccel.Scale(accelFactors);
 
-        //var gyroRot = GetConvertedGyro(LocalRotate, WorldRotate);
+        //var gyroRot = GyroInput.GetCorrectedGyro();
         //var gyroRot = smoothedRot;
         var gyroRot = Body.rotation;
         var gyroEuler = gyroRot.eulerAngles;

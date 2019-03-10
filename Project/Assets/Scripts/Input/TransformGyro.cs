@@ -5,9 +5,6 @@ public class TransformGyro : MonoBehaviour
 {
     public Transform Transform { get; private set; }
 
-    public Vector3 LocalRotate = new Vector3(0, 0, 180);
-    public Vector3 WorldRotate = new Vector3(90, 180, 0);
-
     public float RotationSmoothness = .5f;
     public float MovementSmoothness = .5f;
 
@@ -29,10 +26,7 @@ public class TransformGyro : MonoBehaviour
     
     void UpdateRotation()
     {
-        var gyroRot = Input.gyro.attitude;
-        var localAdjust = Quaternion.Euler(LocalRotate);
-        var worldAdjust = Quaternion.Euler(WorldRotate);
-        var targetRot = worldAdjust * gyroRot * localAdjust;
+        var targetRot = GyroInput.GetCorrectedGyro();
 
         var currentRot = Transform.rotation;
         var smoothedRot = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime / RotationSmoothness);
