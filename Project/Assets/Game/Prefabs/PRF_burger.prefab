@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 5089762996631523689}
   - component: {fileID: 5089762996631523551}
   m_Layer: 0
-  m_Name: tortilla
+  m_Name: burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1543,7 +1543,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e10bdcb9da7f67447a7bf0b61059bc63, type: 2}
+  - {fileID: 2100000, guid: 6e27dcc5e2cf3ea47bbf3e4425e5d227, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6998,7 +6998,7 @@ GameObject:
   - component: {fileID: 5089762998402158251}
   - component: {fileID: 5089762998402158244}
   m_Layer: 0
-  m_Name: Skinned Burger Soft Body
+  m_Name: PRF_burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

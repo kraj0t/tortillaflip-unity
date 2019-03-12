@@ -4050,7 +4050,7 @@ GameObject:
   - component: {fileID: 1445417771170788454}
   - component: {fileID: 8296172668606069622}
   m_Layer: 0
-  m_Name: Skinned Tortilla Soft Body
+  m_Name: PRF_omelette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4586,7 +4586,7 @@ GameObject:
   - component: {fileID: 6655742154454994770}
   - component: {fileID: 7221024104237714294}
   m_Layer: 0
-  m_Name: tortilla
+  m_Name: omelette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4623,7 +4623,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e10bdcb9da7f67447a7bf0b61059bc63, type: 2}
+  - {fileID: 2100000, guid: 8dc0e8362d643c643aa931ae7a41bd22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4689,9 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedRenderer: {fileID: 6655742154454994770}
-  poses:
-  - {fileID: 11400000, guid: b84cd69edaffbbf46b19d4ef978a99ae, type: 2}
-  - {fileID: 11400000, guid: b84cd69edaffbbf46b19d4ef978a99ae, type: 2}
+  poses: []
 --- !u!1 &7264316356718844734
 GameObject:
   m_ObjectHideFlags: 0
