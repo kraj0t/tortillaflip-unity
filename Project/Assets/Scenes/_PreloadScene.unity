@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d19865de53b614a8f2135dc79c552d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetFrameRate: 200
+  TargetFrameRate: 120
 --- !u!4 &2141726617
 Transform:
   m_ObjectHideFlags: 0
