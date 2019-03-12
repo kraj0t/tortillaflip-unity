@@ -14,7 +14,7 @@ EditorSettings:
   m_SpritePackerPaddingPower: 1
   m_EtcTextureCompressorBehavior: 2
   m_EtcTextureFastCompressor: 2
-  m_EtcTextureNormalCompressor: 4
+  m_EtcTextureNormalCompressor: 3
   m_EtcTextureBestCompressor: 4
   m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd
   m_ProjectGenerationRootNamespace: 
