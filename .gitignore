@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Project/Assets/FR2_Cache.asset.meta
+Project/Assets/FR2_Cache.asset
