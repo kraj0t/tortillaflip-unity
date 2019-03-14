@@ -66,10 +66,13 @@ public class SoftBody : MonoBehaviour
     public void ResetAllJointValues()
     {
 #if UNITY_EDITOR
-        for (int i = 0; i < Particles.Length; i++)
+        if (Application.isPlaying)
         {
-            Particles[i].transform.position = _startPositions[i];
-            Particles[i].transform.rotation = _startRotations[i];
+            for (int i = 0; i < Particles.Length; i++)
+            {
+                Particles[i].transform.position = _startPositions[i];
+                Particles[i].transform.rotation = _startRotations[i];
+            }
         }
 #endif
 

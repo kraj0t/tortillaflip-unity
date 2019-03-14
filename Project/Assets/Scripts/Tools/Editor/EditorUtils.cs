@@ -70,7 +70,8 @@ public static class EditorUtils
         var skin = Selection.gameObjects[0].GetComponent<SkinnedMeshRenderer>();
         var skinParent = skin.transform.parent;
 
-        skin.sharedMesh.bindposes = _copiedBindPoses;
+        // TODO: Is this necessary? Does it even get applied? Modifying a sharedMesh without saving the asset...
+        //skin.sharedMesh.bindposes = _copiedBindPoses;
 
         // We look for same-named children in this SkinnedMeshRenderer.
         var newBones = new Transform[_copiedBones.Length];
@@ -83,6 +84,8 @@ public static class EditorUtils
             else
                 newBones[i] = newBone;
         }
+
+        Undo.RecordObject(skin, "Paste Skin Rig");
         skin.bones = newBones;
     }
 
