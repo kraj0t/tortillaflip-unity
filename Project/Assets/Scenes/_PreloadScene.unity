@@ -239,6 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196ca5fc41c44c6448082e3c28e79e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirstScene: SCN_ENV_TortillaFlipSoftBody
+  AdditiveScenes:
+  - SCN_GAME_TortillaFlipSoftBody
 --- !u!4 &1702824054
 Transform:
   m_ObjectHideFlags: 0

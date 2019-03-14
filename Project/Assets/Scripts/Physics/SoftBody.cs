@@ -56,12 +56,6 @@ public class SoftBody : MonoBehaviour
             return;
         _updatesToSkip = DEBUG_UpdateFrameSkip;
 
-        for (int i = 0; i < Particles.Length; i++)
-        {
-            Particles[i].transform.position = _startPositions[i];
-            Particles[i].transform.rotation = _startRotations[i];
-        }
-
         ResetAllJointValues();
     }
 #endif
@@ -71,6 +65,14 @@ public class SoftBody : MonoBehaviour
     [ContextMenu("Reset All Joint Values")]
     public void ResetAllJointValues()
     {
+#if UNITY_EDITOR
+        for (int i = 0; i < Particles.Length; i++)
+        {
+            Particles[i].transform.position = _startPositions[i];
+            Particles[i].transform.rotation = _startRotations[i];
+        }
+#endif
+
         foreach (var p in Particles)
         {
             if (!p)
