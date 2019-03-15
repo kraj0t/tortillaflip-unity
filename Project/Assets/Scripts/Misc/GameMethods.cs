@@ -40,9 +40,9 @@ public class GameMethods : MonoBehaviour
         for (int i = 0; i < SceneManager.sceneCount; i++)
             loadedScenes.Add(SceneManager.GetSceneAt(i).buildIndex);
 
-        // Unload all scenes before reloading them all.
-        foreach (var i in loadedScenes)
-            SceneManager.UnloadSceneAsync(i, UnloadSceneOptions.None);
+        //// Unload all scenes before reloading them all.
+        //foreach (var i in loadedScenes)
+        //    SceneManager.UnloadSceneAsync(i, UnloadSceneOptions.None);
 
         // First reload the main scene, then additively load the rest.
         SceneManager.LoadScene(activeLoadedScene, LoadSceneMode.Single);
