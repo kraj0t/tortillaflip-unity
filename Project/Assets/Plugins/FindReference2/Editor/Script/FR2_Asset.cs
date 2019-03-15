@@ -41,36 +41,36 @@ namespace vietlabs.fr2
 
 	    private static readonly HashSet<string> SCRIPT_EXTENSIONS = new HashSet<string>()
 	    {
-	    	".cs", ".js", ".boo"
+	    	".cs", ".js", ".boo",".h"
 	    };
 
 	    private static readonly HashSet<string> REFERENCABLE_EXTENSIONS = new HashSet<string>()
         {
             ".anim", ".controller", ".mat", ".unity", ".guiskin", ".prefab",
             ".overridecontroller", ".mask", ".rendertexture", ".cubemap", ".flare",
-	        ".mat", ".prefab", ".physicsmaterial", ".fontsettings", ".asset", ".prefs"
+	        ".mat", ".prefab", ".physicsmaterial", ".fontsettings", ".asset", ".prefs",".spriteatlas"
         };
 
 	    private static readonly HashSet<string> IGNORE_GUIDS = new HashSet<string>()
         {
-            "00000000000000001000000000000000", // Assets
-            "00000000000000002000000000000000", // ProjectSettings/InputManager.asset
-            "00000000000000003000000000000000", // ProjectSettings/TagManager.asset
-            "00000000000000004000000000000000", // ProjectSettings/ProjectSettings.asset
-            "00000000000000005000000000000000", // Library/BuildPlayer.prefs
-            "00000000000000006000000000000000", // ProjectSettings/AudioManager.asset
-            "00000000000000007000000000000000", // ProjectSettings/TimeManager.asset
-            "00000000000000008000000000000000", // ProjectSettings/DynamicsManager.asset
-            "00000000000000009000000000000000", // ProjectSettings/QualitySettings.asset
+            // "00000000000000001000000000000000", // Assets 
+            // "00000000000000002000000000000000", // ProjectSettings/InputManager.asset
+            // "00000000000000003000000000000000", // ProjectSettings/TagManager.asset
+            // // "00000000000000004000000000000000", // ProjectSettings/ProjectSettings.asset
+            // "00000000000000005000000000000000", // Library/BuildPlayer.prefs
+            // "00000000000000006000000000000000", // ProjectSettings/AudioManager.asset
+            // "00000000000000007000000000000000", // ProjectSettings/TimeManager.asset
+            // "00000000000000008000000000000000", // ProjectSettings/DynamicsManager.asset
+            // "00000000000000009000000000000000", // ProjectSettings/QualitySettings.asset
 		
-            // Reserved
-            "00000000000000000000000000000000",
-            "0000000000000000a000000000000000",
-            "0000000000000000b000000000000000",
-            "0000000000000000c000000000000000",
-            "0000000000000000d000000000000000",
-            "0000000000000000e000000000000000",
-            "0000000000000000f000000000000000"
+            // // Reserved
+            // "00000000000000000000000000000000",
+            // "0000000000000000a000000000000000",
+            // // "0000000000000000b000000000000000", // ProjectSettings/EditorBuildSettings.asset
+            // // "0000000000000000c000000000000000", // ProjectSettings/EditorSettings.asset
+            // "0000000000000000d000000000000000", // Library/unity editor resources
+            // "0000000000000000e000000000000000", // Library/unity default resources
+            // "0000000000000000f000000000000000"  // Resources/unity_builtin_extra
         };
 	    
 	    private static readonly HashSet<string> SCRIPT_KEYWORDS = new HashSet<string>()
@@ -90,15 +90,186 @@ namespace vietlabs.fr2
 		    "UNITY_5", "UNITY_4", "Type", "BindingFlags", "get", "set", "NonSerialized", "Serialized", "Package",
 		    "GUIContent", "AppDomain"
 	    };
+        private static readonly Dictionary<int, string> HashClassesNormal = new Dictionary<int, string>()
+        {
+            {1, 	"UnityEngine.GameObject"},
+			{2, 	"UnityEngine.Component"},
+			{4, 	"UnityEngine.Transform"},
+			{8, 	"UnityEngine.Behaviour"},
+			{12, 	"UnityEngine.ParticleAnimator"},
+			{15, 	"UnityEngine.EllipsoidParticleEmitter"},
+			{20, 	"UnityEngine.Camera"},
+			{21, 	"UnityEngine.Material"},
+			{23, 	"UnityEngine.MeshRenderer"},
+			{25, 	"UnityEngine.Renderer"},
+			{26, 	"UnityEngine.ParticleRenderer"},
+			{27, 	"UnityEngine.Texture"},
+			{28, 	"UnityEngine.Texture2D"},
+			{33, 	"UnityEngine.MeshFilter"},
+			{41, 	"UnityEngine.OcclusionPortal"},
+			{43, 	"UnityEngine.Mesh"},
+			{45, 	"UnityEngine.Skybox"},
+			{47, 	"UnityEngine.QualitySettings"},
+			{48, 	"UnityEngine.Shader"},
+			{49, 	"UnityEngine.TextAsset"},
+			{50, 	"UnityEngine.Rigidbody2D"},
+			{53, 	"UnityEngine.Collider2D"},
+			{54, 	"UnityEngine.Rigidbody"},
+			{56, 	"UnityEngine.Collider"},
+			{57, 	"UnityEngine.Joint"},
+			{58, 	"UnityEngine.CircleCollider2D"},
+			{59, 	"UnityEngine.HingeJoint"},
+			{60, 	"UnityEngine.PolygonCollider2D"},
+			{61, 	"UnityEngine.BoxCollider2D"},
+			{62, 	"UnityEngine.PhysicsMaterial2D"},
+			{64, 	"UnityEngine.MeshCollider"},
+			{65, 	"UnityEngine.BoxCollider"},
+			{68, 	"UnityEngine.EdgeCollider2D"},
+			{72, 	"UnityEngine.ComputeShader"},
+			{74, 	"UnityEngine.AnimationClip"},
+			{75, 	"UnityEngine.ConstantForce"},
+			{81, 	"UnityEngine.AudioListener"},
+			{82, 	"UnityEngine.AudioSource"},
+			{83, 	"UnityEngine.AudioClip"},
+			{84, 	"UnityEngine.RenderTexture"},
+			{87, 	"UnityEngine.MeshParticleEmitter"},
+			{88, 	"UnityEngine.ParticleEmitter"},
+			{89, 	"UnityEngine.Cubemap"},
+			{90, 	"Avatar"},
+			{92, 	"UnityEngine.GUILayer"},
+			{93, 	"UnityEngine.RuntimeAnimatorController"},
+			{95, 	"UnityEngine.Animator"},
+			{96, 	"UnityEngine.TrailRenderer"},
+			{102, 	"UnityEngine.TextMesh"},
+			{104, 	"UnityEngine.RenderSettings"},
+			{108, 	"UnityEngine.Light"},
+			{111, 	"UnityEngine.Animation"},
+			{114, 	"UnityEngine.MonoBehaviour"},
+			{115, 	"UnityEditor.MonoScript"},
+			{117, 	"UnityEngine.Texture3D"},
+			{119, 	"UnityEngine.Projector"},
+			{120, 	"UnityEngine.LineRenderer"},
+			{121, 	"UnityEngine.Flare"},
+			{123, 	"UnityEngine.LensFlare"},
+			{124, 	"UnityEngine.FlareLayer"},
+			{128, 	"UnityEngine.Font"},
+			{129, 	"UnityEditor.PlayerSettings"},
+			{131, 	"UnityEngine.GUITexture"},
+			{132, 	"UnityEngine.GUIText"},
+			{133, 	"UnityEngine.GUIElement"},
+			{134, 	"UnityEngine.PhysicMaterial"},
+			{135, 	"UnityEngine.SphereCollider"},
+			{136, 	"UnityEngine.CapsuleCollider"},
+			{137, 	"UnityEngine.SkinnedMeshRenderer"},
+			{138, 	"UnityEngine.FixedJoint"},
+			{142, 	"UnityEngine.AssetBundle"},
+			{143, 	"UnityEngine.CharacterController"},
+			{144, 	"UnityEngine.CharacterJoint"},
+			{145, 	"UnityEngine.SpringJoint"},
+			{146, 	"UnityEngine.WheelCollider"},
+			{152, 	"UnityEngine.MovieTexture"},
+			{153, 	"UnityEngine.ConfigurableJoint"},
+			{154, 	"UnityEngine.TerrainCollider"},
+			{156, 	"UnityEngine.TerrainData"},
+			{157, 	"UnityEngine.LightmapSettings"},
+			{158, 	"UnityEngine.WebCamTexture"},
+			{159, 	"UnityEditor.EditorSettings"},
+			{162, 	"UnityEditor.EditorUserSettings"},
+			{164, 	"UnityEngine.AudioReverbFilter"},
+			{165, 	"UnityEngine.AudioHighPassFilter"},
+			{166, 	"UnityEngine.AudioChorusFilter"},
+			{167, 	"UnityEngine.AudioReverbZone"},
+			{168, 	"UnityEngine.AudioEchoFilter"},
+			{169, 	"UnityEngine.AudioLowPassFilter"},
+			{170, 	"UnityEngine.AudioDistortionFilter"},
+			{171, 	"UnityEngine.SparseTexture"},
+			{180, 	"UnityEngine.AudioBehaviour"},
+			{182, 	"UnityEngine.WindZone"},
+			{183, 	"UnityEngine.Cloth"},
+			{192, 	"UnityEngine.OcclusionArea"},
+			{193, 	"UnityEngine.Tree"},
+			{198, 	"UnityEngine.ParticleSystem"},
+			{199, 	"UnityEngine.ParticleSystemRenderer"},
+			{200, 	"UnityEngine.ShaderVariantCollection"},
+			{205, 	"UnityEngine.LODGroup"},
+			{207, 	"UnityEngine.Motion"},
+			{212, 	"UnityEngine.SpriteRenderer"},
+			{213, 	"UnityEngine.Sprite"},
+			{215, 	"UnityEngine.ReflectionProbe"},
+			{218, 	"UnityEngine.Terrain"},
+			{220, 	"UnityEngine.LightProbeGroup"},
+			{221, 	"UnityEngine.AnimatorOverrideController"},
+			{222, 	"UnityEngine.CanvasRenderer"},
+			{223, 	"UnityEngine.Canvas"},
+			{224, 	"UnityEngine.RectTransform"},
+			{225, 	"UnityEngine.CanvasGroup"},
+			{226, 	"UnityEngine.BillboardAsset"},
+			{227, 	"UnityEngine.BillboardRenderer"},
+			{229, 	"UnityEngine.AnchoredJoint2D"},
+			{230, 	"UnityEngine.Joint2D"},
+			{231, 	"UnityEngine.SpringJoint2D"},
+			{232, 	"UnityEngine.DistanceJoint2D"},
+			{233, 	"UnityEngine.HingeJoint2D"},
+			{234, 	"UnityEngine.SliderJoint2D"},
+			{235, 	"UnityEngine.WheelJoint2D"},
+			{246, 	"UnityEngine.PhysicsUpdateBehaviour2D"},
+			{247, 	"UnityEngine.ConstantForce2D"},
+			{248, 	"UnityEngine.Effector2D"},
+			{249, 	"UnityEngine.AreaEffector2D"},
+			{250, 	"UnityEngine.PointEffector2D"},
+			{251, 	"UnityEngine.PlatformEffector2D"},
+			{252, 	"UnityEngine.SurfaceEffector2D"},
+			{258, 	"UnityEngine.LightProbes"},
+			{290, 	"UnityEngine.AssetBundleManifest"},
+			{1003, 	"UnityEditor.AssetImporter"},
+			{1004, 	"UnityEditor.AssetDatabase"},
+			{1006, 	"UnityEditor.TextureImporter"},
+			{1007, 	"UnityEditor.ShaderImporter"},
+			{1011, 	"UnityEngine.AvatarMask"},
+			{1020, 	"UnityEditor.AudioImporter"},
+			{1029, 	"UnityEditor.DefaultAsset"},
+			{1032, 	"UnityEditor.SceneAsset"},
+			{1035, 	"UnityEditor.MonoImporter"},
+			{1040, 	"UnityEditor.ModelImporter"},
+			{1042, 	"UnityEditor.TrueTypeFontImporter"},
+			{1044, 	"UnityEditor.MovieImporter"},
+			{1045, 	"UnityEditor.EditorBuildSettings"},
+			{1050, 	"UnityEditor.PluginImporter"},
+			{1051, 	"UnityEditor.EditorUserBuildSettings"},
+			{1105, 	"UnityEditor.HumanTemplate"},
+			{1110, 	"UnityEditor.SpeedTreeImporter"},
+			{1113, 	"UnityEditor.LightmapParameters"}
+        };
+        // private static Dictionary<int, string> _HashClasses;
+        // private static Dictionary<int, string> HashClasses
+        // {
+        //     get{
+        //         if(_HashClasses == null)
+        //         {
+        //             _HashClasses = new Dictionary<int, string>();
+        //             string s ="";
+        //             foreach(var item in HashClassesNormal) 
+        //             {
+        //                 s+= "{"+ item.Key + ", \t" + "\""+item.Value.FullName+"\"},\n";
+        //                 // Debug.Log(item.Value + "  => " +f);
+        //                 _HashClasses.Add(item.Key, item.Value.ToString());
+        //             }
+        //             Debug.Log(s);
+
+        //         }
+        //         return _HashClasses;
+        //     }
+        // }
+        private static Dictionary<int, Type> HashClasses = new Dictionary<int, Type>();
 	    
 	    private static readonly HashSet<string> SCRIPT_SYMBOL = new HashSet<string>()
         {
             "class", "interface", "enum", "struct", "delegate"
         };
 
+	    internal string assetPath;
         internal string assetFolder;
         internal string assetName;
-        internal string assetPath;
 
         internal int cacheStamp;
         internal string extension;
@@ -115,8 +286,10 @@ namespace vietlabs.fr2
 
 
         internal bool loaded;
-        public List<string> ScriptSymbols; // class, enum, delegate, interface definitions
-        public List<string> ScriptTokens; // possibly used symbols
+	    //public 
+	    List<string> ScriptSymbols; // class, enum, delegate, interface definitions
+	    //public 
+	    List<string> ScriptTokens; // possibly used symbols
 
         [NonSerialized] internal List<string> ScriptUsage = new List<string>();
 
@@ -136,22 +309,74 @@ namespace vietlabs.fr2
 
         internal FR2_AssetState state;
 	    public FR2_AssetType type;
-	    public List<string> UseGUIDs;
+        [Serializable]
+        private class Classes {
+            public string guid;
+            public List<int> ids;
+        }
+        [SerializeField] private List<Classes> UseGUIDsList = new List<Classes>();
+	    private Dictionary<string, HashSet<int>> _UseGUIDs;
+	    public Dictionary<string, HashSet<int>> UseGUIDs
+        {
+            get {
+				if (_UseGUIDs != null) return _UseGUIDs;
+
+                _UseGUIDs = new Dictionary<string, HashSet<int>>();
+                for(int i = 0; i < UseGUIDsList.Count; i++)
+                {
+                    string guid = UseGUIDsList[i].guid;
+                    if(_UseGUIDs.ContainsKey(guid))
+                    {
+                        for(int j = 0; j < UseGUIDsList[i].ids.Count; j++)
+                        {
+                            int val = UseGUIDsList[i].ids[j];
+                            if(_UseGUIDs[guid].Contains(val)) continue;
+                            _UseGUIDs[guid].Add(UseGUIDsList[i].ids[j]);
+                        }
+                    }
+                    else
+                    {
+                        _UseGUIDs.Add(guid, new HashSet<int>(UseGUIDsList[i].ids));
+
+                    }
+                }
+                return _UseGUIDs;
+            }    
+        }
 	    
         //[NonSerialized] internal List<FR2_Asset> UsedBy		= new List<FR2_Asset>();
+        internal HashSet<int> HashUsedByClassesIds = new HashSet<int>();
         internal Dictionary<string, FR2_Asset> UsedByMap = new Dictionary<string, FR2_Asset>();
-        
+        public void AddUsedBy(string guid, FR2_Asset asset)
+	    {
+            if(UsedByMap.ContainsKey(guid)) return;
+            UsedByMap.Add(guid, asset);
+            HashSet<int> output;
+            if(HashUsedByClassesIds == null) HashUsedByClassesIds = new HashSet<int>();
+            if(asset.UseGUIDs.TryGetValue(this.guid, out output))
+            {
+                foreach(var item in output)
+                {
+                    HashUsedByClassesIds.Add(item); 
+                }
+            }
+            
+            // int classId = HashUseByClassesIds    
+        }
 
         public FR2_Asset(string guid)
         {
             this.guid = guid;
 
             type = FR2_AssetType.UNKNOWN;
-            UseGUIDs = new List<string>();
-            ScriptSymbols = new List<string>();
-            ScriptTokens = new List<string>();
+            // UseGUIDs = new Dictionary<string, HashSet<int>>();
+	        //ScriptSymbols = new List<string>();
+	        //ScriptTokens = new List<string>();
         }
-
+        public int UsageCount()
+        {
+            return UsedByMap.Count;
+        }
 
         // ------------------------------- GETTERS -----------------------------
 
@@ -205,7 +430,7 @@ namespace vietlabs.fr2
             }
 
             var p = AssetDatabase.GUIDToAssetPath(guid);
-	        if (p != null && !p.StartsWith("Assets/", StringComparison.Ordinal))
+	        if (p != null && !FR2_Cache.ASSET_ROOT_ALLOW.Any(x=> p.StartsWith(x, StringComparison.Ordinal)))
                 return false; // Asset can be missing but can not be at invalid path 
 	        return p != FR2_Cache.CachePath;
         }
@@ -232,7 +457,7 @@ namespace vietlabs.fr2
                 var isUnity = extension == ".unity";
                 type = isUnity ? FR2_AssetType.SCENE : FR2_AssetType.REFERENCABLE;
 
-                if (extension == ".asset" || isUnity)
+                if (extension == ".asset" || isUnity || extension == ".spriteatlas")
                 {
                     var buffer = new byte[5];
 
@@ -245,7 +470,7 @@ namespace vietlabs.fr2
 #if FR2_DEBUG
                     catch (Exception e)
                     {
-                        Debug.LogWarning("Guess Asset Type error :: " + e + "\n" + assetPath);
+                        Debug.LogWarning("Guess Asset Type error :: " + e + "\n" + assetPath); 
 #else
                     catch
                     {
@@ -286,7 +511,10 @@ namespace vietlabs.fr2
 
         internal void LoadAssetInfo()
         {
-            assetPath = AssetDatabase.GUIDToAssetPath(guid);
+	        assetPath = AssetDatabase.GUIDToAssetPath(guid);
+#if FR2_DEBUG
+	        Debug.Log("LoadAssetInfo: " + assetPath);
+#endif
 
             if (string.IsNullOrEmpty(assetPath))
             {
@@ -294,7 +522,8 @@ namespace vietlabs.fr2
                 return;
             }
 
-            if (!assetPath.StartsWith("Assets/", StringComparison.Ordinal))
+            // if (!assetPath.StartsWith("Assets/", StringComparison.Ordinal))
+            if (!FR2_Cache.ASSET_ROOT_ALLOW.Any(x=> assetPath.StartsWith(x, StringComparison.Ordinal)))
             {
 #if FR2_DEBUG
             Debug.LogWarning("Something wrong ! Should never be here !\n"  + assetPath + "\n" + guid);
@@ -382,7 +611,8 @@ namespace vietlabs.fr2
             }
             stamp = newStamp;
 
-            UseGUIDs.Clear();
+            ClearUseGUIDs();
+            
 
             if (IsFolder)
             {
@@ -390,7 +620,8 @@ namespace vietlabs.fr2
             }
             else if (IsReferencable)
             {
-                LoadYAML();
+                // LoadYAML();
+                LoadYAML2();
             }
             else if (IsBinaryAsset)
             {
@@ -398,15 +629,33 @@ namespace vietlabs.fr2
             }
             else if (IsScript)
             {
-                LoadScript();
+                // LoadScript();
             }
         }
 
-        internal void AddUseGUID(string fguid, bool checkExist = true)
+        internal void AddUseGUID(string fguid, int fFileId = -1, bool checkExist = true)
         {
-            if (checkExist && UseGUIDs.Contains(fguid)) return;
+            // if (checkExist && UseGUIDs.ContainsKey(fguid)) return;
             if (!IsValidGUID(fguid)) return;
-            UseGUIDs.Add(fguid);
+            if(!UseGUIDs.ContainsKey(fguid))
+            {
+                UseGUIDsList.Add(new Classes()
+                {
+                    guid = fguid,
+                    ids =new List<int>()
+                });
+                UseGUIDs.Add(fguid, new HashSet<int>());
+            }
+            if(fFileId != -1)
+            {
+                if(UseGUIDs[fguid].Contains(fFileId)) return;
+                UseGUIDs[fguid].Add(fFileId);
+                var i = UseGUIDsList.FirstOrDefault(x => x.guid == fguid);
+                if(i != null)
+                {
+                    i.ids.Add(fFileId);
+                }
+            }
         }
 
         // ----------------------------- STATIC  ---------------------------------------
@@ -424,20 +673,20 @@ namespace vietlabs.fr2
         {
             if (asset == null) return null;
 
-            var refs = FR2_Cache.Api.FindAssets(asset.UseGUIDs.ToArray(), true);
+            var refs = FR2_Cache.Api.FindAssets(asset.UseGUIDs.Keys.ToArray(), true);
 	        
-	        if (asset.ScriptUsage != null)
-	        {
-	        	for (var i = 0; i < asset.ScriptUsage.Count; i++)
-	        	{
-		        	var symbolList = FR2_Cache.Api.FindAllSymbol(asset.ScriptUsage[i]);
-		        	if (symbolList.Contains(asset)) continue;
+	        //if (asset.ScriptUsage != null)
+	        //{
+	        //	for (var i = 0; i < asset.ScriptUsage.Count; i++)
+	        //	{
+		    //    	var symbolList = FR2_Cache.Api.FindAllSymbol(asset.ScriptUsage[i]);
+		    //    	if (symbolList.Contains(asset)) continue;
 		        	
-		        	var symbol = symbolList[0];
-		        	if (symbol == null || refs.Contains(symbol)) continue;
-		        	refs.Add(symbol);
-	        	}	
-	        }
+		    //    	var symbol = symbolList[0];
+		    //    	if (symbol == null || refs.Contains(symbol)) continue;
+		    //    	refs.Add(symbol);
+	        //	}	
+	        //}
 	        
             return refs;
         }
@@ -457,26 +706,30 @@ namespace vietlabs.fr2
 	    		return result.ToList();
 	    	}
 	    	
-	    	for (var i = 0;i < asset.UseGUIDs.Count; i++)
+	    	// for (var i = 0;i < asset.UseGUIDs.Count; i++)
+	    	// {
+	    	// 	result.Add(asset.UseGUIDs[i]);
+	    	// }
+            foreach (var item in asset.UseGUIDs)
 	    	{
-	    		result.Add(asset.UseGUIDs[i]);
+	    		result.Add(item.Key);
 	    	}
 	    	
 	    	if (!includeScriptSymbols) return result.ToList();
 	    	
-	    	if (asset.ScriptUsage != null)
-	    	{
-		    	for (var i = 0; i < asset.ScriptUsage.Count; i++)
-		    	{
-			    	var symbolList = FR2_Cache.Api.FindAllSymbol(asset.ScriptUsage[i]);
-			    	if (symbolList.Contains(asset)) continue;
+	    	//if (asset.ScriptUsage != null)
+	    	//{
+		    //	for (var i = 0; i < asset.ScriptUsage.Count; i++)
+		    //	{
+			//    	var symbolList = FR2_Cache.Api.FindAllSymbol(asset.ScriptUsage[i]);
+			//    	if (symbolList.Contains(asset)) continue;
 			    	
-			    	var symbol = symbolList[0];
-			    	if (symbol == null || result.Contains(symbol.guid)) continue;
+			//    	var symbol = symbolList[0];
+			//    	if (symbol == null || result.Contains(symbol.guid)) continue;
 			    	
-			    	result.Add(symbol.guid);
-		    	}	
-	    	}
+			//    	result.Add(symbol.guid);
+		    //	}	
+	    	//}
 	    	
 	    	return result.ToList();
 	    }
@@ -487,12 +740,14 @@ namespace vietlabs.fr2
 	    }
 	    
         // ----------------------------- DRAW  ---------------------------------------
+        
 
         internal float Draw(Rect r, bool highlight, bool drawPath = true)
         {
 //, bool hasMouse
             var singleLine = r.height <= 18f;
             var rw = r.width;
+            var selected = FR2_Selection.h.Contains(guid);
 
             r.height = 16f;
             var hasMouse = Event.current.type == EventType.MouseUp && r.Contains(Event.current.mousePosition);
@@ -511,18 +766,30 @@ namespace vietlabs.fr2
                 //menu.AddItem(new GUIContent("Reload"), false, Reload);
 
                 menu.AddSeparator(string.Empty);
-                menu.AddItem(new GUIContent("Add to Selection"), false, AddToSelection);
+
+
+                if (selected)
+                {
+                    menu.AddDisabledItem(new GUIContent("Add to Selection"));
+                    menu.AddItem(new GUIContent("Remove from Selection"), false, RemoveFromSelection);
+                }
+                else
+                {
+                    menu.AddItem(new GUIContent("Add to Selection"), false, AddToSelection);
+                    menu.AddDisabledItem(new GUIContent("Remove from Selection"));
+                }
+
                 menu.AddItem(new GUIContent("Copy path"), false, CopyAssetPath);
                 menu.AddItem(new GUIContent("Copy full path"), false, CopyAssetPathFull);
 
-                if (IsScript)
-                {
-                    menu.AddSeparator(string.Empty);
-                    AddArray(menu, ScriptSymbols, "+ ", "Definitions", "No Definition", false);
+                //if (IsScript)
+                //{
+                //    menu.AddSeparator(string.Empty);
+                //    AddArray(menu, ScriptSymbols, "+ ", "Definitions", "No Definition", false);
 	                
-                    menu.AddSeparator(string.Empty);
-                    AddArray(menu, ScriptUsage, "-> ", "Depends", "No Dependency", true);
-                }
+                //    menu.AddSeparator(string.Empty);
+                //    AddArray(menu, ScriptUsage, "-> ", "Depends", "No Dependency", true);
+                //}
 
                 menu.ShowAsContext();
                 Event.current.Use();
@@ -557,37 +824,46 @@ namespace vietlabs.fr2
             	var pingRect = FR2_Setting.PingRow ? new Rect(0,r.y, r.x + r.width, r.height) : iconRect;
             	if (pingRect.Contains(Event.current.mousePosition))
             	{
+            		if(Event.current.control || Event.current.command)
+            		{
+            			if(selected)
+            			{
+            				RemoveFromSelection();
+            			}
+            			else
+            			{
+            				AddToSelection();
+            			}
+            		}
             		Ping();	
             		Event.current.Use();
             	}
             }
 
-            //if (UsedByMap != null && UsedByMap.Count > 0)
-            //{
-            //    var str = new GUIContent(UsedByMap.Count.ToString());
-
-            //    usageRect.y += 1f;
-            //    usageRect.xMin = usageRect.xMax - EditorStyles.miniLabel.CalcSize(str).x + 2f;
-            //    usageRect.xMax += 2f;
-            //    GUI.Label(usageRect, str);
-            //}
-	        
-	        
-	        
+            if (UsedByMap != null && UsedByMap.Count > 0)
+            {
+               var str = new GUIContent(UsedByMap.Count.ToString());
+			   var countRect = iconRect;
+			   countRect.xMin-=16f;
+               GUI.Label(countRect, str);
+            }
 
 	        var pathW = drawPath ? EditorStyles.miniLabel.CalcSize(new GUIContent(assetFolder)).x : 0;
 	        var nameW = EditorStyles.boldLabel.CalcSize(new GUIContent(assetName)).x;
+            var cc = new Color(0, 0f, 1f, 0.25f);
 
             if (singleLine)
             {
                 var lbRect = LeftRect(pathW + nameW, ref r);
-                if (highlight)
+
+                if (highlight || selected)
                 {
                     var c = GUI.color;
-                    GUI.color = new Color(0, 0f, 1f, 0.5f);
+                    GUI.color = cc;
                     GUI.DrawTexture(lbRect, EditorGUIUtility.whiteTexture);
                     GUI.color = c;
                 }
+                       
                 if (drawPath)
                 {
                     GUI.Label(LeftRect(pathW, ref lbRect), assetFolder, EditorStyles.miniLabel);
@@ -605,15 +881,38 @@ namespace vietlabs.fr2
                     GUI.Label(new Rect(r.x, r.y + 16f, r.width, r.height), assetFolder, EditorStyles.miniLabel);
 
                 var lbRect = LeftRect(nameW, ref r);
-                if (highlight)
+                if (highlight || selected)
                 {
                     var c = GUI.color;
-                    GUI.color = new Color(0, 0f, 1f, 0.5f);
+                    GUI.color = cc;
                     GUI.DrawTexture(lbRect, EditorGUIUtility.whiteTexture);
                     GUI.color = c;
                 }
                 GUI.Label(lbRect, assetName, EditorStyles.boldLabel);
             }
+            int margin = 15;
+            float sub = FR2_Window.window.IsFocusingDuplicate ? 100 : 40;
+            Rect re = new Rect(r.x + r.width - sub, r.y, 20, r.height);
+            if(FR2_Setting.ShowUsedByClassed && HashUsedByClassesIds != null)
+            {
+                foreach(var item in HashUsedByClassesIds)
+                {
+                    if(!HashClassesNormal.ContainsKey(item)) continue;
+                    
+                    string name = HashClassesNormal[item];
+                    Type t  = null;
+                    if(!HashClasses.TryGetValue(item, out t))
+                    {
+                        t= FR2_Unity.GetType(name);
+                        HashClasses.Add(item, t);
+                    }
+                    GUIContent content = new GUIContent(EditorGUIUtility.ObjectContent(null, t).image, name);
+                    GUI.Label(re, content);
+                    re.x -= margin;
+                    // Debug.Log(item);
+                }
+            }
+                
 
             if (Event.current.type == EventType.Repaint)
             {
@@ -633,21 +932,21 @@ namespace vietlabs.fr2
         internal GenericMenu AddArray(GenericMenu menu, List<string> list, string prefix, string title,
             string emptyTitle, bool showAsset, int max = 10)
         {
-            if (list.Count > 0)
-            {
-                if (list.Count > max)
-                {
-                    prefix = string.Format("{0} _{1}/", title, list.Count) + prefix;
-                }
+            //if (list.Count > 0)
+            //{
+            //    if (list.Count > max)
+            //    {
+            //        prefix = string.Format("{0} _{1}/", title, list.Count) + prefix;
+            //    }
 
-                for (var i = 0; i < list.Count; i++)
-                {
-                    var def = list[i];
-                    var suffix = showAsset ? "/" + FR2_Cache.Api.FindSymbol(def).assetName : string.Empty;
-                    menu.AddItem(new GUIContent(prefix + def + suffix), false, () => OpenScript(def));
-                }
-            }
-            else
+            //    //for (var i = 0; i < list.Count; i++)
+            //    //{
+            //    //    var def = list[i];
+            //    //    var suffix = showAsset ? "/" + FR2_Cache.Api.FindSymbol(def).assetName : string.Empty;
+            //    //    menu.AddItem(new GUIContent(prefix + def + suffix), false, () => OpenScript(def));
+            //    //}
+            //}
+            //else
             {
                 menu.AddItem(new GUIContent(emptyTitle), true, null);
             }
@@ -679,16 +978,29 @@ namespace vietlabs.fr2
             EditorGUIUtility.systemCopyBuffer = fullName;
             Debug.Log(fullName);
         }
-
+                               
         internal void AddToSelection()
         {
-            var list = Selection.objects.ToList();
-            var obj = FR2_Unity.LoadAssetAtPath<Object>(assetPath);
-            if (!list.Contains(obj))
+            if (!FR2_Selection.h.Contains(guid))
             {
-                list.Add(obj);
-                Selection.objects = list.ToArray();
+                FR2_Selection.h.Add(guid);
             }
+
+            //var list = Selection.objects.ToList();
+            //var obj = FR2_Unity.LoadAssetAtPath<Object>(assetPath);
+            //if (!list.Contains(obj))
+            //{
+            //    list.Add(obj);
+            //    Selection.objects = list.ToArray();
+            //}
+        }
+
+        internal void RemoveFromSelection()
+        { 
+            if (FR2_Selection.h.Contains(guid))
+            {
+                FR2_Selection.h.Remove(guid);
+            }                                
         }
 
         internal void Ping()
@@ -711,15 +1023,15 @@ namespace vietlabs.fr2
 	    	Object.Instantiate(prefab);
 	    }
 
-        internal void OpenScript(string definition)
-        {
-            var asset = FR2_Cache.Api.FindSymbol(definition);
-            if (asset == null) return;
+        //internal void OpenScript(string definition)
+        //{
+        //    var asset = FR2_Cache.Api.FindSymbol(definition);
+        //    if (asset == null) return;
 
-            EditorGUIUtility.PingObject(
-                AssetDatabase.LoadAssetAtPath(asset.assetPath, typeof(Object))
-                );
-        }
+        //    EditorGUIUtility.PingObject(
+        //        AssetDatabase.LoadAssetAtPath(asset.assetPath, typeof(Object))
+        //        );
+        //}
 
         internal void Reload()
         {
@@ -838,10 +1150,18 @@ namespace vietlabs.fr2
                 AddUseGUID(refGUID);
             }
         }
-
+        private void ClearUseGUIDs()
+	    {
+#if FR2_DEBUG
+		    Debug.Log("ClearUseGUIDs: " + assetPath);
+#endif
+		    
+            UseGUIDs.Clear();
+            UseGUIDsList.Clear();
+        }
         internal void LoadBinaryAsset()
         {
-            UseGUIDs.Clear();
+            ClearUseGUIDs();
 
             //var assets = AssetDatabase.LoadAllAssetsAtPath(assetPath);
             //for (var i = 0;i < assets.Length; i++){
@@ -893,15 +1213,31 @@ namespace vietlabs.fr2
                 state = FR2_AssetState.MISSING;
                 return;
             }
-	        
+
+#if FR2_DEBUG
+	        Debug.Log("LoadYAML: " + assetPath);
+#endif
+            
+	        //if(assetPath.Contains("Myriad Pro - Bold SDF"))
+            //{
+            //    Debug.Log("no ne");
+            //}
 	        // PERFORMANCE HOG!
-            var matches = Regex.Matches(text, @"\bguid: [a-f0-9]{32}\b");
+            // var matches = Regex.Matches(text, @"\bguid: [a-f0-9]{32}\b");
+            var matches = Regex.Matches(text, @".*guid: [a-f0-9]{32}.*\n");
 
             foreach (Match match in matches)
             {
-                var refGUID = match.Value.Replace("guid: ", string.Empty);
-                if (UseGUIDs.Contains(refGUID)) continue;
-                AddUseGUID(refGUID);
+                var guidMatch = Regex.Match(match.Value, @"\bguid: [a-f0-9]{32}\b");
+                var refGUID = guidMatch.Value.Replace("guid: ", string.Empty);
+
+                var fileIdMatch = Regex.Match(match.Value, @"\bfileID: ([0-9]*).*");
+                int id = -1;
+                try{
+                    id =int.Parse(fileIdMatch.Groups[1].Value) / 100000;
+                }
+                catch{}
+                AddUseGUID(refGUID,id);
             }
 	        
 	        //var idx = text.IndexOf("guid: ");
@@ -924,6 +1260,60 @@ namespace vietlabs.fr2
 			//	Debug.LogWarning("Never finish on " + assetName);
 			//}
         }
+        internal void LoadYAML2()
+        {
+            if (!File.Exists(assetPath))
+            {
+                state = FR2_AssetState.MISSING;
+                return;
+            }
+
+            // var text = string.Empty;
+            try
+            {
+                using (StreamReader sr = new StreamReader(assetPath)) 
+                {
+                    while (sr.Peek() >= 0) 
+                    {
+                        string line = sr.ReadLine();
+                        int index = line.IndexOf("guid: ");
+                        if(index < 0) continue;
+                        string refGUID = line.Substring(index+6, 32);
+                        int indexFileId = line.IndexOf("fileID: ");
+                        int fileID = -1;
+                        if(indexFileId >= 0)
+                        {
+                            indexFileId += 8;
+                            string fileIDStr = line.Substring(indexFileId, line.IndexOf(',', indexFileId) - indexFileId);
+                            try{
+                                fileID =int.Parse(fileIDStr) / 100000;
+                            }
+                            catch{}
+                        }
+                        AddUseGUID(refGUID,fileID);
+                    }
+                }
+                
+                #if FR2_DEBUG
+	            if (UseGUIDsList.Count > 0)
+	            {
+	            	Debug.Log(assetPath + ":" + UseGUIDsList.Count);
+	            }
+	            #endif
+	            
+            }
+#if FR2_DEBUG
+            catch (Exception e)
+            {
+                Debug.LogWarning("Guess Asset Type error :: " + e + "\n" + assetPath);
+#else
+            catch
+            {
+#endif
+                state = FR2_AssetState.MISSING;
+                return;
+            }
+        }
 
         internal void LoadFolder()
         {
@@ -944,14 +1334,16 @@ namespace vietlabs.fr2
 
                     var fguid = AssetDatabase.AssetPathToGUID(f);
                     if (string.IsNullOrEmpty(fguid)) continue;
-                    AddUseGUID(fguid, true);
+                    // AddUseGUID(fguid, true);
+                    AddUseGUID(fguid);
                 }
 
                 foreach (var d in dirs)
                 {
                     var fguid = AssetDatabase.AssetPathToGUID(d);
                     if (string.IsNullOrEmpty(fguid)) continue;
-                    AddUseGUID(fguid, true);
+                    // AddUseGUID(fguid, true);
+                    AddUseGUID(fguid);
                 }
             }
 #if FR2_DEBUG
@@ -1160,6 +1552,7 @@ namespace vietlabs.fr2
                         {
                             //fast forward to first non-whitespace character
                             idx++;
+                            if(idx >= text.Length) break;
                             c = text[idx];
                         }
 
@@ -1306,9 +1699,9 @@ namespace vietlabs.fr2
 
         // ----------------------------- REPLACE GUIDS ---------------------------------------
 
-        internal bool ReplaceReference(string fromGUID, string toGUID)
+        internal bool ReplaceReference(string fromGUID, string toGUID, TerrainData terrain = null)
         {
-            if (IsMissing) return false;
+            if (IsMissing) {return false;}
 
             if (IsReferencable)
             {
@@ -1324,16 +1717,16 @@ namespace vietlabs.fr2
                 {
                     text = File.ReadAllText(assetPath).Replace("\r", "\n");
                     File.WriteAllText(assetPath, text.Replace(fromGUID, toGUID));
+                    // AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.Default);
                     return true;
                 }
                 catch (Exception e)
                 {
-                    state = FR2_AssetState.MISSING;
+                    state = FR2_AssetState.MISSING; 
 //#if FR2_DEBUG
                     Debug.LogWarning("Replace Reference error :: " + e + "\n" + assetPath);
 //#endif
                 }
-
                 return false;
             }
 
@@ -1342,7 +1735,7 @@ namespace vietlabs.fr2
                 var fromObj = FR2_Unity.LoadAssetWithGUID<Object>(fromGUID);
                 var toObj = FR2_Unity.LoadAssetWithGUID<Object>(toGUID);
                 var found = 0;
-                var terrain = AssetDatabase.LoadAssetAtPath(assetPath, typeof(Object)) as TerrainData;
+                // var terrain = AssetDatabase.LoadAssetAtPath(assetPath, typeof(Object)) as TerrainData;
 
                 if (fromObj is Texture2D)
                 {
@@ -1390,13 +1783,13 @@ namespace vietlabs.fr2
                     terrain.treePrototypes = arr2;
                 }
 
-                EditorUtility.SetDirty(terrain);
-                AssetDatabase.SaveAssets();
+                // EditorUtility.SetDirty(terrain);
+                // AssetDatabase.SaveAssets();
 
                 fromObj = null;
                 toObj = null;
                 terrain = null;
-                FR2_Unity.UnloadUnusedAssets();
+                // FR2_Unity.UnloadUnusedAssets();
 
                 return found > 0;
             }

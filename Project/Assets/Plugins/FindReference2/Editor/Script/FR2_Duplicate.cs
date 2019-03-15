@@ -24,13 +24,14 @@ namespace vietlabs.fr2
         {
             var drawR = r;
             drawR.xMin -= 16f;
-            asset.Draw(drawR, false, false);
+            asset.Draw(drawR, false, true);
 
             var bRect = r;
             bRect.xMin += bRect.width - 50f;
             if (GUI.Button(bRect, "Use", EditorStyles.miniButton))
             {
                 EditorGUIUtility.systemCopyBuffer = asset.guid;
+                Debug.Log("guid: " + asset.guid + "  systemCopyBuffer " + EditorGUIUtility.systemCopyBuffer);
                 Selection.objects = (parent as FR2_DuplicateFolder).children.Select(
                     a => FR2_Unity.LoadAssetAtPath<Object>(((FR2_DuplicateAsset) a).asset.assetPath)
                     ).ToArray();
@@ -121,57 +122,353 @@ namespace vietlabs.fr2
             rect.xMin += rect.width - 70f;
         }
     }
-
-    internal class FR2_DuplicateTree : FR2_TreeUI
+    internal class FR2_DuplicateTree2 : FR2_Window.IRefDraw
     {
-        private static readonly FR2_FileCompare fc = new FR2_FileCompare();
-        private List<FR2_DuplicateFolder> duplicated;
+        FR2_TreeUI2.GroupDrawer groupDrawer;
+        List<FR2_Ref> list;
+        Dictionary<string, List<FR2_Ref>> dicIndex;//index, list
+        Dictionary<string, FR2_Ref> refs;
+        private CBParams cacheAssetList;
 
-        private FR2_TreeUI tree;
-
-        public void Reset(CBParams assetList)
+        private bool dirty;
+        private bool showFilter;
+        private bool showIgnore;
+        string searchTerm ="";
+        bool caseSensitive;
+        public FR2_DuplicateTree2()
         {
-            fc.Reset(assetList, RefreshView, RefreshView);
+            groupDrawer = new FR2_TreeUI2.GroupDrawer(DrawGroup, DrawAsset);
         }
-
-        private void RefreshView(CBParams assetList)
+        private float TimePressDelete;
+        private string guidPressDelete;
+        private const float TimeDelayDelete = .5f;
+        private void DrawAsset(Rect r, string guid)
         {
-            itemH = 18f;
-            tree = new FR2_TreeUI();
-            duplicated = new List<FR2_DuplicateFolder>();
+            FR2_Ref rf;
+			if (!refs.TryGetValue(guid, out rf)) return;
+			
+			if (rf.depth == 1) //mode != Mode.Dependency && 
+			{
+				var c = GUI.color;
+				GUI.color = Color.blue;
+				GUI.DrawTexture(new Rect(r.x-4f, r.y + 2f, 2f, 2f), EditorGUIUtility.whiteTexture);
+				GUI.color = c;
+			}
+			rf.asset.Draw(r, false, FR2_Setting.GroupMode != FR2_RefDrawer.Mode.Folder);
 
-            for (var i = 0; i < assetList.Count; i++)
+            var tex = AssetDatabase.GetCachedIcon(rf.asset.assetPath);
+            if(tex == null) return;
+            var drawR = r;
+            drawR.x = drawR.x + drawR.width - 60f;// (groupDrawer.TreeNoScroll() ? 60f : 70f) ;
+            drawR.width = 40f;
+            drawR.y += 1;
+            drawR.height -= 2;
+
+            if (GUI.Button(drawR, "Use", EditorStyles.miniButton))
             {
-                duplicated.Add(new FR2_DuplicateFolder(assetList[i]));
+                if(FR2_Export.IsMergeProcessing)
+                {
+                    Debug.LogWarning("Previous merge is processing");
+                }
+                else
+                {
+                    AssetDatabase.SaveAssets();
+                    EditorGUIUtility.systemCopyBuffer = rf.asset.guid;
+                    EditorGUIUtility.systemCopyBuffer = rf.asset.guid;
+                    // Debug.Log("guid: " + rf.asset.guid + "  systemCopyBuffer " + EditorGUIUtility.systemCopyBuffer);
+                    int index = rf.index;
+                    Selection.objects = list.Where(x => x.index == index).Select(x => FR2_Unity.LoadAssetAtPath<Object>(x.asset.assetPath)).ToArray();
+                    FR2_Export.MergeDuplicate();
+                }
+                
             }
-        }
-
-        public bool Draw()
-        {
-            if (fc.nChunks > 0 && fc.nScaned < fc.nChunks)
+            if(rf.asset.UsageCount() > 0) return;
+            drawR.x -= 25;
+            drawR.width = 20;
+            if(wasPreDelete(guid))
             {
-                var rect = GUILayoutUtility.GetRect(1, Screen.width, 18f, 18f);
-                var p = fc.nScaned/(float) fc.nChunks;
-
-                EditorGUI.ProgressBar(rect, p, string.Format("Scanning {0} / {1}", fc.nScaned, fc.nChunks));
-                GUILayout.FlexibleSpace();
-                return true;
-            }
-
-            if (tree != null)
-            {
-                tree.Draw(duplicated);
+                Color col = GUI.color;
+                GUI.color = Color.red;                
+                if (GUI.Button(drawR, "X", EditorStyles.miniButton))
+                {
+                    guidPressDelete = null;
+                    AssetDatabase.DeleteAsset(rf.asset.assetPath);
+                }
+                GUI.color = col;
+                FR2_Window.window.WillRepaint = true;
             }
             else
             {
-                if (Event.current.type == EventType.Repaint && fc.nChunks == 0)
+                if (GUI.Button(drawR, "X", EditorStyles.miniButton))
                 {
-                    Reset(FR2_Cache.Api.ScanSimilar());
+                    guidPressDelete = guid;
+                    TimePressDelete = Time.realtimeSinceStartup;
+                    FR2_Window.window.WillRepaint = true;
                 }
             }
-
+            
+        }
+        private bool wasPreDelete(string guid)
+        {
+            if(guidPressDelete == null || guid != guidPressDelete) return false;
+            if(Time.realtimeSinceStartup - TimePressDelete < TimeDelayDelete) return true;
+            guidPressDelete = null;
             return false;
         }
+
+        private void DrawGroup(Rect r, string label, int childCount)
+        {
+            // GUI.Label(r, label + " (" + childCount + ")", EditorStyles.boldLabel);
+            FR2_Asset asset = dicIndex[label][0].asset;
+            
+            var tex = AssetDatabase.GetCachedIcon(asset.assetPath);
+            var rect = r;
+
+            if (tex != null)
+            {
+                rect.width = 16f;
+                GUI.DrawTexture(rect, tex);
+            }
+
+            rect = r;
+            rect.xMin += 16f;
+            GUI.Label(rect, asset.assetName, EditorStyles.boldLabel);
+
+            rect = r;
+            rect.xMin += rect.width - 50f;
+            GUI.Label(rect, GetfileSizeString(asset.fileSize), EditorStyles.miniLabel);
+
+            rect = r;
+            rect.xMin += rect.width - 70f;
+            GUI.Label(rect, childCount.ToString(), EditorStyles.miniLabel);
+
+            rect = r;
+            rect.xMin += rect.width - 70f;
+        }
+        private string GetfileSizeString(long fileSize)
+        {
+            return fileSize <= 1024
+                ? fileSize + " B"
+                : fileSize <= 1024*1024
+                    ? Mathf.RoundToInt(fileSize/1024f) + " KB"
+                    : Mathf.RoundToInt(fileSize/1024f/1024f) + " MB";
+        }
+
+        private static readonly FR2_FileCompare fc = new FR2_FileCompare();
+        // private List<FR2_DuplicateFolder> duplicated;
+
+        public void Reset(CBParams assetList)
+        {
+            fc.Reset(assetList, OnUpdateView, RefreshView);
+        }
+        private void OnUpdateView(CBParams assetList)
+        {
+
+        }
+        int excludeCount;
+        public int scanExcludeByTypeCount;
+        public int scanExcludeByIgnoreCount;
+        public bool isExclueAnyItem()
+		{
+			return excludeCount > 0 || scanExcludeByTypeCount > 0;
+		}
+        public bool isExclueAnyItemByIgnoreFolder()
+		{
+			return  scanExcludeByIgnoreCount > 0;
+		}
+        // void OnActive
+        private void RefreshView(CBParams assetList)
+        {
+            cacheAssetList = assetList;
+            dirty = false;
+            list = new List<FR2_Ref>();
+            refs = new Dictionary<string, FR2_Ref>();
+            dicIndex = new Dictionary<string, List<FR2_Ref>>();
+            if(assetList == null) return;
+            var minScore = searchTerm.Length;
+            var term1 = searchTerm;
+			if (!caseSensitive) term1 = term1.ToLower();
+			var term2 = term1.Replace(" ", string.Empty);
+            excludeCount = 0;
+
+            for (var i = 0; i < assetList.Count; i++)
+            {
+               List<FR2_Ref> lst = new List<FR2_Ref>();
+                for(int j = 0; j <assetList[i].Count; j++ )
+                {
+                    string guid = AssetDatabase.AssetPathToGUID(assetList[i][j]);
+                    if(string.IsNullOrEmpty(guid)) continue;
+                    if(refs.ContainsKey(guid)) continue;
+                    FR2_Asset asset = FR2_Cache.Api.Get(guid);
+                    if(asset == null) continue;
+                    FR2_Ref fr2 = new FR2_Ref(i, 0, asset, null);
+
+                    if (FR2_Setting.IsTypeExcluded(fr2.type)) 
+                    {
+                        excludeCount++;
+                        continue; //skip this one
+                    }
+				
+                    if (string.IsNullOrEmpty(searchTerm))
+                    {
+                        fr2.matchingScore = 0;
+                        list.Add(fr2);
+                        lst.Add(fr2);
+                        refs.Add(guid, fr2);
+                        continue;
+                    }
+
+                    //calculate matching score
+                    var name1 = fr2.asset.assetName;
+                    if (!caseSensitive) name1 = name1.ToLower();
+                    var name2 = name1.Replace(" ", string.Empty);
+                    
+                    var score1 =  FR2_Unity.StringMatch(term1, name1);
+                    var score2 =  FR2_Unity.StringMatch(term2, name2);
+                    
+                    fr2.matchingScore = Mathf.Max(score1, score2);
+                    if (fr2.matchingScore > minScore){
+                        list.Add(fr2);
+                        lst.Add(fr2);
+                        refs.Add(guid, fr2);
+                    }
+                }
+                dicIndex.Add(i.ToString(),lst);
+
+            }
+            ResetGroup();
+        }
+        void ResetGroup()
+		{
+			
+			//folderDrawer.GroupByAssetType(list);
+			groupDrawer.Reset<FR2_Ref>(list, 
+			rf =>  rf.asset.guid
+			, GetGroup, SortGroup);
+            if(FR2_Window.window != null) FR2_Window.window.Repaint();
+        }
+        string GetGroup(FR2_Ref rf)
+		{
+            return rf.index.ToString();
+		}
+        void SortGroup(List<string> groups)
+		{
+			// groups.Sort( (item1, item2) =>
+			// {
+			// 	if (item1 == "Others" || item2 == "Selection") return 1;
+			// 	if (item2 == "Others" || item1 == "Selection") return -1;
+			// 	return item1.CompareTo(item2);
+			// });
+		
+		}
+        
+        
+        public bool Draw()
+        {
+            if(dirty) RefreshView(cacheAssetList);
+            
+           
+
+            if (fc.nChunks2 > 0 && fc.nScaned < fc.nChunks2)
+            {
+                var api = FR2_Cache.Api;
+                var w = EditorGUIUtility.labelWidth;
+                EditorGUIUtility.labelWidth = 70f;
+                api.priority = EditorGUILayout.IntSlider("Priority", api.priority, 0, 5);
+                EditorGUIUtility.labelWidth = w;
+
+                var rect = GUILayoutUtility.GetRect(1, Screen.width, 18f, 18f);
+                var p = fc.nScaned/(float) fc.nChunks2;
+
+                EditorGUI.ProgressBar(rect, p, string.Format("Scanning {0} / {1}", fc.nScaned, fc.nChunks2));
+                GUILayout.FlexibleSpace();
+                return true;
+            }
+            DrawHeader();
+			groupDrawer.Draw();
+            return false;
+        }
+        public int ElementCount()
+        {
+            return list == null ? 0 : list.Count; 
+        }
+        public void SetDirty()
+        {
+            dirty = true;
+        }
+        public void RefreshSort(){
+
+        }
+        private void DrawHeader()
+        {
+//draw filter
+            EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
+            {
+                DrawSearch();
+                GUILayout.Space(5);
+                Color col = GUI.color;
+                GUI.color= FR2_Cache.Api.setting.ScanColor;
+                if(GUILayout.Button("Scan", EditorStyles.toolbarButton, GUILayout.Width(60)))
+                {
+                    FR2_Cache.onReady -= OnCacheReady;
+                    FR2_Cache.onReady += OnCacheReady;
+                    FR2_Cache.Api.Check4Changes(true, true);
+                    
+                }
+                GUI.color = col;
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+        private void OnCacheReady()
+        {
+            scanExcludeByTypeCount = 0;
+                Reset(FR2_Cache.Api.ScanSimilar(IgnoreTypeWhenScan, IgnoreFolderWhenScan));
+                FR2_Cache.onReady -= OnCacheReady;
+        }
+        private void IgnoreTypeWhenScan()
+        {
+            scanExcludeByTypeCount++;
+        }
+        private void IgnoreFolderWhenScan()
+        {
+            scanExcludeByIgnoreCount++;
+        }
+        private void DrawSearch(string searchLable ="")
+		{
+			if (FR2_RefDrawer.toolbarSearchField == null) {
+					FR2_RefDrawer.InitSearchStyle();
+				}
+				
+				GUILayout.BeginHorizontal(EditorStyles.toolbar);
+				{
+					
+					var v = GUILayout.Toggle(caseSensitive, "Aa", EditorStyles.toolbarButton, GUILayout.Width(24f));
+					if (v != caseSensitive)
+					{
+						caseSensitive = v;
+						dirty = true;
+					}
+					
+					GUILayout.Space(2f);
+					var value = GUILayout.TextField(searchTerm, FR2_RefDrawer.toolbarSearchField);	
+					if (searchTerm != value)
+					{
+						searchTerm = value;	
+						dirty = true;
+					}
+					
+					var style = string.IsNullOrEmpty(searchTerm) ? FR2_RefDrawer.toolbarSearchFieldCancelButtonEmpty : FR2_RefDrawer.toolbarSearchFieldCancelButton;
+					if (GUILayout.Button("Cancel", style))
+					{
+						searchTerm = string.Empty;
+						dirty = true;
+					}
+					GUILayout.Space(2f);
+				}
+				GUILayout.EndHorizontal();
+		}
+
+        
     }
 
     internal class FR2_FileCompare
@@ -180,15 +477,19 @@ namespace vietlabs.fr2
         public List<FR2_Head> heads = new List<FR2_Head>();
 
         public int nChunks;
+        public int nChunks2;
         public int nScaned;
         public Action<CBParams> OnCompareComplete;
 
         public Action<CBParams> OnCompareUpdate;
-
+        public static HashSet<FR2_Chunk> HashChunksNotComplete;
         public void Reset(CBParams list, Action<CBParams> onUpdate, Action<CBParams> onComplete)
         {
             nChunks = 0;
             nScaned = 0;
+            nChunks2 = 0;
+            streamCount = streamClosedCount =0;
+            HashChunksNotComplete = new HashSet<FR2_Chunk>();
 
             if (heads.Count > 0)
             {
@@ -203,15 +504,29 @@ namespace vietlabs.fr2
 
             OnCompareUpdate = onUpdate;
             OnCompareComplete = onComplete;
+            if(list.Count <= 0)
+                {
+                OnCompareComplete(new CBParams()); return;
+                }
 
-            for (var i = 0; i < list.Count; i++)
+            cacheList = list;
+            for(int i =0;i < list.Count; i++)
             {
-                AddHead(list[i]);
+                var file = new FileInfo(list[i][0]);
+                var nChunk = Mathf.CeilToInt(file.Length/(float) FR2_Head.chunkSize);
+                nChunks2+= nChunk;
             }
+            // for(int i =0;i< list.Count;i++)
+            // {
+            //     AddHead(list[i]);
+            // }
+            AddHead(cacheList[cacheList.Count - 1]);
+            cacheList.RemoveAt(cacheList.Count - 1);
 
             EditorApplication.update -= ReadChunkAsync;
             EditorApplication.update += ReadChunkAsync;
         }
+        CBParams cacheList;
 
         public FR2_FileCompare AddHead(List<string> files)
         {
@@ -219,12 +534,14 @@ namespace vietlabs.fr2
             {
                 Debug.LogWarning("Something wrong ! head should not contains < 2 elements");
             }
-
             var chunkList = new List<FR2_Chunk>();
             for (var i = 0; i < files.Count; i++)
             {
+                streamCount++;
+                //  Debug.Log("new stream " + files[i]);
                 chunkList.Add(new FR2_Chunk
                 {
+                   
                     file = files[i],
                     stream = new FileStream(files[i], FileMode.Open, FileAccess.Read),
                     buffer = new byte[FR2_Head.chunkSize]
@@ -246,10 +563,29 @@ namespace vietlabs.fr2
 
             return this;
         }
-
+        private int streamCount;
+        internal static int streamClosedCount;
+        private bool checkCompleteAllCurFile()
+        {
+            return streamClosedCount + HashChunksNotComplete.Count >= streamCount;//-1 for safe
+        }
         private void ReadChunkAsync()
         {
             var alive = ReadChunk();
+            HashChunksNotComplete.RemoveWhere(x=> x.stream == null || !x.stream.CanRead);
+            if(cacheList.Count > 0 && checkCompleteAllCurFile())//complete all chunk
+            {
+                int numCall = FR2_Cache.Api.priority;// - 2;
+                if(numCall<= 0) numCall = 1;
+                for(int i = 0; i< numCall; i++)
+                {
+                    if(cacheList.Count <= 0) break;
+                    AddHead(cacheList[cacheList.Count - 1]);
+                    cacheList.RemoveAt(cacheList.Count - 1);
+                }
+                
+            } 
+            
             var update = false;
 
             for (var i = heads.Count - 1; i >= 0; i--)
@@ -261,16 +597,25 @@ namespace vietlabs.fr2
                     heads.RemoveAt(i);
                     if (h.chunkList.Count > 1)
                     {
+                        
                         update = true;
                         deads.Add(h);
                     }
                 }
             }
-
             if (update) Trigger(OnCompareUpdate);
-
-            if (!alive)
+            if (!alive && cacheList.Count <= 0 && checkCompleteAllCurFile())//&& cacheList.Count <= 0 complete all chunk and cache list empty
             {
+                foreach(var item in HashChunksNotComplete)
+                {
+                    if(item.stream != null && item.stream.CanRead)
+                    {
+                        item.stream.Close();
+                        item.stream = null;
+                    }
+                }
+                HashChunksNotComplete.Clear();
+                // Debug.Log("complete ");
                 nScaned = nChunks;
                 EditorApplication.update -= ReadChunkAsync;
                 Trigger(OnCompareComplete);
@@ -353,7 +698,6 @@ namespace vietlabs.fr2
                 list = new List<FR2_Chunk>();
                 dict.Add(b, list);
             }
-
             list.Add(chunk);
         }
 
@@ -361,6 +705,8 @@ namespace vietlabs.fr2
         {
             for (var i = 0; i < chunkList.Count; i++)
             {
+                // Debug.Log("stream close");
+                FR2_FileCompare.streamClosedCount++;
                 chunkList[i].stream.Close();
                 chunkList[i].stream = null;
             }
@@ -389,7 +735,6 @@ namespace vietlabs.fr2
 
             currentChunk++;
         }
-
         public void CompareChunk(List<FR2_Head> heads)
         {
             var idx = chunkList.Count;
@@ -408,8 +753,9 @@ namespace vietlabs.fr2
 
                 var v = buffer[diff];
                 var d = new Dictionary<byte, List<FR2_Chunk>>(); //new heads
-
                 chunkList.RemoveAt(idx);
+                FR2_FileCompare.HashChunksNotComplete.Add(chunk);
+                
                 AddToDict(chunk.buffer[diff], chunk, d);
 
                 for (var j = idx - 1; j >= 0; j--)
@@ -419,6 +765,7 @@ namespace vietlabs.fr2
                     if (tValue == v) continue;
 
                     idx--;
+                    FR2_FileCompare.HashChunksNotComplete.Add(tChunk);
                     chunkList.RemoveAt(j);
                     AddToDict(tChunk.buffer[diff], tChunk, d);
                 }

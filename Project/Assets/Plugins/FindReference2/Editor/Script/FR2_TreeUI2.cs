@@ -57,7 +57,7 @@ namespace vietlabs.fr2
 			
 			var minY = (int) position.y;
 			var maxY = (int) (position.y + visibleRect.height);
-			
+			contentRect.x -= FR2_Setting.TreeIndent;
 			position = GUI.BeginScrollView(visibleRect, position, contentRect);
 			{
 				var rect = new Rect(0, 0, r.width - (noScroll ? 4f : 16f), 16f);
@@ -68,7 +68,10 @@ namespace vietlabs.fr2
 			GUI.EndScrollView();
 		}
 		
-		
+		public bool NoScroll()
+		{
+			return rootItem.childrenHeight < visibleRect.height;
+		}
 		
 		// ------------------------ DELEGATE --------------
 		
@@ -97,7 +100,10 @@ namespace vietlabs.fr2
 			}
 			
 			// ----------------- TREE WRAPPER ------------------
-			
+			public bool TreeNoScroll()
+			{
+				return tree.NoScroll();
+			}
 			public void Reset<T>(List<T> items, Func<T, string> idFunc, Func<T, string> groupFunc, Action<List<string>> customGroupSort = null)
 			{
 				groupDict = new Dictionary<string, List<string>>();
@@ -248,7 +254,8 @@ namespace vietlabs.fr2
 					{
 						var o = GUI.color;
 						GUI.color = FR2_Setting.RowColor;
-						GUI.DrawTexture(rect, EditorGUIUtility.whiteTexture);
+						// GUI.DrawTexture(rect, EditorGUIUtility.whiteTexture);
+						GUI.DrawTexture(new Rect(rect.x - FR2_Setting.TreeIndent, rect.y, rect.width, rect.height), EditorGUIUtility.whiteTexture);
 						GUI.color = o;
 					}
 					
