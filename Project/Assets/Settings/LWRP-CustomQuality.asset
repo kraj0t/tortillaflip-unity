@@ -16,9 +16,9 @@ MonoBehaviour:
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
   m_OpaqueDownsampling: 1
-  m_SupportsHDR: 1
-  m_MSAA: 1
-  m_RenderScale: 1
+  m_SupportsHDR: 0
+  m_MSAA: 4
+  m_RenderScale: 0.9
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 1024
@@ -33,7 +33,7 @@ MonoBehaviour:
   m_ShadowDepthBias: 0.94
   m_ShadowNormalBias: 0.65
   m_SoftShadowsSupported: 1
-  m_UseSRPBatcher: 0
+  m_UseSRPBatcher: 1
   m_SupportsDynamicBatching: 0
   m_MixedLightingSupported: 0
   m_ShadowType: 2

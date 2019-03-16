@@ -121,21 +121,13 @@ public class ChangeMeshOnJointBreak : MonoBehaviour
         RefreshCurrentStates();
 
         var combi = FindCombination(_currentStates);
-        
-        //if (combi.Mesh != Renderer.sharedMesh)
-        {
-            // Workaround proposed here to recalculate the renderer.bounds --> https://forum.unity.com/threads/recalculating-renderer-bounds.79081/
-            // TODO: find a better solution for ^this, if any.
-            Renderer.updateWhenOffscreen = false;
-            Renderer.sharedMesh = combi.Mesh;
-            Renderer.rootBone = combi.RootBone;
-            Renderer.bones = new Transform[] { combi.Bone0, combi.Bone1, combi.Bone2, combi.Bone3 };
-            Renderer.updateWhenOffscreen = true;
 
-            OnMeshChanged.Invoke();
-        }
+        Renderer.sharedMesh = combi.Mesh;
+        Renderer.rootBone = combi.RootBone;
+        Renderer.bones = new Transform[] { combi.Bone0, combi.Bone1, combi.Bone2, combi.Bone3 };
+
+        OnMeshChanged.Invoke();
     }
-
 
     private void RefreshCurrentStates()
     {

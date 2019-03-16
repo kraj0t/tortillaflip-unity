@@ -7,7 +7,8 @@ public class SoftBody : MonoBehaviour
 {
     public Rigidbody[] Particles;
 
-    [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderRadius = 0.03f;
+    [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderRadius = 0.025f;
+    [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderHeight = 0.075f;
 
     [BoxGroup("Joints")] public bool EnablePreprocessing = true;
     [BoxGroup("Joints")] [MinValue(0)] public float LinearSpring = 200;
@@ -83,6 +84,11 @@ public class SoftBody : MonoBehaviour
 
             foreach (var col in p.GetComponents<SphereCollider>())
                 col.radius = ColliderRadius;
+            foreach (var col in p.GetComponents<CapsuleCollider>())
+            {
+                col.radius = ColliderRadius;
+                col.height = ColliderHeight;
+            }
 
             foreach (var j in p.GetComponents<ConfigurableJoint>())
                 _ResetJoint(j);

@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1aa0fbd61fee143b8020251f956c48, type: 3}
-  m_Name: BODY_default
+  m_Name: BODY_joint_high
   m_EditorClassIdentifier: 
-  MaxAngularVelocity: 100
-  SolverIterations: 20
-  SolverVelocityIterations: 10
-  SleepThreshold: 0.01
-  MaxDepenetrationVelocity: 1e+32
-  DetectCollisions: 1
-  OverrideMass: 0
   Density: 700
+  MaxAngularVelocity: 100
+  SolverIterations: 70
+  SolverVelocityIterations: 40
+  SleepThreshold: 0.01
   OverrideCenterOfMass: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   OverrideInertiaTensor: 0
   InertiaTensor: {x: 0.1, y: 0.1, z: 0.1}
   InertiaTensorRotation: {x: 0, y: 0, z: 0}
+  MaxDepenetrationVelocity: 1e+32
+  DetectCollisions: 1

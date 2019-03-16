@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4611563702811292346}
   - component: {fileID: 4611563702811292347}
   - component: {fileID: 4611563702811292312}
-  - component: {fileID: 4611563702811292357}
+  - component: {fileID: 337227370}
   m_Layer: 0
   m_Name: bone006
   m_TagString: Untagged
@@ -89,7 +89,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278618631766082222}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -121,7 +121,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.00000013771717, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000007450581, y: -0.054100603, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: -0.000000007450581, y: -0.054100588, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -1, y: 0, z: -0.00000013771717}
   m_XMotion: 1
@@ -205,7 +205,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292357
+--- !u!114 &337227370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,14 +214,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 278618631766082222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &378679173973901587
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,9 +233,9 @@ GameObject:
   - component: {fileID: 4611563702811292366}
   - component: {fileID: 4611563702811292367}
   - component: {fileID: 4611563702811292328}
-  - component: {fileID: 4611563702811292361}
   - component: {fileID: 4233038896330805611}
   - component: {fileID: 4233038896330805610}
+  - component: {fileID: 337227366}
   m_Layer: 0
   m_Name: bone010
   m_TagString: Untagged
@@ -313,7 +310,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378679173973901587}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -345,7 +342,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.25881922, y: 0, z: 0.96592575}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.017182276, y: 0.06412508, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: -0.017182276, y: 0.06412511, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.96592575, y: 0, z: -0.25881928}
   m_XMotion: 1
@@ -429,23 +426,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378679173973901587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &4233038896330805611
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -457,7 +437,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.91875374, y: 0, z: -0.3948309}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.062944815, y: -0.027050298, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.062944815, y: -0.02705027, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.39483094, y: 0, z: -0.9187538}
   m_XMotion: 1
@@ -552,7 +532,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.91875374, y: 0, z: 0.39483094}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.062944815, y: 0.0270503, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.062944815, y: 0.027050328, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.39483094, y: 0, z: -0.9187538}
   m_XMotion: 1
@@ -636,6 +616,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378679173973901587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &429872641581347375
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,8 +644,8 @@ GameObject:
   - component: {fileID: 4611563702811292383}
   - component: {fileID: 4611563702811292380}
   - component: {fileID: 4611563702811292333}
-  - component: {fileID: 4611563702811292382}
   - component: {fileID: 4181774922674430550}
+  - component: {fileID: 337227361}
   m_Layer: 0
   m_Name: bone015
   m_TagString: Untagged
@@ -726,7 +720,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429872641581347375}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -758,7 +752,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.25881892, y: 0, z: -0.9659258}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.017182231, y: -0.064124994, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: -0.017182231, y: -0.064125, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.96592593, y: 0, z: -0.25881895}
   m_XMotion: 1
@@ -842,23 +836,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429872641581347375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &4181774922674430550
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -870,7 +847,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.7770059, y: 0, z: -0.6294933}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.045762576, y: -0.03707467, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.045762576, y: -0.037074678, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.62949336, y: 0, z: 0.77700603}
   m_XMotion: 1
@@ -954,6 +931,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429872641581347375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &499334813327112863
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +959,7 @@ GameObject:
   - component: {fileID: 4611563702811292348}
   - component: {fileID: 4611563702811292349}
   - component: {fileID: 4611563702811292314}
-  - component: {fileID: 4611563702811292351}
+  - component: {fileID: 337227372}
   m_Layer: 0
   m_Name: bone004
   m_TagString: Untagged
@@ -1043,7 +1034,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499334813327112863}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -1075,7 +1066,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.054100573, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.054100573, y: -0.000000022351745, z: -3.5527137e-15}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.00000011920929, y: 0, z: -1.0000001}
   m_XMotion: 1
@@ -1159,7 +1150,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292351
+--- !u!114 &337227372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1168,14 +1159,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 499334813327112863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &1460761561740216794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,9 +1178,9 @@ GameObject:
   - component: {fileID: 4611563702811292376}
   - component: {fileID: 4611563702811292377}
   - component: {fileID: 4611563702811292322}
-  - component: {fileID: 4611563702811292379}
   - component: {fileID: 3150894831390824866}
   - component: {fileID: 3150894831390824865}
+  - component: {fileID: 337227360}
   m_Layer: 0
   m_Name: bone016
   m_TagString: Untagged
@@ -1267,7 +1255,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460761561740216794}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -1299,7 +1287,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.25881904, y: 0, z: -0.9659258}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.017182238, y: -0.064124994, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0.017182238, y: -0.06412499, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.96592593, y: 0, z: 0.25881907}
   m_XMotion: 1
@@ -1383,23 +1371,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460761561740216794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &3150894831390824866
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1411,7 +1382,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9187536, y: 0, z: 0.39483127}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.06294481, y: 0.027050322, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.06294481, y: 0.027050331, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.39483118, y: 0, z: 0.91875374}
   m_XMotion: 1
@@ -1506,7 +1477,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9187538, y: 0, z: -0.39483076}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0629448, y: -0.02705028, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.0629448, y: -0.02705027, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.39483082, y: 0, z: 0.91875386}
   m_XMotion: 1
@@ -1590,6 +1561,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460761561740216794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &1673013813873830461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,9 +1589,9 @@ GameObject:
   - component: {fileID: 4611563702811292369}
   - component: {fileID: 4611563702811292374}
   - component: {fileID: 4611563702811292335}
-  - component: {fileID: 4611563702811292368}
   - component: {fileID: 2938649274952284745}
   - component: {fileID: 2938649274952284744}
+  - component: {fileID: 337227363}
   m_Layer: 0
   m_Name: bone013
   m_TagString: Untagged
@@ -1681,7 +1666,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673013813873830461}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -1713,7 +1698,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9659257, y: 0, z: -0.25881952}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.06412497, y: -0.01718227, z: -0.0000000018626451}
+  m_ConnectedAnchor: {x: -0.06412497, y: -0.01718224, z: -0.0000000018626451}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.25881958, y: 0, z: -0.96592575}
   m_XMotion: 1
@@ -1797,23 +1782,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673013813873830461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &2938649274952284745
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1825,7 +1793,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.39483166, y: 0, z: -0.91875345}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.027050357, y: -0.06294483, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0.027050357, y: -0.0629448, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.9187536, y: 0, z: 0.39483166}
   m_XMotion: 1
@@ -1920,7 +1888,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.39483, y: 0, z: -0.9187543}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.027050218, y: -0.06294483, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: -0.027050218, y: -0.0629448, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.91875434, y: 0, z: -0.39483}
   m_XMotion: 1
@@ -2004,6 +1972,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673013813873830461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &2656693775983167617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,8 +2000,8 @@ GameObject:
   - component: {fileID: 4611563702811292372}
   - component: {fileID: 4611563702811292373}
   - component: {fileID: 4611563702811292334}
-  - component: {fileID: 4611563702811292375}
   - component: {fileID: 1955098975288678652}
+  - component: {fileID: 337227364}
   m_Layer: 0
   m_Name: bone012
   m_TagString: Untagged
@@ -2094,7 +2076,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2656693775983167617}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -2126,7 +2108,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.96592593, y: 0, z: 0.2588186}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.064124994, y: 0.01718221, z: 0.0000000018626451}
+  m_ConnectedAnchor: {x: -0.064124994, y: 0.017182203, z: 0.0000000018626451}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.25881863, y: 0, z: -0.96592593}
   m_XMotion: 1
@@ -2210,23 +2192,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2656693775983167617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &1955098975288678652
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2238,7 +2203,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.6294927, y: 0, z: -0.7770064}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.037074637, y: -0.045762617, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.037074637, y: -0.045762625, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.7770064, y: 0, z: -0.6294927}
   m_XMotion: 1
@@ -2322,6 +2287,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656693775983167617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &2746352777811163808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,8 +2315,8 @@ GameObject:
   - component: {fileID: 4611563702811292390}
   - component: {fileID: 4611563702811292391}
   - component: {fileID: 4611563702811292320}
-  - component: {fileID: 4611563702811292385}
   - component: {fileID: 1865213234721549019}
+  - component: {fileID: 337227358}
   m_Layer: 0
   m_Name: bone018
   m_TagString: Untagged
@@ -2412,7 +2391,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2746352777811163808}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -2444,7 +2423,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9659258, y: 0, z: -0.258819}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.064124994, y: -0.01718224, z: -0.0000000018626451}
+  m_ConnectedAnchor: {x: 0.064124994, y: -0.017182248, z: -0.0000000018626451}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.25881922, y: 0, z: 0.9659259}
   m_XMotion: 1
@@ -2528,23 +2507,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2746352777811163808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &1865213234721549019
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2556,7 +2518,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.6294937, y: 0, z: 0.7770056}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0370747, y: 0.045762572, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.0370747, y: 0.045762565, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.7770056, y: 0, z: 0.6294937}
   m_XMotion: 1
@@ -2640,6 +2602,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746352777811163808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &3528099418873981329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2630,7 @@ GameObject:
   - component: {fileID: 4611563702811292342}
   - component: {fileID: 4611563702811292343}
   - component: {fileID: 4611563702811292324}
-  - component: {fileID: 4611563702811292337}
+  - component: {fileID: 337227374}
   m_Layer: 0
   m_Name: bone002
   m_TagString: Untagged
@@ -2729,7 +2705,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3528099418873981329}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -2761,7 +2737,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.054100595, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: 0, y: 0.054100588, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 1
@@ -2845,7 +2821,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292337
+--- !u!114 &337227374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2854,14 +2830,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3528099418873981329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &4365459655605318086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,8 +2849,8 @@ GameObject:
   - component: {fileID: 4611563702811292393}
   - component: {fileID: 4611563702811292398}
   - component: {fileID: 4611563702811292331}
-  - component: {fileID: 4611563702811292392}
   - component: {fileID: 246196787455418813}
+  - component: {fileID: 337227355}
   m_Layer: 0
   m_Name: bone021
   m_TagString: Untagged
@@ -2952,7 +2925,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4365459655605318086}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -3068,23 +3041,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4365459655605318086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &246196787455418813
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3180,6 +3136,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365459655605318086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &4403141626594420970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,7 +3164,7 @@ GameObject:
   - component: {fileID: 4611563702811292345}
   - component: {fileID: 4611563702811292350}
   - component: {fileID: 4611563702811292315}
-  - component: {fileID: 4611563702811292344}
+  - component: {fileID: 337227371}
   m_Layer: 0
   m_Name: bone005
   m_TagString: Untagged
@@ -3269,7 +3239,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4403141626594420970}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -3301,7 +3271,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.7071069, y: 0, z: -0.70710665}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.038254894, y: -0.038254887, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.038254894, y: -0.03825491, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.7071067, y: 0, z: -0.7071068}
   m_XMotion: 1
@@ -3385,7 +3355,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292344
+--- !u!114 &337227371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3394,14 +3364,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4403141626594420970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &4476791532200549021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,8 +3383,8 @@ GameObject:
   - component: {fileID: 4611563702811292370}
   - component: {fileID: 4611563702811292371}
   - component: {fileID: 4611563702811292332}
-  - component: {fileID: 4611563702811292381}
   - component: {fileID: 134917691620346600}
+  - component: {fileID: 337227362}
   m_Layer: 0
   m_Name: bone014
   m_TagString: Untagged
@@ -3492,7 +3459,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4476791532200549021}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -3524,7 +3491,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.7071064, y: 0, z: -0.7071072}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.04694272, y: -0.046942778, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: -0.04694272, y: -0.046942785, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.7071073, y: 0, z: -0.7071065}
   m_XMotion: 1
@@ -3608,23 +3575,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476791532200549021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &134917691620346600
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3636,7 +3586,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.62949437, y: 0, z: -0.777005}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.037074752, y: -0.045762558, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.037074752, y: -0.045762565, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.7770051, y: 0, z: 0.6294945}
   m_XMotion: 1
@@ -3720,6 +3670,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476791532200549021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &4513392685103999132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,8 +3698,8 @@ GameObject:
   - component: {fileID: 4611563702811292389}
   - component: {fileID: 4611563702811292378}
   - component: {fileID: 4611563702811292323}
-  - component: {fileID: 4611563702811292388}
   - component: {fileID: 98334250792679655}
+  - component: {fileID: 337227359}
   m_Layer: 0
   m_Name: bone017
   m_TagString: Untagged
@@ -3810,7 +3774,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4513392685103999132}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -3842,7 +3806,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.7071068, y: 0, z: -0.7071067}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.046942748, y: -0.046942748, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0.046942748, y: -0.046942756, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.7071067, y: 0, z: 0.7071068}
   m_XMotion: 1
@@ -3926,23 +3890,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513392685103999132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &98334250792679655
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3954,7 +3901,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.77700543, y: 0, z: 0.62949395}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.04576256, y: 0.03707472, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.04576256, y: 0.03707471, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.6294939, y: 0, z: 0.77700543}
   m_XMotion: 1
@@ -4038,6 +3985,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513392685103999132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &5539002955210533647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,9 +4135,9 @@ GameObject:
   - component: {fileID: 4611563702811292387}
   - component: {fileID: 4611563702811292384}
   - component: {fileID: 4611563702811292321}
-  - component: {fileID: 4611563702811292386}
   - component: {fileID: 7348974970507711455}
   - component: {fileID: 7348974970507711454}
+  - component: {fileID: 337227357}
   m_Layer: 0
   m_Name: bone019
   m_TagString: Untagged
@@ -4251,7 +4212,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6486130201391612839}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -4283,7 +4244,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9659258, y: 0, z: 0.25881898}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.064125, y: 0.01718224, z: 0.0000000018626451}
+  m_ConnectedAnchor: {x: 0.064125, y: 0.017182225, z: 0.0000000018626451}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.25881904, y: 0, z: 0.9659259}
   m_XMotion: 1
@@ -4367,23 +4328,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486130201391612839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &7348974970507711455
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4395,7 +4339,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.39483094, y: 0, z: 0.91875386}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.02705029, y: 0.062944815, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: -0.02705029, y: 0.0629448, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.9187538, y: 0, z: -0.39483094}
   m_XMotion: 1
@@ -4490,7 +4434,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.3948311, y: 0, z: 0.91875374}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0270503, y: 0.06294481, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: 0.0270503, y: 0.06294479, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.91875374, y: 0, z: 0.3948311}
   m_XMotion: 1
@@ -4574,6 +4518,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486130201391612839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &6614006553830185743
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,8 +4662,8 @@ GameObject:
   - component: {fileID: 4611563702811292363}
   - component: {fileID: 4611563702811292360}
   - component: {fileID: 4611563702811292329}
-  - component: {fileID: 4611563702811292362}
   - component: {fileID: 6570639689017019205}
+  - component: {fileID: 337227365}
   m_Layer: 0
   m_Name: bone011
   m_TagString: Untagged
@@ -4780,7 +4738,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7264316356718844734}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -4812,7 +4770,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.70710725, y: 0, z: 0.70710623}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.046942785, y: 0.046942726, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: -0.046942785, y: 0.04694271, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.7071063, y: 0, z: -0.7071073}
   m_XMotion: 1
@@ -4896,23 +4854,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7264316356718844734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &6570639689017019205
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4924,7 +4865,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.7770047, y: 0, z: -0.6294948}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.04576254, y: -0.037074786, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.04576254, y: -0.0370748, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.6294949, y: 0, z: -0.7770047}
   m_XMotion: 1
@@ -5008,6 +4949,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264316356718844734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &7621656123203134839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,7 +4984,7 @@ GameObject:
   - component: {fileID: 4611563702811292304}
   - component: {fileID: 4611563702811292305}
   - component: {fileID: 4611563702811292310}
-  - component: {fileID: 4611563702811292340}
+  - component: {fileID: 337227375}
   m_Layer: 0
   m_Name: bone001
   m_TagString: Untagged
@@ -5104,7 +5059,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7621656123203134839}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -5136,7 +5091,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.38268372, y: 0, z: -0.92387944}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.027050318, y: -0.065305196, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0.027050318, y: -0.065305166, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.9238794, y: 0, z: 0.38268375}
   m_XMotion: 1
@@ -5231,7 +5186,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.3826832, y: 0, z: -0.9238796}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.027050272, y: -0.06530519, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: -0.027050272, y: -0.06530516, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.9238796, y: 0, z: -0.38268322}
   m_XMotion: 1
@@ -5326,7 +5281,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9238795, y: 0, z: -0.3826836}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.06530516, y: -0.0270503, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.06530516, y: -0.02705027, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.38268352, y: 0, z: -0.9238795}
   m_XMotion: 1
@@ -5421,7 +5376,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9238794, y: 0, z: 0.38268363}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.06530515, y: 0.027050301, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.06530515, y: 0.027050331, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.38268352, y: 0, z: -0.9238795}
   m_XMotion: 1
@@ -5516,7 +5471,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.382683, y: 0, z: 0.92387974}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.027050257, y: 0.06530519, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: -0.027050257, y: 0.06530522, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.9238797, y: 0, z: -0.38268307}
   m_XMotion: 1
@@ -5611,7 +5566,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.38268375, y: 0, z: 0.92387944}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.027050318, y: 0.06530519, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: 0.027050318, y: 0.06530522, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.9238794, y: 0, z: 0.38268378}
   m_XMotion: 1
@@ -5706,7 +5661,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.92387956, y: 0, z: 0.38268334}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0653052, y: 0.027050298, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.0653052, y: 0.027050328, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.38268316, y: 0, z: 0.92387974}
   m_XMotion: 1
@@ -5801,7 +5756,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.92387956, y: 0, z: -0.38268337}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0653052, y: -0.0270503, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.0653052, y: -0.02705027, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.3826834, y: 0, z: 0.9238795}
   m_XMotion: 1
@@ -5885,7 +5840,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292340
+--- !u!114 &337227375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5894,14 +5849,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7621656123203134839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &7662487403449408357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,7 +5868,7 @@ GameObject:
   - component: {fileID: 4611563702811292365}
   - component: {fileID: 4611563702811292354}
   - component: {fileID: 4611563702811292327}
-  - component: {fileID: 4611563702811292364}
+  - component: {fileID: 337227367}
   m_Layer: 0
   m_Name: bone009
   m_TagString: Untagged
@@ -5991,7 +5943,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7662487403449408357}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -6023,7 +5975,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.70710665, y: 0, z: 0.7071069}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.038254883, y: 0.038254898, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.038254883, y: 0.038254913, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.7071069, y: 0, z: 0.7071067}
   m_XMotion: 1
@@ -6107,7 +6059,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292364
+--- !u!114 &337227367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6116,14 +6068,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7662487403449408357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &8079451994050485342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,8 +6164,8 @@ GameObject:
   - component: {fileID: 4611563702811292396}
   - component: {fileID: 4611563702811292397}
   - component: {fileID: 4611563702811292326}
-  - component: {fileID: 4611563702811292399}
   - component: {fileID: 5732910551351165903}
+  - component: {fileID: 337227356}
   m_Layer: 0
   m_Name: bone020
   m_TagString: Untagged
@@ -6291,7 +6240,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8102242930944119732}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -6323,7 +6272,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.7071068, y: 0, z: 0.7071067}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.046942756, y: 0.046942756, z: 0.000000007450581}
+  m_ConnectedAnchor: {x: 0.046942756, y: 0.046942748, z: 0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.7071067, y: 0, z: 0.7071068}
   m_XMotion: 1
@@ -6407,23 +6356,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8102242930944119732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5732910551351165903
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -6435,7 +6367,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.62949383, y: 0, z: 0.7770055}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.037074704, y: 0.045762565, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.037074704, y: 0.045762558, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.77700543, y: 0, z: -0.6294939}
   m_XMotion: 1
@@ -6519,6 +6451,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &337227356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102242930944119732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &8326617879440013593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6533,7 +6479,7 @@ GameObject:
   - component: {fileID: 4611563702811292339}
   - component: {fileID: 4611563702811292336}
   - component: {fileID: 4611563702811292325}
-  - component: {fileID: 4611563702811292338}
+  - component: {fileID: 337227373}
   m_Layer: 0
   m_Name: bone003
   m_TagString: Untagged
@@ -6608,7 +6554,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8326617879440013593}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -6640,7 +6586,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.70710677, y: 0, z: 0.7071068}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.038254883, y: 0.03825489, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: -0.038254883, y: 0.038254898, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0.7071068, y: 0, z: -0.70710677}
   m_XMotion: 1
@@ -6724,7 +6670,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292338
+--- !u!114 &337227373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6733,14 +6679,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8326617879440013593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &8758542559111890033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6755,7 +6698,7 @@ GameObject:
   - component: {fileID: 4611563702811292359}
   - component: {fileID: 4611563702811292356}
   - component: {fileID: 4611563702811292313}
-  - component: {fileID: 4611563702811292358}
+  - component: {fileID: 337227369}
   m_Layer: 0
   m_Name: bone007
   m_TagString: Untagged
@@ -6830,7 +6773,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8758542559111890033}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -6862,7 +6805,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.70710677, y: 0, z: -0.70710677}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.038254887, y: -0.03825489, z: -0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.038254887, y: -0.038254898, z: -0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.70710695, y: 0, z: 0.7071068}
   m_XMotion: 1
@@ -6946,7 +6889,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292358
+--- !u!114 &337227369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6955,14 +6898,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8758542559111890033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1
 --- !u!1 &8814691139787360414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6977,7 +6917,7 @@ GameObject:
   - component: {fileID: 4611563702811292352}
   - component: {fileID: 4611563702811292353}
   - component: {fileID: 4611563702811292318}
-  - component: {fileID: 4611563702811292355}
+  - component: {fileID: 337227368}
   m_Layer: 0
   m_Name: bone008
   m_TagString: Untagged
@@ -7052,7 +6992,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8814691139787360414}
   serializedVersion: 2
-  m_Mass: 0.11309743
+  m_Mass: 0.05
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -7084,7 +7024,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: -0.00000013771718}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.054100588, y: -0.0000000074505815, z: -8.881784e-16}
+  m_ConnectedAnchor: {x: 0.054100588, y: -0.000000014901163, z: -1.7763568e-15}
   serializedVersion: 2
   m_SecondaryAxis: {x: -0.00000011920929, y: 0, z: 0.99999994}
   m_XMotion: 1
@@ -7168,7 +7108,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4611563702811292355
+--- !u!114 &337227368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7177,11 +7117,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8814691139787360414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
+  Profile: {fileID: 11400000, guid: 5ce000bee6524244f8696a5cc69bbb92, type: 2}
+  ApplyProfileOnStart: 1

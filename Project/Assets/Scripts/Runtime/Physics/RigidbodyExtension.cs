@@ -42,4 +42,24 @@ public class RigidbodyExtension : MonoBehaviour
     {
         Profile.Apply(GetComponent<Rigidbody>());
     }
+
+
+    void OnDrawGizmosSelected()
+    {
+        const float kBoundsToGizmoFactor = .05f;
+        var gizmoRadius = .01f;
+
+        // Gather the bounds of all the colliders, to render the center of mass in a proper size.
+        var cols = GetComponentsInChildren<Collider>();
+        if (cols.Length > 0)
+        {
+            var totalBounds = cols[0].bounds;
+            for (int i = 1; i < cols.Length; i++)
+                totalBounds.Encapsulate(cols[i].bounds);
+            gizmoRadius = kBoundsToGizmoFactor * Mathf.Max(totalBounds.size.x, totalBounds.size.y, totalBounds.size.z);
+        }
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(ActualWorldCenterOfMass, gizmoRadius);
+    }
 }
