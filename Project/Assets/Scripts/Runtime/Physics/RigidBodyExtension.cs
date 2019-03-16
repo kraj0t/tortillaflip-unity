@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
-public class RigidBodyExtension : MonoBehaviour
+public class RigidbodyExtension : MonoBehaviour
 {
     [Required]
     public RigidbodyExtensionProfile Profile;

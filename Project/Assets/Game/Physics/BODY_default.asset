@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1aa0fbd61fee143b8020251f956c48, type: 3}
+  m_Name: BODY_default
+  m_EditorClassIdentifier: 
+  Density: 900
+  MaxAngularVelocity: 100
+  SolverIterations: 20
+  SolverVelocityIterations: 10
+  SleepThreshold: 0.01
+  OverrideCenterOfMass: 0
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  OverrideInertiaTensor: 0
+  InertiaTensor: {x: 0.1, y: 0.1, z: 0.1}
+  InertiaTensorRotation: {x: 0, y: 0, z: 0}
+  MaxDepenetrationVelocity: 1e+32
+  DetectCollisions: 1
