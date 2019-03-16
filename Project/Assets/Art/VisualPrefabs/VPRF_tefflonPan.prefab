@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2892969923111613810}
   - component: {fileID: 113579252263664860}
   m_Layer: 0
-  m_Name: FRYPAN
+  m_Name: MSH_tefflonPan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
