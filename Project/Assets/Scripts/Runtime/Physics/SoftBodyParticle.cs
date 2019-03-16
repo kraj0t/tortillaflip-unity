@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SkinnedMeshRenderer))]
@@ -88,6 +92,7 @@ public class SoftBodyParticle : MonoBehaviour
 
     public void RegisterJoint(SoftBodyParticle other, ConfigurableJoint j)
     {
+        Debug.Log("Registered joint from " + this.name + " to " + other.name);
         ConnectedParticlesAndJoints[other] = j;
     }
 
@@ -183,22 +188,32 @@ public class SoftBodyParticle : MonoBehaviour
     }
 
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        DoDrawGizmos(new Color(1, 1, 0, .7f));
+        DoDrawGizmos(new Color(.3f, .3f, 1, .3f), new Color(1, 0, 0, .3f));
     }
 
     private void OnDrawGizmosSelected()
     {
-        DoDrawGizmos(Color.green);
+        DoDrawGizmos(new Color(.3f, .3f, 1, 1), new Color(1, 0, 0, 1));
     }
 
-    private void DoDrawGizmos(Color col)
+    private void DoDrawGizmos(Color connectedColor, Color brokenColor)
     {
+        Handles.lighting = false;
+
         var pos = Rigidbody.position;
 
-        Gizmos.color = col;
-        foreach (var conn in ConnectedParticlesAndJoints.Keys)
-            Gizmos.DrawLine(pos, conn.Rigidbody.position);
+        foreach (var conn in ConnectedParticlesAndJoints)
+        {
+            var AtoB = conn.Key.Rigidbody.position - pos;
+            var dir = AtoB.normalized;
+            var dist = Vector3.Dot(AtoB, dir);
+
+            Handles.color = conn.Value ? connectedColor : Handles.xAxisColor;
+            Handles.ArrowHandleCap(0, pos, Quaternion.LookRotation(dir), dist*.85f, EventType.Repaint);
+        }
     }
+#endif // UNITY_EDITOR
 }
