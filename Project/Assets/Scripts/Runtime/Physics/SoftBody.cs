@@ -1,11 +1,12 @@
 ﻿using NaughtyAttributes;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class SoftBody : MonoBehaviour
 {
-    public Rigidbody[] Particles;
+    public SoftBodyParticle[] Particles;
 
     [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderRadius = 0.025f;
     [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderHeight = 0.075f;
@@ -27,6 +28,19 @@ public class SoftBody : MonoBehaviour
     [BoxGroup("Joints")] [MinValue(0)] public float HardAngularLimit = 60f;
     [BoxGroup("Joints")] [MinValue(0.01f)] public float BreakForce = Mathf.Infinity;
     [BoxGroup("Joints")] [MinValue(0.01f)] public float BreakTorque = Mathf.Infinity;
+
+
+    [ShowNativeProperty]
+    public int TotalNumberOfConnections
+    {
+        get
+        {
+            var total = 0;
+            foreach (var p in Particles)
+                total += p.ConnectedParticlesAndJoints.Count;
+            return total;
+        }
+    }
 
 
     // This code updates the component according to the changes in the inspector.
@@ -62,6 +76,38 @@ public class SoftBody : MonoBehaviour
 #endif
 
 
+    [Button("Recreate All Joints")]
+    public void RecreateJoints()
+    {
+        foreach (var p in Particles)
+        {
+            // Delete any previously existing joint.
+            foreach (var existingJoint in p.GetComponents<ConfigurableJoint>())
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                    DestroyImmediate(existingJoint);
+                else
+                    Destroy(existingJoint);
+#else
+                Destroy(existingJoint);
+#endif
+            }
+
+            // Create new joints.
+            var particlesArray = new SoftBodyParticle[p.ConnectedParticlesAndJoints.Count];
+            p.ConnectedParticlesAndJoints.Keys.CopyTo(particlesArray, 0);
+            foreach (var conn in particlesArray)
+            {
+                var newJoint = p.gameObject.AddComponent<ConfigurableJoint>();
+                newJoint.connectedBody = conn.Rigidbody;
+                ResetJoint(newJoint);
+                p.RegisterJoint(conn, newJoint);
+            }
+        }
+    }
+
+
     [Button("Reset All Joint Values")]
     [ContextMenu("Reset All Joint Values")]
     public void ResetAllJointValues()
@@ -91,14 +137,14 @@ public class SoftBody : MonoBehaviour
             }
 
             foreach (var j in p.GetComponents<ConfigurableJoint>())
-                _ResetJoint(j);
+                ResetJoint(j);
 
-            p.WakeUp();
+            p.Rigidbody.WakeUp();
         }
     }
 
 
-    private void _ResetJoint(ConfigurableJoint j)
+    private void ResetJoint(ConfigurableJoint j)
     {
         var a = j.GetComponent<Rigidbody>();
         var b = j.connectedBody;
@@ -110,6 +156,7 @@ public class SoftBody : MonoBehaviour
         j.enablePreprocessing = EnablePreprocessing;
 
         // This lets PhysX configure the anchor.
+        j.connectedBody = null;
         j.autoConfigureConnectedAnchor = true;
         j.connectedBody = null;
         j.connectedBody = b;

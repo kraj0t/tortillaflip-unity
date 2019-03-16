@@ -254,7 +254,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2748686286290959873
+--- !u!114 &129824828883147923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,6 +268,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &1069533543426715023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140012480293069976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!54 &2514138273576739170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,6 +440,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &6214792271094481178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342635230569258153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!54 &1283397120829065827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -683,6 +733,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &2748686286290959873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029245557265053590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!54 &2027394576269773598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -937,7 +1012,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2748686286290959874
+--- !u!114 &4297199103202122674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -951,6 +1026,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &2909730864198671451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181463873670428397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &5378941883409358272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,12 +1064,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particles:
-  - {fileID: 5259173606864995977}
-  - {fileID: 1283397120829065827}
-  - {fileID: 5960460795317345003}
-  - {fileID: 2869961772933142897}
-  - {fileID: 2027394576269773598}
-  - {fileID: 2514138273576739170}
+  - {fileID: 2748686286290959874}
+  - {fileID: 2748686286290959873}
+  - {fileID: 454334153946841563}
+  - {fileID: 1069533543426715023}
+  - {fileID: 2909730864198671451}
+  - {fileID: 6214792271094481178}
   ColliderRadius: 0.025
   ColliderHeight: 0.075
   EnablePreprocessing: 0
@@ -1227,6 +1327,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &2748686286290959874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987447414914055024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!54 &5960460795317345003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1495,6 +1620,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
+--- !u!114 &454334153946841563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399921520722601758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectedParticlesAndJoints:
+    m_keys: []
+    m_values: []
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMeshChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &8513762592890646603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1510,37 +1660,37 @@ PrefabInstance:
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.105
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13
+      value: 0.305
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.2599998
+      value: 0.113
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
@@ -1555,7 +1705,7 @@ PrefabInstance:
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
@@ -1569,24 +1719,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff195ebd233418240be41515ef4424c3, type: 3}
---- !u!1 &7987447414914055024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1801414436273064763, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &140012480293069976 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8635539463348163795, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7513803538222673033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2188909374164212930, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8399921520722601758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 194905917153941333, guid: ff195ebd233418240be41515ef4424c3,
@@ -1605,9 +1737,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &342635230569258153 stripped
+--- !u!1 &4029245557265053590 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8279794338622090466, guid: ff195ebd233418240be41515ef4424c3,
+  m_CorrespondingSourceObject: {fileID: 4741222253060671453, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
@@ -1617,15 +1749,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4029245557265053590 stripped
+--- !u!1 &342635230569258153 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4741222253060671453, guid: ff195ebd233418240be41515ef4424c3,
+  m_CorrespondingSourceObject: {fileID: 8279794338622090466, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1187425479094846037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7375876766225871390, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7987447414914055024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1801414436273064763, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
@@ -1638,6 +1776,18 @@ GameObject:
 --- !u!4 &9080484495590426153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586217207115904610, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &140012480293069976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8635539463348163795, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7513803538222673033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2188909374164212930, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
