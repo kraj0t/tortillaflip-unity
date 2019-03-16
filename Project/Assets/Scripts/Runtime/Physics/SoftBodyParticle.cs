@@ -117,7 +117,6 @@ public class SoftBodyParticle : MonoBehaviour
 
 
     private IEnumerator OnJointBreak(float breakForce)
-    //private void OnJointBreak(float breakForce)
     {
         Debug.DrawRay(transform.position, transform.forward, Color.red, 1);
         Debug.Log("Se ha roto con fuerza " + breakForce);

@@ -1161,7 +1161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 771935605}
   - component: {fileID: 771935604}
-  - component: {fileID: 1168628562635544221}
   - component: {fileID: 1168628560995325135}
   - component: {fileID: 771935606}
   m_Layer: 0
@@ -3527,7 +3526,7 @@ GameObject:
   - component: {fileID: 1168628561981653785}
   - component: {fileID: 943716452}
   m_Layer: 0
-  m_Name: GyroRigidbodySlower
+  m_Name: GyroSlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3563,18 +3562,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1168628562635544221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771935603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1283397120829065827 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1283397120829065827, guid: b2bc8820fef6c9e42af8a91994cce5c6,

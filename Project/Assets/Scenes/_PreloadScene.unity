@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000002, guid: 547a89ddfd24ccf45968d4514e007624,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -132,11 +132,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DebugCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382140379401391645, guid: a687fd9d37bc04a47891911b96571a68,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2382140379401391642, guid: a687fd9d37bc04a47891911b96571a68,
         type: 3}
@@ -191,21 +186,6 @@ PrefabInstance:
     - target: {fileID: 2382140379401391642, guid: a687fd9d37bc04a47891911b96571a68,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382140379609262036, guid: a687fd9d37bc04a47891911b96571a68,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382140379609262037, guid: a687fd9d37bc04a47891911b96571a68,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382140379773798623, guid: a687fd9d37bc04a47891911b96571a68,
-        type: 3}
-      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
