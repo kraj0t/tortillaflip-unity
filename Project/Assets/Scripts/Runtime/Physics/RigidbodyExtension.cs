@@ -8,7 +8,7 @@ public class RigidbodyExtension : MonoBehaviour
     [Required]
     public RigidbodyExtensionProfile Profile;
 
-    public bool ApplyProfileOnStart = false;
+    public bool ApplyProfileOnStart = true;
 
 
     #region Inspector read-only properties to debug the actual current values of the Rigidbody

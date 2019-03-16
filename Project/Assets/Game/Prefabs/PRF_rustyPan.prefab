@@ -715,7 +715,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.05, z: 0.25}
+  m_Size: {x: 0.226, y: 0.05, z: 0.226}
   m_Center: {x: 0, y: -0.0332, z: 0.25}
 --- !u!1 &3688633669684407583
 GameObject:
@@ -1194,6 +1194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VPRF_tefflonPan
       objectReference: {fileID: 0}
+    - target: {fileID: 7654472459930240970, guid: ad38480ee48580f418e14a33c5ea4e51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7654472459929820138, guid: ad38480ee48580f418e14a33c5ea4e51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1202,7 +1207,7 @@ PrefabInstance:
     - target: {fileID: 7654472459929820138, guid: ad38480ee48580f418e14a33c5ea4e51,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.013
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7654472459929820138, guid: ad38480ee48580f418e14a33c5ea4e51,
         type: 3}

@@ -8,7 +8,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140012480293069976}
   serializedVersion: 2
-  m_Mass: 0.06544989
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -92,11 +92,11 @@ ConfigurableJoint:
   m_GameObject: {fileID: 140012480293069976}
   m_ConnectedBody: {fileID: 2027394576269773598}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.05000002, z: -0.000000007450581}
   serializedVersion: 2
-  m_SecondaryAxis: {x: 1, y: 0, z: 0}
+  m_SecondaryAxis: {x: -1, y: 0, z: 0}
   m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
@@ -172,8 +172,8 @@ ConfigurableJoint:
   m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 10
-  m_BreakTorque: 10
+  m_BreakForce: 80
+  m_BreakTorque: 80
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!54 &2514138273576739170
 Rigidbody:
@@ -276,7 +276,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342635230569258153}
   serializedVersion: 2
-  m_Mass: 0.06544989
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!54 &1283397120829065827
 Rigidbody:
@@ -423,7 +423,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4029245557265053590}
   serializedVersion: 2
-  m_Mass: 0.06544989
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -507,11 +507,11 @@ ConfigurableJoint:
   m_GameObject: {fileID: 4029245557265053590}
   m_ConnectedBody: {fileID: 5960460795317345003}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.050000004, z: -0.000000007450581}
   serializedVersion: 2
-  m_SecondaryAxis: {x: 1, y: 0, z: 0}
+  m_SecondaryAxis: {x: -1, y: 0, z: 0}
   m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
@@ -587,8 +587,8 @@ ConfigurableJoint:
   m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 10
-  m_BreakTorque: 10
+  m_BreakForce: 80
+  m_BreakTorque: 80
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!54 &2027394576269773598
 Rigidbody:
@@ -691,7 +691,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4181463873670428397}
   serializedVersion: 2
-  m_Mass: 0.06544989
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -775,11 +775,11 @@ ConfigurableJoint:
   m_GameObject: {fileID: 4181463873670428397}
   m_ConnectedBody: {fileID: 2514138273576739170}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.04999999, z: -0.000000007450581}
   serializedVersion: 2
-  m_SecondaryAxis: {x: 1, y: 0, z: 0}
+  m_SecondaryAxis: {x: -1, y: 0, z: 0}
   m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
@@ -790,7 +790,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.039999988
+    limit: 0.03999998
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -851,12 +851,12 @@ ConfigurableJoint:
     positionDamper: 0.05
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
-  m_ProjectionDistance: 0.05499998
+  m_ProjectionDistance: 0.054999974
   m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 10
-  m_BreakTorque: 10
+  m_BreakForce: 80
+  m_BreakTorque: 80
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!114 &5378941883409358272
 MonoBehaviour:
@@ -971,6 +971,7 @@ MonoBehaviour:
   - {fileID: 2027394576269773598}
   - {fileID: 2514138273576739170}
   ColliderRadius: 0.025
+  ColliderHeight: 0.075
   EnablePreprocessing: 0
   LinearSpring: 500
   LinearDamper: 10
@@ -980,8 +981,8 @@ MonoBehaviour:
   AngularLimit: 100
   HardLinearLimitFactor: 1.1
   HardAngularLimit: 120
-  BreakForce: 20
-  BreakTorque: 20
+  BreakForce: 80
+  BreakTorque: 80
   DEBUG_LiveUpdate: 0
   DEBUG_UpdateFrameSkip: 120
 --- !u!54 &5259173606864995977
@@ -992,7 +993,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7987447414914055024}
   serializedVersion: 2
-  m_Mass: 0.06544989
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -1076,11 +1077,11 @@ ConfigurableJoint:
   m_GameObject: {fileID: 7987447414914055024}
   m_ConnectedBody: {fileID: 1283397120829065827}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.050000004, z: -0.000000007450581}
   serializedVersion: 2
-  m_SecondaryAxis: {x: 1, y: 0, z: 0}
+  m_SecondaryAxis: {x: -1, y: 0, z: 0}
   m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
@@ -1156,8 +1157,8 @@ ConfigurableJoint:
   m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 10
-  m_BreakTorque: 10
+  m_BreakForce: 80
+  m_BreakTorque: 80
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -1224,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!54 &5960460795317345003
 Rigidbody:
@@ -1234,7 +1235,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8399921520722601758}
   serializedVersion: 2
-  m_Mass: 0.103083596
+  m_Mass: 0.045814928
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -1318,11 +1319,11 @@ ConfigurableJoint:
   m_GameObject: {fileID: 8399921520722601758}
   m_ConnectedBody: {fileID: 2869961772933142897}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.05000002, z: -0.000000007450581}
   serializedVersion: 2
-  m_SecondaryAxis: {x: 1, y: 0, z: 0}
+  m_SecondaryAxis: {x: -1, y: 0, z: 0}
   m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
@@ -1398,8 +1399,8 @@ ConfigurableJoint:
   m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 10
-  m_BreakTorque: 10
+  m_BreakForce: 80
+  m_BreakTorque: 80
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -1492,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd747cc0487f27458d7f87f1c6a3765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Profile: {fileID: 11400000, guid: 08f6024835209f94eb60d866eb2fbcae, type: 2}
+  Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
 --- !u!1001 &8513762592890646603
 PrefabInstance:
