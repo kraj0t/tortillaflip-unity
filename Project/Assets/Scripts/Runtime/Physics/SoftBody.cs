@@ -1,8 +1,7 @@
 ﻿using NaughtyAttributes;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 public class SoftBody : MonoBehaviour
 {
@@ -39,16 +38,24 @@ public class SoftBody : MonoBehaviour
                 return 0;
             var total = 0;
             foreach (var p in Particles)
-                total += p.ConnectedParticles.Count;
+                //xtotal += p.ConnectedParticles.Count;
+                total += p.Connections.Count;
             return total;
         }
     }
 
 
-    // This code updates the component according to the changes in the inspector.
+    // Editor code that updates the component according to the changes in the inspector.
 #if UNITY_EDITOR
+    public bool DEBUG_LiveUpdate = false;
+    [MinValue(0)] public int DEBUG_UpdateFrameSkip = 60;
+
+
     private Vector3[] _startPositions;
     private Quaternion[] _startRotations;
+    private int _updatesLeftForUpdate = 0;
+
+
     private void Start()
     {
         _startPositions = new Vector3[Particles.Length];
@@ -60,18 +67,16 @@ public class SoftBody : MonoBehaviour
         }
     }
 
-    public bool DEBUG_LiveUpdate = false;
-    [MinValue(0)] public int DEBUG_UpdateFrameSkip = 60;
-    private int _updatesToSkip = 0;
+           
     private void FixedUpdate()
     {
         if (!DEBUG_LiveUpdate)
             return;
 
-        _updatesToSkip--;
-        if (_updatesToSkip >= 0)
+        _updatesLeftForUpdate--;
+        if (_updatesLeftForUpdate >= 0)
             return;
-        _updatesToSkip = DEBUG_UpdateFrameSkip;
+        _updatesLeftForUpdate = DEBUG_UpdateFrameSkip;
 
         ResetAllJointValues();
     }
@@ -87,12 +92,14 @@ public class SoftBody : MonoBehaviour
         foreach (var p in Particles)
         {
             // Create new joints.
-            foreach (var conn in p.ConnectedParticles)
+            //xforeach (var conn in p.ConnectedParticles)
+            foreach (var conn in p.Connections)
             {
                 var newJoint = p.gameObject.AddComponent<ConfigurableJoint>();
-                newJoint.connectedBody = conn.Rigidbody;
+                newJoint.connectedBody = conn.ConnectedParticle.Rigidbody;
                 ResetJoint(newJoint);
-                p.RegisterJoint(conn, newJoint);
+                //xp.RegisterJoint(conn, newJoint);
+                conn.Joint = newJoint;
             }
         }
     }

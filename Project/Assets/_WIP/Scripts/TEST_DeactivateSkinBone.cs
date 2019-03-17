@@ -21,6 +21,6 @@ public class TEST_DeactivateSkinBone : MonoBehaviour
     [Button]
     public void DoIt()
     {
-        SoftBodyParticle.RemoveSkinBone_DUMMY_BINDPOSE(Skin, RemovedBone, ParentBone);
+        TEST_SoftBodyBreakerByDeactivatingBones.DeactivateBoneByReplacingWithDummy(Skin, RemovedBone, ParentBone);
     }
 }
