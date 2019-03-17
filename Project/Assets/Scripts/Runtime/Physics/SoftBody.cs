@@ -35,9 +35,11 @@ public class SoftBody : MonoBehaviour
     {
         get
         {
+            if (Particles == null)
+                return 0;
             var total = 0;
             foreach (var p in Particles)
-                total += p.ConnectedParticlesAndJoints.Count;
+                total += p.ConnectedParticles.Count;
             return total;
         }
     }
@@ -80,24 +82,12 @@ public class SoftBody : MonoBehaviour
     public void RecreateJoints()
     {
         foreach (var p in Particles)
-        {
-            // Delete any previously existing joint.
-            foreach (var existingJoint in p.GetComponents<ConfigurableJoint>())
-            {
-#if UNITY_EDITOR
-                if (!Application.isPlaying)
-                    DestroyImmediate(existingJoint);
-                else
-                    Destroy(existingJoint);
-#else
-                Destroy(existingJoint);
-#endif
-            }
+            p.Clear();
 
+        foreach (var p in Particles)
+        {
             // Create new joints.
-            var particlesArray = new SoftBodyParticle[p.ConnectedParticlesAndJoints.Count];
-            p.ConnectedParticlesAndJoints.Keys.CopyTo(particlesArray, 0);
-            foreach (var conn in particlesArray)
+            foreach (var conn in p.ConnectedParticles)
             {
                 var newJoint = p.gameObject.AddComponent<ConfigurableJoint>();
                 newJoint.connectedBody = conn.Rigidbody;

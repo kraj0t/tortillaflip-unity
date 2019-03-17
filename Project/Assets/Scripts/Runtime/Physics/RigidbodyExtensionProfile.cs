@@ -30,8 +30,9 @@ public class RigidbodyExtensionProfile : ScriptableObject
 
     public void Apply(Rigidbody rb)
     {
-        Debug.Log("WHEN CREATING A RigidbodyExtensionProfile, ITS VALUES SHOULD BE COPIED FROM THE PHYSICS SETTINGS!");
-        Debug.Log("SHOW SOME WIDGET FOR EDITING THE INERTIA TENSOR AND CENTER OF MASS");
+        // TODO: WHEN CREATING A RigidbodyExtensionProfile, ITS VALUES SHOULD BE COPIED FROM THE PHYSICS SETTINGS!
+
+        // TODO: SHOW SOME WIDGET FOR EDITING THE INERTIA TENSOR AND CENTER OF MASS
 
         rb.maxAngularVelocity = MaxAngularVelocity;
         rb.solverIterations = SolverIterations;
