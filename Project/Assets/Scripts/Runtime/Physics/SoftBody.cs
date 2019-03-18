@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -82,6 +83,96 @@ public class SoftBody : MonoBehaviour
     }
 #endif
 
+
+    public bool AreParticlesJoinedDirectly(SoftBodyParticle a, SoftBodyParticle b)
+    {
+        if (a.IsConnectedTo(b))
+            return true;
+        return b.IsConnectedTo(a);
+    }
+
+
+    // Returns false if all the joints between the two particles have broken.
+    public bool AreParticlesJoinedRecursive(SoftBodyParticle a, SoftBodyParticle b)
+    {
+        // TODO: if this works, consider removing the _remoteConnections array, as it might be not needed anymore.
+
+        if (a == b)
+            throw new InvalidOperationException("Received the same particle in both arguments!");
+
+        /*
+        var allParticlesConnectedToA = new HashSet<SoftBodyParticle>();
+        if (AreParticlesJoinedRecursion(a, b, ref allParticlesConnectedToA))
+            return true;
+
+        var allParticlesConnectedToB = new HashSet<SoftBodyParticle>();
+        return AreParticlesJoinedRecursion(b, a, ref allParticlesConnectedToB);
+        */
+
+        var alreadyChecked = new HashSet<SoftBodyParticle>();
+        if (AreParticlesJoinedRecursion(a, b, ref alreadyChecked))
+            return true;
+        return AreParticlesJoinedRecursion(b, a, ref alreadyChecked);
+    }
+
+
+    private bool AreParticlesJoinedRecursion(SoftBodyParticle a, SoftBodyParticle b, ref HashSet<SoftBodyParticle> alreadyChecked)
+    {
+        if (!alreadyChecked.Contains(a))
+        {
+            if (a.IsConnectedTo(b))
+            {
+                if (a.GetConnection(b).isBroken)
+                    return false;
+                return true;
+            }
+            else
+            {
+                alreadyChecked.Add(a);
+            }
+        }
+
+        foreach (var aConn in a.ConnectedParticles)
+        {
+            if (!alreadyChecked.Contains(aConn))
+            {
+                if (aConn.IsConnectedTo(b))
+                {
+                    if (aConn.GetConnection(b).isBroken)
+                        return false;
+                    return true;
+                }
+                else
+                {
+                    alreadyChecked.Add(aConn);
+                    AreParticlesJoinedRecursion(aConn, b, ref alreadyChecked);
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private bool TEST_AreParticlesJoinedRecursion(SoftBodyParticle a, SoftBodyParticle b, ref HashSet<SoftBodyParticle> allParticlesConnectedToA)
+    {
+        foreach (var aConn in a.Connections)
+            allParticlesConnectedToA.Add(aConn.ConnectedParticle);
+
+        if (allParticlesConnectedToA.Contains(b))
+            return true;
+
+        foreach (var aConn in a.Connections)
+            if (AreParticlesJoinedRecursion(aConn.ConnectedParticle, b, ref allParticlesConnectedToA))
+                return true;
+
+        return false;
+    }
+
+
+
+
+
+    #region Joints and connections
 
     [Button("Recreate All Joints")]
     public void RecreateJoints()
@@ -195,4 +286,6 @@ public class SoftBody : MonoBehaviour
         j.projectionDistance = dist * HardLinearLimitFactor;
         j.projectionAngle = HardAngularLimit;
     }
+
+    #endregion Joints and connections
 }

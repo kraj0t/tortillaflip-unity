@@ -82,9 +82,9 @@ SkinnedMeshRenderer:
   - {fileID: 7795424284665340592}
   - {fileID: 729033689057120980}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 729033689057120980}
+  m_RootBone: {fileID: 2525395656439441188}
   m_AABB:
-    m_Center: {x: 0.119035244, y: 0.0013466664, z: 0.000000013038516}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &501393941290222235
@@ -172,11 +172,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895188}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 4952843474125576085}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895188}
     ConnectedParticle: {fileID: 6129166030303895186}
     Joint: {fileID: 1371811473759250049}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -762,15 +762,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895178}
     Joint: {fileID: 8403196496629288421}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895184}
     Joint: {fileID: 8815948359195880031}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895198}
     Joint: {fileID: 6998861832329859173}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -1449,11 +1449,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895222}
     ConnectedParticle: {fileID: 6129166030303895220}
     Joint: {fileID: 7920773611614797458}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895222}
     ConnectedParticle: {fileID: 6129166030303895196}
     Joint: {fileID: 8118995446373766873}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -1942,11 +1942,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895198}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 5265293164796832144}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895198}
     ConnectedParticle: {fileID: 6129166030303895196}
     Joint: {fileID: 1339801837706968781}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -2434,9 +2434,9 @@ SkinnedMeshRenderer:
   - {fileID: 3194560359176286095}
   - {fileID: 6769535859051103306}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 6769535859051103306}
+  m_RootBone: {fileID: 3785838174145073530}
   m_AABB:
-    m_Center: {x: 0.018326454, y: 0.057071075, z: 0.000000017695129}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &1100621707794745038
@@ -2524,9 +2524,9 @@ SkinnedMeshRenderer:
   - {fileID: 3785838174145073530}
   - {fileID: 7795424284665340592}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 7795424284665340592}
+  m_RootBone: {fileID: 5700381575680996132}
   m_AABB:
-    m_Center: {x: 0.036535427, y: 0.060781248, z: 0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &1161398552229482922
@@ -2615,15 +2615,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895218}
     Joint: {fileID: 1590449157866911659}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895196}
     Joint: {fileID: 899644383735122692}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895194}
     Joint: {fileID: 7632067851284544383}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -3304,15 +3304,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895182}
     Joint: {fileID: 5984603625074701314}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895186}
     Joint: {fileID: 2449763195301978390}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895184}
     Joint: {fileID: 3482569353001736140}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -3990,9 +3990,9 @@ SkinnedMeshRenderer:
   - {fileID: 744728468248117526}
   - {fileID: 197917007232979956}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 197917007232979956}
+  m_RootBone: {fileID: 193006395711795403}
   m_AABB:
-    m_Center: {x: -0.0986533, y: -0.04869974, z: 0.0000000037252903}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &2362276450924380372
@@ -4077,9 +4077,9 @@ SkinnedMeshRenderer:
   - {fileID: 5700381575680996132}
   - {fileID: 2525395656439441188}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 2525395656439441188}
+  m_RootBone: {fileID: 729033689057120980}
   m_AABB:
-    m_Center: {x: -0.119035296, y: 0.0013466906, z: 0.000000013038516}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &2392715060558987575
@@ -4166,11 +4166,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895182}
     ConnectedParticle: {fileID: 6129166030303895180}
     Joint: {fileID: 6630842250725815586}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895182}
     ConnectedParticle: {fileID: 6129166030303895184}
     Joint: {fileID: 2376394639603384177}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -4661,15 +4661,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895222}
     Joint: {fileID: 1243050866621445722}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895198}
     Joint: {fileID: 3890087187692262382}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895196}
     Joint: {fileID: 6288070067811389053}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -5347,9 +5347,9 @@ SkinnedMeshRenderer:
   - {fileID: 5365339385010599975}
   - {fileID: 193006395711795403}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 193006395711795403}
+  m_RootBone: {fileID: 1230003982023625881}
   m_AABB:
-    m_Center: {x: -0.018326461, y: -0.05707109, z: 0.0000000037252903}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &2793521956864068022
@@ -5435,9 +5435,9 @@ SkinnedMeshRenderer:
   - {fileID: 193006395711795403}
   - {fileID: 3194560359176286095}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 3194560359176286095}
+  m_RootBone: {fileID: 197917007232979956}
   m_AABB:
-    m_Center: {x: -0.093673564, y: 0.054928977, z: 0.000000013038516}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &3006744206764775713
@@ -5523,9 +5523,9 @@ SkinnedMeshRenderer:
   - {fileID: 6438435375289227652}
   - {fileID: 7795424284665340592}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 7795424284665340592}
+  m_RootBone: {fileID: 6769535859051103306}
   m_AABB:
-    m_Center: {x: 0.09865326, y: 0.04869971, z: 0.000000017695129}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &3140997476926028773
@@ -5613,9 +5613,9 @@ SkinnedMeshRenderer:
   - {fileID: 1230003982023625881}
   - {fileID: 3785838174145073530}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 3785838174145073530}
+  m_RootBone: {fileID: 2406359743951796056}
   m_AABB:
-    m_Center: {x: -0.11546998, y: 0.000000024214387, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &3526004896115773845
@@ -5702,11 +5702,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895184}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 6469530700781295654}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895184}
     ConnectedParticle: {fileID: 6129166030303895198}
     Joint: {fileID: 7705060810185216745}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -6197,15 +6197,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895170}
     Joint: {fileID: 2444878371772767920}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895188}
     Joint: {fileID: 8046549371198040446}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895186}
     Joint: {fileID: 529737268139587576}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -6884,11 +6884,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895178}
     ConnectedParticle: {fileID: 6129166030303895176}
     Joint: {fileID: 8807783772494023078}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895178}
     ConnectedParticle: {fileID: 6129166030303895198}
     Joint: {fileID: 1093408937595155610}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -7377,11 +7377,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895196}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 7213146730325219009}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895196}
     ConnectedParticle: {fileID: 6129166030303895194}
     Joint: {fileID: 5801029236248117137}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -7868,9 +7868,9 @@ SkinnedMeshRenderer:
   - {fileID: 197917007232979956}
   - {fileID: 2394533378072141066}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 2394533378072141066}
+  m_RootBone: {fileID: 8990347271168423764}
   m_AABB:
-    m_Center: {x: -0.1190353, y: -0.001346726, z: 0.000000007450581}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &4534823837457208691
@@ -7959,9 +7959,9 @@ SkinnedMeshRenderer:
   - {fileID: 5700381575680996132}
   - {fileID: 744728468248117526}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 744728468248117526}
+  m_RootBone: {fileID: 8913215967484680372}
   m_AABB:
-    m_Center: {x: -0.083233476, y: -0.050000004, z: -0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &4561172015411344837
@@ -8049,9 +8049,9 @@ SkinnedMeshRenderer:
   - {fileID: 1230003982023625881}
   - {fileID: 197917007232979956}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 197917007232979956}
+  m_RootBone: {fileID: 2872856526489502712}
   m_AABB:
-    m_Center: {x: -0.036535457, y: -0.060781248, z: -0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &4595155287690756876
@@ -8137,9 +8137,9 @@ SkinnedMeshRenderer:
   - {fileID: 6769535859051103306}
   - {fileID: 5365339385010599975}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 5365339385010599975}
+  m_RootBone: {fileID: 7795424284665340592}
   m_AABB:
-    m_Center: {x: 0.093673535, y: -0.054928973, z: 0.000000007450581}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &5011673233908158995
@@ -8226,11 +8226,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895186}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 5505211031289788197}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895186}
     ConnectedParticle: {fileID: 6129166030303895184}
     Joint: {fileID: 250891324848601876}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -8718,9 +8718,9 @@ SkinnedMeshRenderer:
   - {fileID: 3785838174145073530}
   - {fileID: 197917007232979956}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 197917007232979956}
+  m_RootBone: {fileID: 3194560359176286095}
   m_AABB:
-    m_Center: {x: 0.098653294, y: -0.048699755, z: 0.0000000037252903}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &5500881392085689236
@@ -8809,15 +8809,15 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895174}
     Joint: {fileID: 7565269364517651462}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895194}
     Joint: {fileID: 3744476384146415110}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895188}
     Joint: {fileID: 3169919759368693812}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -9498,9 +9498,9 @@ SkinnedMeshRenderer:
   - {fileID: 2872856526489502712}
   - {fileID: 6438435375289227652}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 6438435375289227652}
+  m_RootBone: {fileID: 9073461270364292719}
   m_AABB:
-    m_Center: {x: 0.083233476, y: 0.050000023, z: 0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &5665529512422374292
@@ -9588,9 +9588,9 @@ SkinnedMeshRenderer:
   - {fileID: 3785838174145073530}
   - {fileID: 197917007232979956}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 197917007232979956}
+  m_RootBone: {fileID: 744728468248117526}
   m_AABB:
-    m_Center: {x: 0.036535442, y: -0.060781255, z: -0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &5732946626203135867
@@ -9677,11 +9677,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895194}
     ConnectedParticle: {fileID: 6129166030303895190}
     Joint: {fileID: 6585224778734765752}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895194}
     ConnectedParticle: {fileID: 6129166030303895188}
     Joint: {fileID: 965461943198818639}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -10172,9 +10172,9 @@ SkinnedMeshRenderer:
   - {fileID: 1230003982023625881}
   - {fileID: 7795424284665340592}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 7795424284665340592}
+  m_RootBone: {fileID: 6438435375289227652}
   m_AABB:
-    m_Center: {x: -0.036535468, y: 0.060781248, z: 0.000000006519258}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &5968137731947409460
@@ -10261,11 +10261,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895170}
     ConnectedParticle: {fileID: 6129166030303895168}
     Joint: {fileID: 3211860056672919617}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895170}
     ConnectedParticle: {fileID: 6129166030303895186}
     Joint: {fileID: 379939395109185210}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -10752,9 +10752,9 @@ SkinnedMeshRenderer:
   - {fileID: 2872856526489502712}
   - {fileID: 8990347271168423764}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 8990347271168423764}
+  m_RootBone: {fileID: 2394533378072141066}
   m_AABB:
-    m_Center: {x: 0.11903532, y: -0.0013467297, z: 0.000000007450581}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &6653368243666563183
@@ -10841,11 +10841,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895174}
     ConnectedParticle: {fileID: 6129166030303895172}
     Joint: {fileID: 7835794765593486509}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895174}
     ConnectedParticle: {fileID: 6129166030303895188}
     Joint: {fileID: 1522730761225183511}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -11333,9 +11333,9 @@ SkinnedMeshRenderer:
   - {fileID: 8913215967484680372}
   - {fileID: 7795424284665340592}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 7795424284665340592}
+  m_RootBone: {fileID: 5365339385010599975}
   m_AABB:
-    m_Center: {x: -0.0986533, y: 0.048699692, z: 0.000000017695129}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.06, y: 0.06, z: 0.06}
   m_DirtyAABB: 0
 --- !u!1 &6901365400847109757
@@ -11523,11 +11523,11 @@ MonoBehaviour:
   - OwnerParticle: {fileID: 6129166030303895218}
     ConnectedParticle: {fileID: 6129166030303895192}
     Joint: {fileID: 6053158754997301118}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895218}
     ConnectedParticle: {fileID: 6129166030303895194}
     Joint: {fileID: 3284760821875008478}
-    HasBeenRegisteredAsBroken: 0
+    isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
@@ -12042,6 +12042,7 @@ GameObject:
   - component: {fileID: 5514157015718605334}
   - component: {fileID: 2453401139773054828}
   - component: {fileID: 4919958390147506400}
+  - component: {fileID: 79925007}
   m_Layer: 0
   m_Name: PRF_omelette 2
   m_TagString: Untagged
@@ -12168,3 +12169,15 @@ MonoBehaviour:
   BreakTorque: 0.03
   DEBUG_LiveUpdate: 0
   DEBUG_UpdateFrameSkip: 120
+--- !u!114 &79925007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853339437668777989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3da61d660ab9e4d916aae5fbd9c76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,8 +11,13 @@ using UnityEditor;
 
 
 /// <summary>
+/// DISCLAIMER: the 'breakForce' will sometimes not correspond to the joint.
+/// 
 /// Joints are destroyed by Unity after breaking. Additionally, the callback does not include
 /// the reference to the Joint. That's why we need this class.
+/// 
+/// More info on SoftBodyParticle.OnJointBreak()
+/// 
 /// Seriously, Unity...
 /// </summary>
 [Serializable]
@@ -33,6 +38,10 @@ public class SoftBodyJointBreakEventData
 }
 
 
+/// <summary>
+/// DISCLAIMER: the 'breakForce' will sometimes not correspond to the joint.
+/// More info about this in SoftBodyParticle.OnJointBreak()
+/// </summary>
 [Serializable]
 public class SoftBodyJointBreakEvent : UnityEvent<SoftBodyJointBreakEventData>
 {
@@ -45,7 +54,7 @@ public class SoftBodyConnection
     [HideInInspector] public SoftBodyParticle OwnerParticle;
     public SoftBodyParticle ConnectedParticle;
     [ReadOnly] public ConfigurableJoint Joint;
-    [ReadOnly] public bool HasBeenRegisteredAsBroken;
+    [ReadOnly] public bool isAlreadyRegisteredAsBroken;
 
 
     public bool isBroken { get => Joint == null; }
@@ -56,10 +65,14 @@ public class SoftBodyConnection
 [DisallowMultipleComponent]
 public class SoftBodyParticle : MonoBehaviour
 {
+    // TODO: not sure if the renderer should go in another component.
+
     public SkinnedMeshRenderer SkinnedRenderer;
 
     [ReorderableList]
     public List<SoftBodyConnection> Connections = new List<SoftBodyConnection>();
+    private HashSet<SoftBodyParticle> _connectedParticlesSet;
+    public IEnumerable<SoftBodyParticle> ConnectedParticles { get => _connectedParticlesSet; }
 
     //xpublic List<SoftBodyParticle> ConnectedParticles = new List<SoftBodyParticle>();
     //x[SerializeField] /*[HideInInspector]*/ [ReadOnly] List<ConfigurableJoint> _jointsByConnectedParticles = new List<ConfigurableJoint>();
@@ -68,14 +81,15 @@ public class SoftBodyParticle : MonoBehaviour
 
 
     public SoftBodyJointBreakEvent OnJointBroken;
-    public SoftBodyJointBreakEvent OnMeshChanged;
 
 
     //x// We need to cache the state of the Joints (alive/broken) because Unity nulls them after they break.
     //x// This uses the same indices as the ConnectedParticles dictionary.
     //x[SerializeField] [ReadOnly] private bool[] _previousJointStates;
+
     
-    private Mesh _mesh;
+               
+    //private Mesh _mesh;
     
     private Rigidbody _rb;
     public Rigidbody Rigidbody
@@ -92,14 +106,18 @@ public class SoftBodyParticle : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
 
+        _connectedParticlesSet = new HashSet<SoftBodyParticle>();
+        foreach (var conn in Connections)
+            _connectedParticlesSet.Add(conn.ConnectedParticle);
+
         if (OnJointBroken == null)
             OnJointBroken = new SoftBodyJointBreakEvent();
 
         //x_previousJointStates = GetCurrentJointStates();
 
-        _mesh = Instantiate<Mesh>(SkinnedRenderer.sharedMesh);
-        _mesh.MarkDynamic();
-        SkinnedRenderer.sharedMesh = _mesh;
+        //_mesh = Instantiate<Mesh>(SkinnedRenderer.sharedMesh);
+        //_mesh.MarkDynamic();
+        //SkinnedRenderer.sharedMesh = _mesh;
 
         // TESTING TO SEE IF IT FIXES THE WEIRD OFFSET WHEN REMOVING BONE WEIGHTS:
         SkinnedRenderer.rootBone = this.transform;
@@ -146,7 +164,13 @@ public class SoftBodyParticle : MonoBehaviour
 
     private void OnDestroy()
     {
-        DestroyImmediate(_mesh);
+        //DestroyImmediate(_mesh);
+    }
+
+
+    public bool IsConnectedTo(SoftBodyParticle other)
+    {
+        return _connectedParticlesSet.Contains(other);
     }
 
 
@@ -156,53 +180,12 @@ public class SoftBodyParticle : MonoBehaviour
     }
 
 
-    public bool IsConnectionBroken(SoftBodyParticle other)
+    public SoftBodyConnection GetConnection(SoftBodyParticle connectedParticle)
     {
-        //xvar i = ConnectedParticles.IndexOf(other);
-        //xreturn IsJointBroken(_jointsByConnectedParticles[i]);
-        foreach (var c in Connections)
-            if (c.ConnectedParticle == other)
-                return c.isBroken;
-        throw new InvalidOperationException("Queried the state of a connection that does not belong to the SoftBodyParticle!");
-    }
-    
-
-    public bool IsConnectionBrokenRecursive(SoftBodyParticle other)
-    {
-        // TODO: if this works, consider removing the _remoteConnections array, as it might be not needed anymore.
-
-        var isBroken = false;
-
-        /*
-        IsConnectionBroken
-        _remoteConnections
-        _jointsByConnectedParticles
-        */
-
-        Debug.Log("TODO: RECORRER LA JERARQUIA DE CONEXIONES PARA VER SI AUN HAY ALGUNA CONEXION INDIRECTA.");
-        Debug.Log("TODO: ADEMÁS, NO TE BASES SOLO EN LOS ConnectedParticles LOCALES, LAS CONEXIONES SON RECÍPROCAS!");
-
-        /*
-        foreach (var bone in SkinnedRenderer.bones)
-        {
-            if (bone != this.transform)
-            {
-                var isConnected = false;
-                foreach (var conn in ConnectedParticles)
-                {
-                    if (bone == conn.transform)
-                    {
-                        isConnected = true;
-                    }
-                }
-                if (!isConnected)
-                {
-                    DeactivateBoneByReplacingWithDummy(SkinnedRenderer, bone, this.transform);
-                }
-            }
-        }
-        */
-        return isBroken;
+        foreach (var conn in Connections)
+            if (conn.ConnectedParticle == connectedParticle)
+                return conn;
+        return null;
     }
 
 
@@ -265,17 +248,33 @@ public class SoftBodyParticle : MonoBehaviour
     //x}
 
 
-    private IEnumerator OnJointBreak(float breakForce)
-    //private void OnJointBreak(float breakForce)
+
+    //private IEnumerator OnJointBreak(float breakForce)
+    private void OnJointBreak(float breakForce)
     {
+        // As you can see, this callback does not include the reference to the Joint. Moreover, Joints are 
+        // destroyed by Unity after they break, but this happens asynchronously. Therefore, we need to keep track 
+        // of the status of our joints, and keep polling them here until we find out that they have just been destroyed.
+
+        // BIG CAVEAT: the 'breakForce' will sometimes not belong to the joint that we find. This is because
+        // the destruction of the Joint component happens asynchronously. Therefore, since we are looping 
+        // to check the first joint that we detect as newly broken, we cannot be sure that the joint that
+        // we find is the joint that Unity invoked this callback for.
+
+        StartCoroutine(FindBrokenJoint(breakForce));
+    }
+
+
+    private IEnumerator FindBrokenJoint(float breakForce)
+    { 
         //xvar statesOnBreakFrame = (bool[])_previousJointStates.Clone();
-        var wereRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
-        for (int i = 0; i < wereRegisteredAsBrokenAtBreakFrame.Length; i++)
-            wereRegisteredAsBrokenAtBreakFrame[i] = Connections[i].HasBeenRegisteredAsBroken;
+        var wereAlreadyRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
+        for (int i = 0; i < wereAlreadyRegisteredAsBrokenAtBreakFrame.Length; i++)
+            wereAlreadyRegisteredAsBrokenAtBreakFrame[i] = Connections[i].isAlreadyRegisteredAsBroken;
 
         //UnityEditor.EditorApplication.isPaused = true;
 
-        // Apparently, we need to wait one frame to be sure that the joint is destroyed. Sigh...
+        // As I said, we need to wait *at least* one frame to be sure that the joint is destroyed. Sigh...
         yield return null;
 
         // TODO: modify the mesh (via shader distortion or vertexstreambuffer)
@@ -283,11 +282,13 @@ public class SoftBodyParticle : MonoBehaviour
         // NOTE: please Unity, just make this a proper callback and pass the Joint reference...
 
         // Find out which of the joints broke.
+        //var foundIndices = new List<int>();
+        var foundIndex = -1;
+        //while (foundIndices.Count == 0)
         int iterations = 0;
-        var foundIndices = new List<int>();
-        while (foundIndices.Count == 0)
+        while (foundIndex == -1)
         {
-            // Reverse traversal for easy removal later if needed.
+            //// Reverse traversal for easy removal later if needed.
             //for (int i = Connections.Count - 1; i >= 0; i--)
             for (int i = 0; i < Connections.Count; i++)
             //xfor (int i = 0; i < ConnectedParticles.Count; i++)
@@ -295,13 +296,15 @@ public class SoftBodyParticle : MonoBehaviour
                 //xvar j = _jointsByConnectedParticles[i];
                 var conn = Connections[i];
                 //xvar jointState = !IsJointBroken(j);
-                if (conn.isBroken && !wereRegisteredAsBrokenAtBreakFrame[i])
+                if (conn.isBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
                 {
-                    foundIndices.Add(i);
-                    conn.HasBeenRegisteredAsBroken = true;
+                    //foundIndices.Add(i);
+                    foundIndex = i;
+                    conn.isAlreadyRegisteredAsBroken = true;
                 }
             }
-            if (foundIndices.Count == 0)
+            //if (foundIndices.Count == 0)
+            if (foundIndex == -1)
                 yield return null;
 
             iterations++;
@@ -309,11 +312,13 @@ public class SoftBodyParticle : MonoBehaviour
                 Debug.LogError("ALREADY SPENT " + iterations.ToString() + " ITERATIONS LOOKING FOR THE JOINT THAT BROKE", this);
         }
 
-        foreach (var brokenConnectionIndex in foundIndices)
+        //foreach (var brokenConnectionIndex in foundIndices)
         {
             //xvar p = ConnectedParticles[i];
-            var conn = Connections[brokenConnectionIndex];
-            Debug.Log("Se ha roto el joint de <b>" + conn.OwnerParticle.name + "</b> con <b>" + conn.ConnectedParticle.name + "</b>, fuerza = <b>" + breakForce.ToString() + "</b>", this);
+            //var conn = Connections[brokenConnectionIndex];
+            var conn = Connections[foundIndex];
+
+            //Debug.Log("Broken joint from <b>" + conn.OwnerParticle.name + "</b> to <b>" + conn.ConnectedParticle.name + "</b>, breakForce <b>" + breakForce.ToString() + "</b>", this);
 
             // So much work... just for sending what should have been passed as an event argument... -_-
             //xOnJointBroken.Invoke(new SoftBodyJointBreakEventData(this, p, breakForce, _jointsByConnectedParticles[brokenConnectionIndex]));

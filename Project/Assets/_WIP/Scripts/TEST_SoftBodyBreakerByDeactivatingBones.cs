@@ -6,52 +6,55 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
 {
     private SoftBody _softBody;
 
-    public SkinnedMeshRenderer SkinnedRenderer;
-
 
     void Start()
     {
         _softBody = GetComponent<SoftBody>();
+
+        foreach (var p in _softBody.Particles)
+            p.OnJointBroken.AddListener(OnSoftBodyJointBroken);
     }
 
 
     private void OnSoftBodyJointBroken(SoftBodyJointBreakEventData e)
     {
-        //DeactivateBoneIfDisconnected(e.);
+        var owner = e.JointOwner;
+        var other = e.JointConnectedBody;
+
+        DeactivateBoneByReplacingWithDummy(owner.SkinnedRenderer, other.transform, owner.transform);
+        DeactivateBoneByReplacingWithDummy(other.SkinnedRenderer, owner.transform, other.transform);
+
+        foreach (var p in _softBody.Particles)
+        {
+            if (p != owner && p != other)
+            {
+                DeactivateBoneIfDisconnected(p, owner);
+                DeactivateBoneIfDisconnected(p, other);
+            }
+        }
     }
 
 
-    private void DeactivateBoneIfDisconnected()
+    private void DeactivateBoneIfDisconnected(SoftBodyParticle a, SoftBodyParticle b)
     {
-
+        if (_softBody.AreParticlesJoinedRecursive(a, b))
+        {
+            DeactivateBoneByReplacingWithDummy(a.SkinnedRenderer, b.transform, a.transform);
+            DeactivateBoneByReplacingWithDummy(b.SkinnedRenderer, a.transform, b.transform);
+        }
     }
 
 
-
-
-
-
-    // TODO: this could go in another component, which should handle the renderer.
-    private void TryRemoveConnectedBoneFromSkin(SoftBodyJointBreakEventData e)
-    {
-        if (e.JointOwner != this && e.JointConnectedBody != this)
-            return;
-
-        var possibleBone = e.JointOwner == this ? e.JointConnectedBody.transform : e.JointOwner.transform;
-        if (DeactivateBoneByReplacingWithDummy(SkinnedRenderer, possibleBone, this.transform))
-            Debug.Log("Removed bone " + possibleBone.name + " from skin " + SkinnedRenderer.name + " and particle " + this.name);
-    }
-
-
+    // "Deactivates" a SkinnedMeshRenderer's bone by doing the following:
+    // - Create a dummy gameObject.
+    // - Assign the dummy as bone instead of the original one.
+    // - Make the dummy a child of the particle. 
+    // - Position it into the bindPose of the parent bone relative to the bindPose of the original bone.
+    //
     // Returns false if the bone is not influencing the skin and there is no need to remove it.
     public static bool DeactivateBoneByReplacingWithDummy(SkinnedMeshRenderer skin, Transform bone, Transform parentBone)
     {
         var removed = false;
-
-        // - Create a dummy gameObject.
-        // - Replace the actual bone with the dummy.
-        // - Make it a child of the particle. 
-        // - Position it into the bindPose of the bone relative to the bindPose of the particle's bone.
 
         for (int boneIndex = 0; !removed && boneIndex < skin.bones.Length; boneIndex++)
         {
@@ -86,6 +89,11 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
                 dummy.localScale = relativeBindPose.DecodeScale();
             }
         }
+
+        //if (removed)
+        //    Debug.Log("Removed <color=green>SUCCESSFULY</color> bone <b>" + bone.name + "</b> from skin <b>" + skin.name + "</b> with parent bone <b>" + parentBone.name + "</b>", bone);
+        //else
+        //    Debug.LogWarning("Could <color=red>NOT</color> remove bone <b>" + bone.name + "</b> from skin <b>" + skin.name + "</b> with parent bone <b>" + parentBone.name + "</b>", bone);
 
         return removed;
     }
@@ -153,3 +161,4 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
     }
     #endregion OLD & POSSIBLY DEPRECATED
 }
+
