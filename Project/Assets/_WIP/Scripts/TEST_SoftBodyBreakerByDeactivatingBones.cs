@@ -25,7 +25,7 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
     }
 
 
-
+    /*
     private void Update()
     {
         // Every few frames, remove all disconnected particles' bones.
@@ -51,7 +51,7 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
             }
         }
     }
-
+    */
 
     private void OnSoftBodyJointBroken(SoftBodyJointBreakEventData e)
     {

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5089762996631523672}
   - component: {fileID: 5089762996631523685}
   - component: {fileID: 5089762996631523510}
-  - component: {fileID: 5089762996631523496}
   - component: {fileID: 5089762996631523484}
   - component: {fileID: 5089762996631523485}
   m_Layer: 0
@@ -207,23 +206,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523484
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -428,7 +410,6 @@ GameObject:
   - component: {fileID: 5089762996631523667}
   - component: {fileID: 5089762996631523698}
   - component: {fileID: 5089762996631523482}
-  - component: {fileID: 5089762996631523502}
   m_Layer: 0
   m_Name: bone006
   m_TagString: Untagged
@@ -619,23 +600,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523754
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +614,6 @@ GameObject:
   - component: {fileID: 5089762996631523666}
   - component: {fileID: 5089762996631523709}
   - component: {fileID: 5089762996631523460}
-  - component: {fileID: 5089762996631523501}
   m_Layer: 0
   m_Name: bone004
   m_TagString: Untagged
@@ -841,23 +804,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523755
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +818,6 @@ GameObject:
   - component: {fileID: 5089762996631523655}
   - component: {fileID: 5089762996631523683}
   - component: {fileID: 5089762996631523506}
-  - component: {fileID: 5089762996631523537}
   - component: {fileID: 5089762996631523474}
   m_Layer: 0
   m_Name: bone015
@@ -1064,23 +1009,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523474
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1190,7 +1118,6 @@ GameObject:
   - component: {fileID: 5089762996631523678}
   - component: {fileID: 5089762996631523706}
   - component: {fileID: 5089762996631523505}
-  - component: {fileID: 5089762996631523499}
   - component: {fileID: 5089762996631523518}
   m_Layer: 0
   m_Name: bone011
@@ -1382,23 +1309,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523518
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1631,7 +1541,6 @@ GameObject:
   - component: {fileID: 5089762996631523487}
   - component: {fileID: 5089762996631523486}
   - component: {fileID: 5089762996631523483}
-  - component: {fileID: 5089762996631523489}
   m_Layer: 0
   m_Name: bone001
   m_TagString: Untagged
@@ -2487,23 +2396,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,7 +2410,6 @@ GameObject:
   - component: {fileID: 5089762996631523649}
   - component: {fileID: 5089762996631523680}
   - component: {fileID: 5089762996631523464}
-  - component: {fileID: 5089762996631523538}
   - component: {fileID: 5089762996631523688}
   m_Layer: 0
   m_Name: bone017
@@ -2710,23 +2601,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523688
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2836,7 +2710,6 @@ GameObject:
   - component: {fileID: 5089762996631523654}
   - component: {fileID: 5089762996631523682}
   - component: {fileID: 5089762996631523470}
-  - component: {fileID: 5089762996631523539}
   - component: {fileID: 5089762996631523512}
   - component: {fileID: 5089762996631523513}
   m_Layer: 0
@@ -3029,23 +2902,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523512
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3250,7 +3106,6 @@ GameObject:
   - component: {fileID: 5089762996631523627}
   - component: {fileID: 5089762996631523702}
   - component: {fileID: 5089762996631523509}
-  - component: {fileID: 5089762996631523495}
   m_Layer: 0
   m_Name: bone003
   m_TagString: Untagged
@@ -3441,23 +3296,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3310,6 @@ GameObject:
   - component: {fileID: 5089762996631523650}
   - component: {fileID: 5089762996631523692}
   - component: {fileID: 5089762996631523508}
-  - component: {fileID: 5089762996631523548}
   - component: {fileID: 5089762996631523519}
   m_Layer: 0
   m_Name: bone020
@@ -3664,23 +3501,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523519
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3790,7 +3610,6 @@ GameObject:
   - component: {fileID: 5089762996631523679}
   - component: {fileID: 5089762996631523707}
   - component: {fileID: 5089762996631523461}
-  - component: {fileID: 5089762996631523497}
   m_Layer: 0
   m_Name: bone007
   m_TagString: Untagged
@@ -3981,23 +3800,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +3814,6 @@ GameObject:
   - component: {fileID: 5089762996631523673}
   - component: {fileID: 5089762996631523704}
   - component: {fileID: 5089762996631523511}
-  - component: {fileID: 5089762996631523498}
   m_Layer: 0
   m_Name: bone009
   m_TagString: Untagged
@@ -4203,23 +4004,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4234,7 +4018,6 @@ GameObject:
   - component: {fileID: 5089762996631523675}
   - component: {fileID: 5089762996631523686}
   - component: {fileID: 5089762996631523516}
-  - component: {fileID: 5089762996631523541}
   - component: {fileID: 5089762996631523473}
   - component: {fileID: 5089762996631523478}
   m_Layer: 0
@@ -4427,23 +4210,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523473
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4648,7 +4414,6 @@ GameObject:
   - component: {fileID: 5089762996631523652}
   - component: {fileID: 5089762996631523681}
   - component: {fileID: 5089762996631523465}
-  - component: {fileID: 5089762996631523543}
   - component: {fileID: 5089762996631523475}
   - component: {fileID: 5089762996631523472}
   m_Layer: 0
@@ -4841,23 +4606,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523475
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5062,7 +4810,6 @@ GameObject:
   - component: {fileID: 5089762996631523665}
   - component: {fileID: 5089762996631523711}
   - component: {fileID: 5089762996631523462}
-  - component: {fileID: 5089762996631523491}
   m_Layer: 0
   m_Name: bone005
   m_TagString: Untagged
@@ -5253,23 +5000,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,7 +5014,6 @@ GameObject:
   - component: {fileID: 5089762996631523651}
   - component: {fileID: 5089762996631523695}
   - component: {fileID: 5089762996631523504}
-  - component: {fileID: 5089762996631523549}
   - component: {fileID: 5089762996631523690}
   m_Layer: 0
   m_Name: bone021
@@ -5476,23 +5205,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523690
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5602,7 +5314,6 @@ GameObject:
   - component: {fileID: 5089762996631523674}
   - component: {fileID: 5089762996631523684}
   - component: {fileID: 5089762996631523507}
-  - component: {fileID: 5089762996631523542}
   - component: {fileID: 5089762996631523691}
   m_Layer: 0
   m_Name: bone014
@@ -5794,23 +5505,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523691
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5920,7 +5614,6 @@ GameObject:
   - component: {fileID: 5089762996631523648}
   - component: {fileID: 5089762996631523693}
   - component: {fileID: 5089762996631523471}
-  - component: {fileID: 5089762996631523536}
   - component: {fileID: 5089762996631523476}
   m_Layer: 0
   m_Name: bone018
@@ -6112,23 +5805,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523476
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -6238,7 +5914,6 @@ GameObject:
   - component: {fileID: 5089762996631523653}
   - component: {fileID: 5089762996631523687}
   - component: {fileID: 5089762996631523517}
-  - component: {fileID: 5089762996631523540}
   - component: {fileID: 5089762996631523479}
   m_Layer: 0
   m_Name: bone012
@@ -6430,23 +6105,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!153 &5089762996631523479
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -6556,7 +6214,6 @@ GameObject:
   - component: {fileID: 5089762996631523671}
   - component: {fileID: 5089762996631523696}
   - component: {fileID: 5089762996631523467}
-  - component: {fileID: 5089762996631523493}
   m_Layer: 0
   m_Name: bone002
   m_TagString: Untagged
@@ -6747,23 +6404,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762996631523829
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,7 +6418,6 @@ GameObject:
   - component: {fileID: 5089762996631523676}
   - component: {fileID: 5089762996631523705}
   - component: {fileID: 5089762996631523458}
-  - component: {fileID: 5089762996631523503}
   m_Layer: 0
   m_Name: bone008
   m_TagString: Untagged
@@ -6969,23 +6608,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5089762996631523503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089762996631523829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0001d65faa7f8458abce9aaaf166aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Density: 1000
-  MaxAngularVelocity: 50
-  SolverIterations: 255
-  SolverVelocityIterations: 255
-  SleepThreshold: 0.005
 --- !u!1 &5089762998402158245
 GameObject:
   m_ObjectHideFlags: 0
@@ -7072,28 +6694,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particles:
-  - {fileID: 5089762996631523669}
-  - {fileID: 5089762996631523671}
-  - {fileID: 5089762996631523627}
-  - {fileID: 5089762996631523666}
-  - {fileID: 5089762996631523665}
-  - {fileID: 5089762996631523667}
-  - {fileID: 5089762996631523679}
-  - {fileID: 5089762996631523676}
-  - {fileID: 5089762996631523673}
-  - {fileID: 5089762996631523672}
-  - {fileID: 5089762996631523678}
-  - {fileID: 5089762996631523653}
-  - {fileID: 5089762996631523675}
-  - {fileID: 5089762996631523674}
-  - {fileID: 5089762996631523655}
-  - {fileID: 5089762996631523652}
-  - {fileID: 5089762996631523649}
-  - {fileID: 5089762996631523648}
-  - {fileID: 5089762996631523654}
-  - {fileID: 5089762996631523650}
-  - {fileID: 5089762996631523651}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ColliderRadius: 0.03
+  ColliderHeight: 0.075
   EnablePreprocessing: 0
   LinearSpring: 50
   LinearDamper: 10

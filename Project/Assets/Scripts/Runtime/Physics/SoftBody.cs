@@ -39,7 +39,6 @@ public class SoftBody : MonoBehaviour
                 return 0;
             var total = 0;
             foreach (var p in Particles)
-                //xtotal += p.ConnectedParticles.Count;
                 total += p.Connections.Count;
             return total;
         }
@@ -162,13 +161,11 @@ public class SoftBody : MonoBehaviour
         foreach (var p in Particles)
         {
             // Create new joints.
-            //xforeach (var conn in p.ConnectedParticles)
             foreach (var conn in p.Connections)
             {
                 var newJoint = p.gameObject.AddComponent<ConfigurableJoint>();
                 newJoint.connectedBody = conn.ConnectedParticle.Rigidbody;
                 ResetJoint(newJoint);
-                //xp.RegisterJoint(conn, newJoint);
                 conn.Joint = newJoint;
             }
         }

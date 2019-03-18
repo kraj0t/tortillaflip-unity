@@ -74,6 +74,8 @@ public class SoftBodyParticle : MonoBehaviour
     private HashSet<SoftBodyParticle> _connectedParticlesSet;
     public IEnumerable<SoftBodyParticle> ConnectedParticles { get => _connectedParticlesSet; }
 
+    public bool CheckForBrokenJoints = true;
+
     public SoftBodyJointBreakEvent OnJointBroken;
 
 
@@ -210,6 +212,9 @@ public class SoftBodyParticle : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!CheckForBrokenJoints)
+            return;
+
         float fakeBreakForce = -1;
 
         var wereAlreadyRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
