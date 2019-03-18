@@ -4,7 +4,11 @@
 [RequireComponent(typeof(SoftBody))]
 public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
 {
+    private readonly float kDisconnectionCheckFrequency = .1f;
+
     private SoftBody _softBody;
+
+    private float _nextDisconnectionCheckTime;
 
 
     void Start()
@@ -13,6 +17,36 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
 
         foreach (var p in _softBody.Particles)
             p.OnJointBroken.AddListener(OnSoftBodyJointBroken);
+
+        _nextDisconnectionCheckTime = Time.time + kDisconnectionCheckFrequency;
+    }
+
+
+
+    private void Update()
+    {
+        // Every few frames, remove all disconnected particles' bones.
+        if (Time.time < _nextDisconnectionCheckTime)
+            return;
+
+        _nextDisconnectionCheckTime = _nextDisconnectionCheckTime + kDisconnectionCheckFrequency;
+
+        // Loop the bones in the particles' skinnedMeshRenderers, and filter out the bones that are not particles of the soft body.
+        // This will early-out all the dummy bones that we may have already created.
+        foreach (var particle in _softBody.Particles)
+        {
+            var particleTransform = particle.transform;
+            foreach (var bone in particle.SkinnedRenderer.bones)
+            {
+                if (bone == particleTransform)
+                    continue;
+                var otherParticle = bone.GetComponent<SoftBodyParticle>();
+                if (otherParticle)
+                    if (_softBody.Particles.Contains(otherParticle))
+                        if (DeactivateBonesIfDisconnected(_softBody, particle, otherParticle))
+                            Debug.Log("Automatically disconnected " + particle.name + " from " + otherParticle.name + " in Update!");
+            }
+        }
     }
 
 
@@ -28,20 +62,23 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
         {
             if (p != owner && p != other)
             {
-                DeactivateBoneIfDisconnected(p, owner);
-                DeactivateBoneIfDisconnected(p, other);
+                DeactivateBonesIfDisconnected(_softBody, p, owner);
+                DeactivateBonesIfDisconnected(_softBody, p, other);
             }
         }
     }
 
 
-    private void DeactivateBoneIfDisconnected(SoftBodyParticle a, SoftBodyParticle b)
+    // Returns true if any bone was deactivated.
+    public static bool DeactivateBonesIfDisconnected(SoftBody softBody, SoftBodyParticle a, SoftBodyParticle b)
     {
-        if (_softBody.AreParticlesJoinedRecursive(a, b))
+        var anyBoneDeactivated = false;
+        if (!softBody.AreParticlesJoinedRecursive(a, b))
         {
-            DeactivateBoneByReplacingWithDummy(a.SkinnedRenderer, b.transform, a.transform);
-            DeactivateBoneByReplacingWithDummy(b.SkinnedRenderer, a.transform, b.transform);
+            anyBoneDeactivated = anyBoneDeactivated || DeactivateBoneByReplacingWithDummy(a.SkinnedRenderer, b.transform, a.transform);
+            anyBoneDeactivated = anyBoneDeactivated || DeactivateBoneByReplacingWithDummy(b.SkinnedRenderer, a.transform, b.transform);
         }
+        return anyBoneDeactivated;
     }
 
 

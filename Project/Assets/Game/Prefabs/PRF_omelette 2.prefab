@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 2815020735591169322}
   - component: {fileID: 2742213488277634057}
   - component: {fileID: 8485695863401232508}
-  - component: {fileID: 4952843474125576085}
-  - component: {fileID: 1371811473759250049}
+  - component: {fileID: 1339478328691712400}
+  - component: {fileID: 4383147376756187655}
   m_Layer: 0
   m_Name: bone002
   m_TagString: Untagged
@@ -167,26 +167,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkinnedRenderer: {fileID: 6908106481308294146}
+  SkinnedRenderer: {fileID: 1921954550408664508}
   Connections:
   - OwnerParticle: {fileID: 6129166030303895188}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 4952843474125576085}
+    Joint: {fileID: 1339478328691712400}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895188}
     ConnectedParticle: {fileID: 6129166030303895186}
-    Joint: {fileID: 1371811473759250049}
+    Joint: {fileID: 4383147376756187655}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +482,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &4952843474125576085
+--- !u!153 &1339478328691712400
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -576,12 +572,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1371811473759250049
+--- !u!153 &4383147376756187655
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,7 +667,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -692,9 +688,9 @@ GameObject:
   - component: {fileID: 3897062641351881308}
   - component: {fileID: 1323871857210959601}
   - component: {fileID: 4509990787023604389}
-  - component: {fileID: 8403196496629288421}
-  - component: {fileID: 8815948359195880031}
-  - component: {fileID: 6998861832329859173}
+  - component: {fileID: 7158222694349688700}
+  - component: {fileID: 8452338394528427338}
+  - component: {fileID: 2027600367327868573}
   m_Layer: 0
   m_Name: bone014
   m_TagString: Untagged
@@ -761,26 +757,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895178}
-    Joint: {fileID: 8403196496629288421}
+    Joint: {fileID: 7158222694349688700}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895184}
-    Joint: {fileID: 8815948359195880031}
+    Joint: {fileID: 8452338394528427338}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895180}
     ConnectedParticle: {fileID: 6129166030303895198}
-    Joint: {fileID: 6998861832329859173}
+    Joint: {fileID: 2027600367327868573}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1072,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8403196496629288421
+--- !u!153 &7158222694349688700
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1170,12 +1162,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8815948359195880031
+--- !u!153 &8452338394528427338
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1265,12 +1257,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6998861832329859173
+--- !u!153 &2027600367327868573
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1360,7 +1352,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -1380,8 +1372,8 @@ GameObject:
   - component: {fileID: 2372889352321524426}
   - component: {fileID: 4296837298998264815}
   - component: {fileID: 4155791720501872792}
-  - component: {fileID: 7920773611614797458}
-  - component: {fileID: 8118995446373766873}
+  - component: {fileID: 8929836489419922939}
+  - component: {fileID: 7706763306393833562}
   m_Layer: 0
   m_Name: bone017
   m_TagString: Untagged
@@ -1448,22 +1440,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895222}
     ConnectedParticle: {fileID: 6129166030303895220}
-    Joint: {fileID: 7920773611614797458}
+    Joint: {fileID: 8929836489419922939}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895222}
     ConnectedParticle: {fileID: 6129166030303895196}
-    Joint: {fileID: 8118995446373766873}
+    Joint: {fileID: 7706763306393833562}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,7 +1656,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7920773611614797458
+--- !u!153 &8929836489419922939
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1758,12 +1746,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8118995446373766873
+--- !u!153 &7706763306393833562
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1853,7 +1841,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -1873,8 +1861,8 @@ GameObject:
   - component: {fileID: 2372889352321524398}
   - component: {fileID: 4018217740422888003}
   - component: {fileID: 429082596548497396}
-  - component: {fileID: 5265293164796832144}
-  - component: {fileID: 1339801837706968781}
+  - component: {fileID: 7173706097115714140}
+  - component: {fileID: 8558651280307750571}
   m_Layer: 0
   m_Name: bone005
   m_TagString: Untagged
@@ -1941,22 +1929,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895198}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 5265293164796832144}
+    Joint: {fileID: 7173706097115714140}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895198}
     ConnectedParticle: {fileID: 6129166030303895196}
-    Joint: {fileID: 1339801837706968781}
+    Joint: {fileID: 8558651280307750571}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2161,7 +2145,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &5265293164796832144
+--- !u!153 &7173706097115714140
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2251,12 +2235,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1339801837706968781
+--- !u!153 &8558651280307750571
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2346,7 +2330,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -2545,9 +2529,9 @@ GameObject:
   - component: {fileID: 2117154187145405308}
   - component: {fileID: 4668903222127412471}
   - component: {fileID: 5566746306431026962}
-  - component: {fileID: 1590449157866911659}
-  - component: {fileID: 899644383735122692}
-  - component: {fileID: 7632067851284544383}
+  - component: {fileID: 1105255468224593450}
+  - component: {fileID: 7273569279688419389}
+  - component: {fileID: 4023569566881680138}
   m_Layer: 0
   m_Name: bone018
   m_TagString: Untagged
@@ -2614,26 +2598,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895218}
-    Joint: {fileID: 1590449157866911659}
+    Joint: {fileID: 1105255468224593450}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895196}
-    Joint: {fileID: 899644383735122692}
+    Joint: {fileID: 7273569279688419389}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895220}
     ConnectedParticle: {fileID: 6129166030303895194}
-    Joint: {fileID: 7632067851284544383}
+    Joint: {fileID: 4023569566881680138}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2933,7 +2913,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1590449157866911659
+--- !u!153 &1105255468224593450
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3023,12 +3003,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &899644383735122692
+--- !u!153 &7273569279688419389
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3118,12 +3098,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7632067851284544383
+--- !u!153 &4023569566881680138
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3213,7 +3193,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -3234,9 +3214,9 @@ GameObject:
   - component: {fileID: 183891731801290288}
   - component: {fileID: 8879411576742427944}
   - component: {fileID: 5068802762186603404}
-  - component: {fileID: 5984603625074701314}
-  - component: {fileID: 2449763195301978390}
-  - component: {fileID: 3482569353001736140}
+  - component: {fileID: 9050465897214772579}
+  - component: {fileID: 8349820066185611765}
+  - component: {fileID: 6337651159907022502}
   m_Layer: 0
   m_Name: bone012
   m_TagString: Untagged
@@ -3303,26 +3283,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895182}
-    Joint: {fileID: 5984603625074701314}
+    Joint: {fileID: 9050465897214772579}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895186}
-    Joint: {fileID: 2449763195301978390}
+    Joint: {fileID: 8349820066185611765}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895168}
     ConnectedParticle: {fileID: 6129166030303895184}
-    Joint: {fileID: 3482569353001736140}
+    Joint: {fileID: 6337651159907022502}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3622,7 +3598,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &5984603625074701314
+--- !u!153 &9050465897214772579
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3712,12 +3688,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2449763195301978390
+--- !u!153 &8349820066185611765
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3807,12 +3783,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3482569353001736140
+--- !u!153 &6337651159907022502
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3902,7 +3878,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -4097,8 +4073,8 @@ GameObject:
   - component: {fileID: 2372889352321524422}
   - component: {fileID: 520688649374692899}
   - component: {fileID: 7411272948943260918}
-  - component: {fileID: 6630842250725815586}
-  - component: {fileID: 2376394639603384177}
+  - component: {fileID: 2856972989843539820}
+  - component: {fileID: 7627265666527582893}
   m_Layer: 0
   m_Name: bone013
   m_TagString: Untagged
@@ -4165,22 +4141,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895182}
     ConnectedParticle: {fileID: 6129166030303895180}
-    Joint: {fileID: 6630842250725815586}
+    Joint: {fileID: 2856972989843539820}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895182}
     ConnectedParticle: {fileID: 6129166030303895184}
-    Joint: {fileID: 2376394639603384177}
+    Joint: {fileID: 7627265666527582893}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,7 +4357,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6630842250725815586
+--- !u!153 &2856972989843539820
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4475,12 +4447,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2376394639603384177
+--- !u!153 &7627265666527582893
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4570,7 +4542,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -4591,9 +4563,9 @@ GameObject:
   - component: {fileID: 5337328924233477912}
   - component: {fileID: 222167005165164681}
   - component: {fileID: 1541796897683988423}
-  - component: {fileID: 1243050866621445722}
-  - component: {fileID: 3890087187692262382}
-  - component: {fileID: 6288070067811389053}
+  - component: {fileID: 2261339395982076797}
+  - component: {fileID: 5632423171024557665}
+  - component: {fileID: 3263189559063755530}
   m_Layer: 0
   m_Name: bone016
   m_TagString: Untagged
@@ -4660,26 +4632,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895222}
-    Joint: {fileID: 1243050866621445722}
+    Joint: {fileID: 2261339395982076797}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895198}
-    Joint: {fileID: 3890087187692262382}
+    Joint: {fileID: 5632423171024557665}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895176}
     ConnectedParticle: {fileID: 6129166030303895196}
-    Joint: {fileID: 6288070067811389053}
+    Joint: {fileID: 3263189559063755530}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4979,7 +4947,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1243050866621445722
+--- !u!153 &2261339395982076797
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5069,12 +5037,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3890087187692262382
+--- !u!153 &5632423171024557665
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5164,12 +5132,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6288070067811389053
+--- !u!153 &3263189559063755530
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5259,7 +5227,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -5633,8 +5601,8 @@ GameObject:
   - component: {fileID: 2372889352321524385}
   - component: {fileID: 2646248959177135874}
   - component: {fileID: 656000438570571748}
-  - component: {fileID: 6469530700781295654}
-  - component: {fileID: 7705060810185216745}
+  - component: {fileID: 932054870650638181}
+  - component: {fileID: 495731720587353858}
   m_Layer: 0
   m_Name: bone004
   m_TagString: Untagged
@@ -5701,22 +5669,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895184}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 6469530700781295654}
+    Joint: {fileID: 932054870650638181}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895184}
     ConnectedParticle: {fileID: 6129166030303895198}
-    Joint: {fileID: 7705060810185216745}
+    Joint: {fileID: 495731720587353858}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5921,7 +5885,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6469530700781295654
+--- !u!153 &932054870650638181
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6011,12 +5975,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7705060810185216745
+--- !u!153 &495731720587353858
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6106,7 +6070,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -6127,9 +6091,9 @@ GameObject:
   - component: {fileID: 726302292650378688}
   - component: {fileID: 3598431910197123447}
   - component: {fileID: 7153683228007100691}
-  - component: {fileID: 2444878371772767920}
-  - component: {fileID: 8046549371198040446}
-  - component: {fileID: 529737268139587576}
+  - component: {fileID: 3730032383060898004}
+  - component: {fileID: 2112564547626566595}
+  - component: {fileID: 5536495162251138714}
   m_Layer: 0
   m_Name: bone010
   m_TagString: Untagged
@@ -6196,26 +6160,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895170}
-    Joint: {fileID: 2444878371772767920}
+    Joint: {fileID: 3730032383060898004}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895188}
-    Joint: {fileID: 8046549371198040446}
+    Joint: {fileID: 2112564547626566595}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895172}
     ConnectedParticle: {fileID: 6129166030303895186}
-    Joint: {fileID: 529737268139587576}
+    Joint: {fileID: 5536495162251138714}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6515,7 +6475,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2444878371772767920
+--- !u!153 &3730032383060898004
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6605,12 +6565,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8046549371198040446
+--- !u!153 &2112564547626566595
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6700,12 +6660,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &529737268139587576
+--- !u!153 &5536495162251138714
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6795,7 +6755,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -6815,8 +6775,8 @@ GameObject:
   - component: {fileID: 2372889352321524416}
   - component: {fileID: 4059900615736825420}
   - component: {fileID: 277614064431033593}
-  - component: {fileID: 8807783772494023078}
-  - component: {fileID: 1093408937595155610}
+  - component: {fileID: 665567501816153869}
+  - component: {fileID: 5778411983629990928}
   m_Layer: 0
   m_Name: bone015
   m_TagString: Untagged
@@ -6883,22 +6843,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895178}
     ConnectedParticle: {fileID: 6129166030303895176}
-    Joint: {fileID: 8807783772494023078}
+    Joint: {fileID: 665567501816153869}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895178}
     ConnectedParticle: {fileID: 6129166030303895198}
-    Joint: {fileID: 1093408937595155610}
+    Joint: {fileID: 5778411983629990928}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7103,7 +7059,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8807783772494023078
+--- !u!153 &665567501816153869
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7193,12 +7149,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1093408937595155610
+--- !u!153 &5778411983629990928
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7288,7 +7244,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -7308,8 +7264,8 @@ GameObject:
   - component: {fileID: 2372889352321524395}
   - component: {fileID: 677359068659680054}
   - component: {fileID: 6217654505058439686}
-  - component: {fileID: 7213146730325219009}
-  - component: {fileID: 5801029236248117137}
+  - component: {fileID: 8417120527395619441}
+  - component: {fileID: 6803997248430373066}
   m_Layer: 0
   m_Name: bone006
   m_TagString: Untagged
@@ -7376,22 +7332,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895196}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 7213146730325219009}
+    Joint: {fileID: 8417120527395619441}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895196}
     ConnectedParticle: {fileID: 6129166030303895194}
-    Joint: {fileID: 5801029236248117137}
+    Joint: {fileID: 6803997248430373066}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7596,7 +7548,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7213146730325219009
+--- !u!153 &8417120527395619441
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7686,12 +7638,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &5801029236248117137
+--- !u!153 &6803997248430373066
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7781,7 +7733,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -8157,8 +8109,8 @@ GameObject:
   - component: {fileID: 2372889352321524388}
   - component: {fileID: 2526925543703622721}
   - component: {fileID: 1904902231032563660}
-  - component: {fileID: 5505211031289788197}
-  - component: {fileID: 250891324848601876}
+  - component: {fileID: 5894483491020082761}
+  - component: {fileID: 2660156908439385309}
   m_Layer: 0
   m_Name: bone003
   m_TagString: Untagged
@@ -8225,22 +8177,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895186}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 5505211031289788197}
+    Joint: {fileID: 5894483491020082761}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895186}
     ConnectedParticle: {fileID: 6129166030303895184}
-    Joint: {fileID: 250891324848601876}
+    Joint: {fileID: 2660156908439385309}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8445,7 +8393,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &5505211031289788197
+--- !u!153 &5894483491020082761
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8535,12 +8483,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &250891324848601876
+--- !u!153 &2660156908439385309
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8630,7 +8578,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -8739,9 +8687,9 @@ GameObject:
   - component: {fileID: 3683141732169876681}
   - component: {fileID: 4642337468352038989}
   - component: {fileID: 789297339543468388}
-  - component: {fileID: 7565269364517651462}
-  - component: {fileID: 3744476384146415110}
-  - component: {fileID: 3169919759368693812}
+  - component: {fileID: 9035874941992340684}
+  - component: {fileID: 2702677475585936020}
+  - component: {fileID: 7533215207916540512}
   m_Layer: 0
   m_Name: bone008
   m_TagString: Untagged
@@ -8808,26 +8756,22 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895174}
-    Joint: {fileID: 7565269364517651462}
+    Joint: {fileID: 9035874941992340684}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895194}
-    Joint: {fileID: 3744476384146415110}
+    Joint: {fileID: 2702677475585936020}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895192}
     ConnectedParticle: {fileID: 6129166030303895188}
-    Joint: {fileID: 3169919759368693812}
+    Joint: {fileID: 7533215207916540512}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9127,7 +9071,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7565269364517651462
+--- !u!153 &9035874941992340684
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9217,12 +9161,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3744476384146415110
+--- !u!153 &2702677475585936020
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9312,12 +9256,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3169919759368693812
+--- !u!153 &7533215207916540512
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9407,7 +9351,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -9608,8 +9552,8 @@ GameObject:
   - component: {fileID: 2372889352321524392}
   - component: {fileID: 6085176807803194779}
   - component: {fileID: 8215459030304034193}
-  - component: {fileID: 6585224778734765752}
-  - component: {fileID: 965461943198818639}
+  - component: {fileID: 5611191908929041807}
+  - component: {fileID: 7615181811788480853}
   m_Layer: 0
   m_Name: bone007
   m_TagString: Untagged
@@ -9676,22 +9620,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895194}
     ConnectedParticle: {fileID: 6129166030303895190}
-    Joint: {fileID: 6585224778734765752}
+    Joint: {fileID: 5611191908929041807}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895194}
     ConnectedParticle: {fileID: 6129166030303895188}
-    Joint: {fileID: 965461943198818639}
+    Joint: {fileID: 7615181811788480853}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9896,7 +9836,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6585224778734765752
+--- !u!153 &5611191908929041807
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9986,12 +9926,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &965461943198818639
+--- !u!153 &7615181811788480853
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10081,7 +10021,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -10192,8 +10132,8 @@ GameObject:
   - component: {fileID: 2372889352321524444}
   - component: {fileID: 5322730059850722276}
   - component: {fileID: 56185594916500834}
-  - component: {fileID: 3211860056672919617}
-  - component: {fileID: 379939395109185210}
+  - component: {fileID: 2400837806027743537}
+  - component: {fileID: 5728997037971108383}
   m_Layer: 0
   m_Name: bone011
   m_TagString: Untagged
@@ -10260,22 +10200,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895170}
     ConnectedParticle: {fileID: 6129166030303895168}
-    Joint: {fileID: 3211860056672919617}
+    Joint: {fileID: 2400837806027743537}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895170}
     ConnectedParticle: {fileID: 6129166030303895186}
-    Joint: {fileID: 379939395109185210}
+    Joint: {fileID: 5728997037971108383}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10480,7 +10416,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3211860056672919617
+--- !u!153 &2400837806027743537
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10570,12 +10506,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &379939395109185210
+--- !u!153 &5728997037971108383
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10665,7 +10601,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -10772,8 +10708,8 @@ GameObject:
   - component: {fileID: 2372889352321524434}
   - component: {fileID: 4523629712251650228}
   - component: {fileID: 2727937908360017365}
-  - component: {fileID: 7835794765593486509}
-  - component: {fileID: 1522730761225183511}
+  - component: {fileID: 1149446102095505187}
+  - component: {fileID: 8772938244193766687}
   m_Layer: 0
   m_Name: bone009
   m_TagString: Untagged
@@ -10840,22 +10776,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895174}
     ConnectedParticle: {fileID: 6129166030303895172}
-    Joint: {fileID: 7835794765593486509}
+    Joint: {fileID: 1149446102095505187}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895174}
     ConnectedParticle: {fileID: 6129166030303895188}
-    Joint: {fileID: 1522730761225183511}
+    Joint: {fileID: 8772938244193766687}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11060,7 +10992,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7835794765593486509
+--- !u!153 &1149446102095505187
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11150,12 +11082,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1522730761225183511
+--- !u!153 &8772938244193766687
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11245,7 +11177,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -11420,11 +11352,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11454,8 +11382,8 @@ GameObject:
   - component: {fileID: 2372889352321524468}
   - component: {fileID: 1111929148976563149}
   - component: {fileID: 3589536211127479189}
-  - component: {fileID: 6053158754997301118}
-  - component: {fileID: 3284760821875008478}
+  - component: {fileID: 7554964237865227924}
+  - component: {fileID: 5463085701392090027}
   m_Layer: 0
   m_Name: bone019
   m_TagString: Untagged
@@ -11522,22 +11450,18 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 6129166030303895218}
     ConnectedParticle: {fileID: 6129166030303895192}
-    Joint: {fileID: 6053158754997301118}
+    Joint: {fileID: 7554964237865227924}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 6129166030303895218}
     ConnectedParticle: {fileID: 6129166030303895194}
-    Joint: {fileID: 3284760821875008478}
+    Joint: {fileID: 5463085701392090027}
     isAlreadyRegisteredAsBroken: 0
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  _previousJointStates: 
 --- !u!114 &2372889352321524468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11742,7 +11666,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6053158754997301118
+--- !u!153 &7554964237865227924
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11832,12 +11756,12 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3284760821875008478
+--- !u!153 &5463085701392090027
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11927,7 +11851,7 @@ ConfigurableJoint:
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakTorque: 0.3
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -12166,7 +12090,7 @@ MonoBehaviour:
   HardLinearLimitFactor: 1.1
   HardAngularLimit: 140
   BreakForce: 40
-  BreakTorque: 0.03
+  BreakTorque: 0.3
   DEBUG_LiveUpdate: 0
   DEBUG_UpdateFrameSkip: 120
 --- !u!114 &79925007

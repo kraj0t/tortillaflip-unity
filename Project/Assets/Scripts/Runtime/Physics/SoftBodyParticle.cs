@@ -83,14 +83,14 @@ public class SoftBodyParticle : MonoBehaviour
     public SoftBodyJointBreakEvent OnJointBroken;
 
 
-    //x// We need to cache the state of the Joints (alive/broken) because Unity nulls them after they break.
-    //x// This uses the same indices as the ConnectedParticles dictionary.
-    //x[SerializeField] [ReadOnly] private bool[] _previousJointStates;
+    // We need to cache the state of the Joints (alive/broken) because Unity nulls them after they break.
+    // This uses the same indices as the ConnectedParticles dictionary.
+    [SerializeField] [ReadOnly] private bool[] _previousJointStates;//y
 
-    
-               
+
+
     //private Mesh _mesh;
-    
+
     private Rigidbody _rb;
     public Rigidbody Rigidbody
     {
@@ -113,7 +113,7 @@ public class SoftBodyParticle : MonoBehaviour
         if (OnJointBroken == null)
             OnJointBroken = new SoftBodyJointBreakEvent();
 
-        //x_previousJointStates = GetCurrentJointStates();
+        _previousJointStates = GetCurrentJointStates();//y
 
         //_mesh = Instantiate<Mesh>(SkinnedRenderer.sharedMesh);
         //_mesh.MarkDynamic();
@@ -228,8 +228,6 @@ public class SoftBodyParticle : MonoBehaviour
     //x_jointsByConnectedParticles[i] = j;
 
     //xother.RegisterRemoteJoint(this);
-
-
     //x}
 
 
@@ -249,6 +247,7 @@ public class SoftBodyParticle : MonoBehaviour
 
 
 
+
     //private IEnumerator OnJointBreak(float breakForce)
     private void OnJointBreak(float breakForce)
     {
@@ -261,13 +260,23 @@ public class SoftBodyParticle : MonoBehaviour
         // to check the first joint that we detect as newly broken, we cannot be sure that the joint that
         // we find is the joint that Unity invoked this callback for.
 
-        StartCoroutine(FindBrokenJoint(breakForce));
+        //zStartCoroutine(FindBrokenJoint(breakForce));
     }
 
 
+    private bool _isFindingBrokenJoint;
+
     private IEnumerator FindBrokenJoint(float breakForce)
-    { 
-        //xvar statesOnBreakFrame = (bool[])_previousJointStates.Clone();
+    {
+        // Force this coroutine to run one at a time.
+        if (_isFindingBrokenJoint)
+        {
+            Debug.Log("aqui esperando...", this);
+            yield return null;
+        }
+        _isFindingBrokenJoint = true;
+
+        var statesOnBreakFrame = (bool[])_previousJointStates.Clone(); //y
         var wereAlreadyRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
         for (int i = 0; i < wereAlreadyRegisteredAsBrokenAtBreakFrame.Length; i++)
             wereAlreadyRegisteredAsBrokenAtBreakFrame[i] = Connections[i].isAlreadyRegisteredAsBroken;
@@ -282,11 +291,11 @@ public class SoftBodyParticle : MonoBehaviour
         // NOTE: please Unity, just make this a proper callback and pass the Joint reference...
 
         // Find out which of the joints broke.
-        //var foundIndices = new List<int>();
-        var foundIndex = -1;
-        //while (foundIndices.Count == 0)
+        var foundIndices = new List<int>();
+        //zvar foundIndex = -1;
         int iterations = 0;
-        while (foundIndex == -1)
+        while (foundIndices.Count == 0)
+        //zwhile (foundIndex == -1)
         {
             //// Reverse traversal for easy removal later if needed.
             //for (int i = Connections.Count - 1; i >= 0; i--)
@@ -295,16 +304,17 @@ public class SoftBodyParticle : MonoBehaviour
             {
                 //xvar j = _jointsByConnectedParticles[i];
                 var conn = Connections[i];
-                //xvar jointState = !IsJointBroken(j);
-                if (conn.isBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
+                var jointState = !IsJointBroken(conn.Joint);//y
+                if (!jointState && statesOnBreakFrame[i]) //y
+                //yif (conn.isBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
                 {
-                    //foundIndices.Add(i);
-                    foundIndex = i;
+                    foundIndices.Add(i);
+                    //zfoundIndex = i;
                     conn.isAlreadyRegisteredAsBroken = true;
                 }
             }
-            //if (foundIndices.Count == 0)
-            if (foundIndex == -1)
+            if (foundIndices.Count == 0)
+            //zif (foundIndex == -1)
                 yield return null;
 
             iterations++;
@@ -312,11 +322,11 @@ public class SoftBodyParticle : MonoBehaviour
                 Debug.LogError("ALREADY SPENT " + iterations.ToString() + " ITERATIONS LOOKING FOR THE JOINT THAT BROKE", this);
         }
 
-        //foreach (var brokenConnectionIndex in foundIndices)
+        foreach (var brokenConnectionIndex in foundIndices)
         {
             //xvar p = ConnectedParticles[i];
-            //var conn = Connections[brokenConnectionIndex];
-            var conn = Connections[foundIndex];
+            var conn = Connections[brokenConnectionIndex];
+            //zvar conn = Connections[foundIndex];
 
             //Debug.Log("Broken joint from <b>" + conn.OwnerParticle.name + "</b> to <b>" + conn.ConnectedParticle.name + "</b>, breakForce <b>" + breakForce.ToString() + "</b>", this);
 
@@ -325,41 +335,63 @@ public class SoftBodyParticle : MonoBehaviour
             OnJointBroken.Invoke(new SoftBodyJointBreakEventData(conn.OwnerParticle, conn.ConnectedParticle, breakForce, conn.Joint));
         }
 
-        //x_previousJointStates = GetCurrentJointStates();
+        _previousJointStates = GetCurrentJointStates();//y
+
+        // Allow a next coroutine to keep working.
+        _isFindingBrokenJoint = false;
     }
 
 
-    /*
-        private void FixedUpdate()
+    private void FixedUpdate()
+    {
+        // INSTEAD OF LISTENING FOR BROKEN JOINTS, JUST QUERY THEM EVERY FRAME.
+
+        float fakeBreakForce = -1;
+
+        var wereAlreadyRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
+        for (int i = 0; i < wereAlreadyRegisteredAsBrokenAtBreakFrame.Length; i++)
+            wereAlreadyRegisteredAsBrokenAtBreakFrame[i] = Connections[i].isAlreadyRegisteredAsBroken;
+
+        // TODO: modify the mesh (via shader distortion or vertexstreambuffer)
+
+        // NOTE: please Unity, just make this a proper callback and pass the Joint reference...
+
+        // Find out which of the joints broke.
+        var foundIndices = new List<int>();
+            
+        //// Reverse traversal for easy removal later if needed.
+        //for (int i = Connections.Count - 1; i >= 0; i--)
+        for (int i = 0; i < Connections.Count; i++)
         {
-            // INSTEAD OF LISTENING FOR BROKEN JOINTS, JUST QUERY THEM EVERY FRAME.
-
-            // Check if a joint broke.
-            for (int i = 0; i < ConnectedParticles.Count; i++)
+            var conn = Connections[i];
+            if (conn.isBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
             {
-                var j = _jointsByConnectedParticles[i];
-                var jointState = !IsJointBroken(j);
-                if (!jointState && _previousJointStates[i])
-                {
-                    Debug.Log("ENCONTRADO JOINT ROTO", this);
-
-                    // So much work... just for sending what should have been passed as an event argument... -_-
-                    var breakForce = 0f;
-                    OnJointBroken.Invoke(new JointBreakEventData(this, ConnectedParticles[i], breakForce, j));
-                }
+                foundIndices.Add(i);
+                conn.isAlreadyRegisteredAsBroken = true;
             }
-
-            _previousJointStates = GetCurrentJointStates();
         }
-    */
 
-    //xprivate bool[] GetCurrentJointStates()
-    //x{
-    //xvar states = new bool[ConnectedParticles.Count];
-    //x        for (int i = 0; i < ConnectedParticles.Count; i++)
-    //xstates[i] = !IsJointBroken(_jointsByConnectedParticles[i]);
-    //xreturn states;
-    //x}
+        foreach (var brokenConnectionIndex in foundIndices)
+        {
+            var conn = Connections[brokenConnectionIndex];
+
+            //Debug.Log("Broken joint from <b>" + conn.OwnerParticle.name + "</b> to <b>" + conn.ConnectedParticle.name + "</b>, breakForce <b>" + breakForce.ToString() + "</b>", this);
+
+            // So much work... just for sending what should have been passed as an event argument... -_-
+            OnJointBroken.Invoke(new SoftBodyJointBreakEventData(conn.OwnerParticle, conn.ConnectedParticle, fakeBreakForce, conn.Joint));
+        }
+    }
+
+    private bool[] GetCurrentJointStates()//y
+    {
+        //yvar states = new bool[ConnectedParticles.Count];
+        var states = new bool[Connections.Count];
+        //yfor (int i = 0; i < ConnectedParticles.Count; i++)
+        for (int i = 0; i < Connections.Count; i++)
+            //ystates[i] = !IsJointBroken(_jointsByConnectedParticles[i]);
+            states[i] = !IsJointBroken(Connections[i].Joint);
+        return states;
+    }
 
 
     //xprivate void OnValidate()

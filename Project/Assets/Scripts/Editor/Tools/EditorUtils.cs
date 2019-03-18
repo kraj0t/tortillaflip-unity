@@ -60,7 +60,7 @@ public static class EditorUtils
 
         var msgString = "Copied to clipboard the bones for SkinnedMeshRender \"" + skin.name + "\": ";
         for (int i = 0; i < _copiedBones.Length; i++)
-            msgString += "\n  " + _copiedBones[i].name + " [" + skin.sharedMesh.bindposes[i] + "]";
+            msgString += "\n  " + _copiedBones[i].name;
         Debug.Log(msgString);
     }
 
@@ -95,7 +95,7 @@ public static class EditorUtils
 
         var msgString = "Pasted from clipboard the bones for SkinnedMeshRender \"" + skin.name + "\": ";
         for (int i = 0; i < newBones.Length; i++)
-            msgString += "\n  " + newBones[i].name + " [" + skin.sharedMesh.bindposes[i] + "]";
+            msgString += "\n  " + newBones[i].name;
         Debug.Log(msgString);
     }
 
