@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 1913202710456274265}
   - component: {fileID: 1913202710456274267}
   - component: {fileID: 8028811985460556061}
-  - component: {fileID: 1619311412417177074}
-  - component: {fileID: 8793016173910473995}
+  - component: {fileID: 3239907084105267161}
+  - component: {fileID: 48331270231856660}
   m_Layer: 0
   m_Name: bone019
   m_TagString: Untagged
@@ -162,7 +162,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274267
 MonoBehaviour:
@@ -194,11 +194,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556061}
     ConnectedParticle: {fileID: 8028811985460556087}
-    Joint: {fileID: 1619311412417177074}
+    Joint: {fileID: 3239907084105267161}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556061}
     ConnectedParticle: {fileID: 8028811985460556085}
-    Joint: {fileID: 8793016173910473995}
+    Joint: {fileID: 48331270231856660}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &1619311412417177074
+--- !u!153 &3239907084105267161
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,7 +259,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -287,7 +287,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -301,7 +301,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8793016173910473995
+--- !u!153 &48331270231856660
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,7 +354,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -382,7 +382,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -518,13 +518,13 @@ MonoBehaviour:
   - {fileID: 8028811985460556057}
   - {fileID: 8028811985460556059}
   - {fileID: 8028811985460556061}
-  ColliderRadius: 0.03
+  ColliderRadius: 0.025
   ColliderHeight: 0.075
   EnablePreprocessing: 0
-  LinearSpring: 50
+  LinearSpring: 100
   LinearDamper: 0.9
   LinearLimitFactor: 1
-  AngularSpring: 0.03
+  AngularSpring: 0.05
   AngularDamper: 0.001
   AngularLimit: 140
   HardLinearLimitFactor: 1.2
@@ -546,8 +546,8 @@ GameObject:
   - component: {fileID: 1913202710456274181}
   - component: {fileID: 1913202710456274183}
   - component: {fileID: 8028811985460556085}
-  - component: {fileID: 6016123958071136156}
-  - component: {fileID: 9060761513591865961}
+  - component: {fileID: 997239078297590359}
+  - component: {fileID: 8388546543178063608}
   m_Layer: 0
   m_Name: bone007
   m_TagString: Untagged
@@ -596,7 +596,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274183
 MonoBehaviour:
@@ -628,11 +628,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556085}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 6016123958071136156}
+    Joint: {fileID: 997239078297590359}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556085}
     ConnectedParticle: {fileID: 8028811985460556091}
-    Joint: {fileID: 9060761513591865961}
+    Joint: {fileID: 8388546543178063608}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -640,7 +640,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &6016123958071136156
+--- !u!153 &997239078297590359
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,7 +693,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -721,7 +721,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -735,7 +735,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &9060761513591865961
+--- !u!153 &8388546543178063608
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,7 +788,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -816,7 +816,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1024,9 +1024,9 @@ GameObject:
   - component: {fileID: 1913202710456274296}
   - component: {fileID: 1913202710456274298}
   - component: {fileID: 8028811985460556087}
-  - component: {fileID: 857943739632261447}
-  - component: {fileID: 1254255673442035053}
-  - component: {fileID: 765154866169354110}
+  - component: {fileID: 5558792179932624280}
+  - component: {fileID: 1549737533021657093}
+  - component: {fileID: 2699715919749531344}
   m_Layer: 0
   m_Name: bone008
   m_TagString: Untagged
@@ -1075,7 +1075,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274298
 MonoBehaviour:
@@ -1107,15 +1107,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556087}
     ConnectedParticle: {fileID: 8028811985460556073}
-    Joint: {fileID: 857943739632261447}
+    Joint: {fileID: 5558792179932624280}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556087}
     ConnectedParticle: {fileID: 8028811985460556085}
-    Joint: {fileID: 1254255673442035053}
+    Joint: {fileID: 1549737533021657093}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556087}
     ConnectedParticle: {fileID: 8028811985460556091}
-    Joint: {fileID: 765154866169354110}
+    Joint: {fileID: 2699715919749531344}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -1123,7 +1123,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &857943739632261447
+--- !u!153 &5558792179932624280
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1176,7 +1176,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -1204,7 +1204,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1218,7 +1218,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1254255673442035053
+--- !u!153 &1549737533021657093
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1271,7 +1271,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -1299,7 +1299,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1313,7 +1313,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &765154866169354110
+--- !u!153 &2699715919749531344
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1366,7 +1366,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -1394,7 +1394,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1509,8 +1509,8 @@ GameObject:
   - component: {fileID: 1913202710456274185}
   - component: {fileID: 1913202710456274187}
   - component: {fileID: 8028811985460556093}
-  - component: {fileID: 3153107986912708009}
-  - component: {fileID: 7308349836985001858}
+  - component: {fileID: 5000446383140055383}
+  - component: {fileID: 4835242209422934340}
   m_Layer: 0
   m_Name: bone003
   m_TagString: Untagged
@@ -1559,7 +1559,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274187
 MonoBehaviour:
@@ -1591,11 +1591,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556093}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 3153107986912708009}
+    Joint: {fileID: 5000446383140055383}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556093}
     ConnectedParticle: {fileID: 8028811985460556095}
-    Joint: {fileID: 7308349836985001858}
+    Joint: {fileID: 4835242209422934340}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -1603,7 +1603,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &3153107986912708009
+--- !u!153 &5000446383140055383
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1656,7 +1656,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -1684,7 +1684,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1698,7 +1698,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &7308349836985001858
+--- !u!153 &4835242209422934340
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1751,7 +1751,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -1779,7 +1779,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -1854,7 +1854,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274197
 MonoBehaviour:
@@ -1991,8 +1991,8 @@ GameObject:
   - component: {fileID: 1913202710456274299}
   - component: {fileID: 1913202710456274301}
   - component: {fileID: 8028811985460556073}
-  - component: {fileID: 3279162600093600082}
-  - component: {fileID: 3077919297564184836}
+  - component: {fileID: 6668038267953939037}
+  - component: {fileID: 5330340032155870765}
   m_Layer: 0
   m_Name: bone009
   m_TagString: Untagged
@@ -2041,7 +2041,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274301
 MonoBehaviour:
@@ -2073,11 +2073,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556073}
     ConnectedParticle: {fileID: 8028811985460556075}
-    Joint: {fileID: 3279162600093600082}
+    Joint: {fileID: 6668038267953939037}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556073}
     ConnectedParticle: {fileID: 8028811985460556091}
-    Joint: {fileID: 3077919297564184836}
+    Joint: {fileID: 5330340032155870765}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -2085,7 +2085,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &3279162600093600082
+--- !u!153 &6668038267953939037
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2138,7 +2138,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -2166,7 +2166,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -2180,7 +2180,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3077919297564184836
+--- !u!153 &5330340032155870765
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2233,7 +2233,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -2261,7 +2261,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -2288,8 +2288,8 @@ GameObject:
   - component: {fileID: 1913202710456274289}
   - component: {fileID: 1913202710456274291}
   - component: {fileID: 8028811985460556077}
-  - component: {fileID: 3948407609278912996}
-  - component: {fileID: 1587501192200728731}
+  - component: {fileID: 5268006483746834088}
+  - component: {fileID: 632603709648235112}
   m_Layer: 0
   m_Name: bone011
   m_TagString: Untagged
@@ -2338,7 +2338,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274291
 MonoBehaviour:
@@ -2370,11 +2370,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556077}
     ConnectedParticle: {fileID: 8028811985460556079}
-    Joint: {fileID: 3948407609278912996}
+    Joint: {fileID: 5268006483746834088}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556077}
     ConnectedParticle: {fileID: 8028811985460556093}
-    Joint: {fileID: 1587501192200728731}
+    Joint: {fileID: 632603709648235112}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -2382,7 +2382,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &3948407609278912996
+--- !u!153 &5268006483746834088
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2435,7 +2435,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -2463,7 +2463,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -2477,7 +2477,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1587501192200728731
+--- !u!153 &632603709648235112
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2530,7 +2530,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -2558,7 +2558,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -3029,9 +3029,9 @@ GameObject:
   - component: {fileID: 1913202710456274272}
   - component: {fileID: 1913202710456274274}
   - component: {fileID: 8028811985460556071}
-  - component: {fileID: 1133546306907311458}
-  - component: {fileID: 2431264251368289583}
-  - component: {fileID: 6869827285642166417}
+  - component: {fileID: 3544222693573569347}
+  - component: {fileID: 8611230536509089457}
+  - component: {fileID: 4189071180968634559}
   m_Layer: 0
   m_Name: bone016
   m_TagString: Untagged
@@ -3080,7 +3080,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274274
 MonoBehaviour:
@@ -3112,15 +3112,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556071}
     ConnectedParticle: {fileID: 8028811985460556057}
-    Joint: {fileID: 1133546306907311458}
+    Joint: {fileID: 3544222693573569347}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556071}
     ConnectedParticle: {fileID: 8028811985460556081}
-    Joint: {fileID: 2431264251368289583}
+    Joint: {fileID: 8611230536509089457}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556071}
     ConnectedParticle: {fileID: 8028811985460556083}
-    Joint: {fileID: 6869827285642166417}
+    Joint: {fileID: 4189071180968634559}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -3128,7 +3128,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &1133546306907311458
+--- !u!153 &3544222693573569347
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3181,7 +3181,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -3209,7 +3209,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -3223,7 +3223,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2431264251368289583
+--- !u!153 &8611230536509089457
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3276,7 +3276,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -3304,7 +3304,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -3318,7 +3318,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6869827285642166417
+--- !u!153 &4189071180968634559
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3371,7 +3371,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -3399,7 +3399,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -3514,8 +3514,8 @@ GameObject:
   - component: {fileID: 1913202710456274295}
   - component: {fileID: 1913202710456274281}
   - component: {fileID: 8028811985460556065}
-  - component: {fileID: 2386795842931858763}
-  - component: {fileID: 1135392942615622167}
+  - component: {fileID: 3758389336482840472}
+  - component: {fileID: 8181957868683502693}
   m_Layer: 0
   m_Name: bone013
   m_TagString: Untagged
@@ -3564,7 +3564,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274281
 MonoBehaviour:
@@ -3596,11 +3596,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556065}
     ConnectedParticle: {fileID: 8028811985460556067}
-    Joint: {fileID: 2386795842931858763}
+    Joint: {fileID: 3758389336482840472}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556065}
     ConnectedParticle: {fileID: 8028811985460556095}
-    Joint: {fileID: 1135392942615622167}
+    Joint: {fileID: 8181957868683502693}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -3608,7 +3608,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &2386795842931858763
+--- !u!153 &3758389336482840472
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3661,7 +3661,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -3689,7 +3689,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -3703,7 +3703,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1135392942615622167
+--- !u!153 &8181957868683502693
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3756,7 +3756,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -3784,7 +3784,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4254,8 +4254,8 @@ GameObject:
   - component: {fileID: 1913202710456274178}
   - component: {fileID: 1913202710456274180}
   - component: {fileID: 8028811985460556083}
-  - component: {fileID: 1470538943165379324}
-  - component: {fileID: 2987058406931149909}
+  - component: {fileID: 2822540018145025368}
+  - component: {fileID: 7542644324684439105}
   m_Layer: 0
   m_Name: bone006
   m_TagString: Untagged
@@ -4304,7 +4304,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274180
 MonoBehaviour:
@@ -4336,11 +4336,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556083}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 1470538943165379324}
+    Joint: {fileID: 2822540018145025368}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556083}
     ConnectedParticle: {fileID: 8028811985460556085}
-    Joint: {fileID: 2987058406931149909}
+    Joint: {fileID: 7542644324684439105}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -4348,7 +4348,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &1470538943165379324
+--- !u!153 &2822540018145025368
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4401,7 +4401,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -4429,7 +4429,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4443,7 +4443,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2987058406931149909
+--- !u!153 &7542644324684439105
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4496,7 +4496,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -4524,7 +4524,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4551,9 +4551,9 @@ GameObject:
   - component: {fileID: 1913202710456274302}
   - component: {fileID: 1913202710456274288}
   - component: {fileID: 8028811985460556075}
-  - component: {fileID: 606016377571623209}
-  - component: {fileID: 6640675205527665242}
-  - component: {fileID: 2743926145789189928}
+  - component: {fileID: 369892941032189112}
+  - component: {fileID: 845666092199671552}
+  - component: {fileID: 391247918235488721}
   m_Layer: 0
   m_Name: bone010
   m_TagString: Untagged
@@ -4602,7 +4602,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274288
 MonoBehaviour:
@@ -4634,15 +4634,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556075}
     ConnectedParticle: {fileID: 8028811985460556077}
-    Joint: {fileID: 606016377571623209}
+    Joint: {fileID: 369892941032189112}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556075}
     ConnectedParticle: {fileID: 8028811985460556091}
-    Joint: {fileID: 6640675205527665242}
+    Joint: {fileID: 845666092199671552}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556075}
     ConnectedParticle: {fileID: 8028811985460556093}
-    Joint: {fileID: 2743926145789189928}
+    Joint: {fileID: 391247918235488721}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -4650,7 +4650,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &606016377571623209
+--- !u!153 &369892941032189112
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4703,7 +4703,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -4731,7 +4731,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4745,7 +4745,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6640675205527665242
+--- !u!153 &845666092199671552
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4798,7 +4798,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -4826,7 +4826,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4840,7 +4840,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &2743926145789189928
+--- !u!153 &391247918235488721
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4893,7 +4893,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -4921,7 +4921,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -4948,8 +4948,8 @@ GameObject:
   - component: {fileID: 1913202710456274285}
   - component: {fileID: 1913202710456274287}
   - component: {fileID: 8028811985460556069}
-  - component: {fileID: 1948625009968670686}
-  - component: {fileID: 5474897707870812212}
+  - component: {fileID: 6633320173978565415}
+  - component: {fileID: 4501019557296860054}
   m_Layer: 0
   m_Name: bone015
   m_TagString: Untagged
@@ -4998,7 +4998,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274287
 MonoBehaviour:
@@ -5030,11 +5030,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556069}
     ConnectedParticle: {fileID: 8028811985460556071}
-    Joint: {fileID: 1948625009968670686}
+    Joint: {fileID: 6633320173978565415}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556069}
     ConnectedParticle: {fileID: 8028811985460556081}
-    Joint: {fileID: 5474897707870812212}
+    Joint: {fileID: 4501019557296860054}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -5042,7 +5042,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &1948625009968670686
+--- !u!153 &6633320173978565415
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5095,7 +5095,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5123,7 +5123,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -5137,7 +5137,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &5474897707870812212
+--- !u!153 &4501019557296860054
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5190,7 +5190,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5218,7 +5218,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -5245,8 +5245,8 @@ GameObject:
   - component: {fileID: 1913202710456274188}
   - component: {fileID: 1913202710456274190}
   - component: {fileID: 8028811985460556095}
-  - component: {fileID: 3172513805105695771}
-  - component: {fileID: 4105160242707758999}
+  - component: {fileID: 4256897815386662310}
+  - component: {fileID: 4725278242396114385}
   m_Layer: 0
   m_Name: bone004
   m_TagString: Untagged
@@ -5295,7 +5295,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274190
 MonoBehaviour:
@@ -5327,11 +5327,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556095}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 3172513805105695771}
+    Joint: {fileID: 4256897815386662310}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556095}
     ConnectedParticle: {fileID: 8028811985460556081}
-    Joint: {fileID: 4105160242707758999}
+    Joint: {fileID: 4725278242396114385}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -5339,7 +5339,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &3172513805105695771
+--- !u!153 &4256897815386662310
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5392,7 +5392,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5420,7 +5420,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -5434,7 +5434,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &4105160242707758999
+--- !u!153 &4725278242396114385
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5487,7 +5487,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5515,7 +5515,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -5720,8 +5720,8 @@ GameObject:
   - component: {fileID: 1913202710456274191}
   - component: {fileID: 1913202710456274177}
   - component: {fileID: 8028811985460556081}
-  - component: {fileID: 645800957010617437}
-  - component: {fileID: 401213417251170328}
+  - component: {fileID: 4108346729922738694}
+  - component: {fileID: 2746322047502384589}
   m_Layer: 0
   m_Name: bone005
   m_TagString: Untagged
@@ -5770,7 +5770,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274177
 MonoBehaviour:
@@ -5802,11 +5802,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556081}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 645800957010617437}
+    Joint: {fileID: 4108346729922738694}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556081}
     ConnectedParticle: {fileID: 8028811985460556083}
-    Joint: {fileID: 401213417251170328}
+    Joint: {fileID: 2746322047502384589}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -5814,7 +5814,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &645800957010617437
+--- !u!153 &4108346729922738694
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5867,7 +5867,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5895,7 +5895,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -5909,7 +5909,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &401213417251170328
+--- !u!153 &2746322047502384589
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5962,7 +5962,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -5990,7 +5990,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6017,9 +6017,9 @@ GameObject:
   - component: {fileID: 1913202710456274282}
   - component: {fileID: 1913202710456274284}
   - component: {fileID: 8028811985460556067}
-  - component: {fileID: 8936780911030249325}
-  - component: {fileID: 3998755906961454589}
-  - component: {fileID: 8299845946159325358}
+  - component: {fileID: 2094653128610078697}
+  - component: {fileID: 4202117339764966615}
+  - component: {fileID: 9019870365525480853}
   m_Layer: 0
   m_Name: bone014
   m_TagString: Untagged
@@ -6068,7 +6068,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274284
 MonoBehaviour:
@@ -6100,15 +6100,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556067}
     ConnectedParticle: {fileID: 8028811985460556069}
-    Joint: {fileID: 8936780911030249325}
+    Joint: {fileID: 2094653128610078697}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556067}
     ConnectedParticle: {fileID: 8028811985460556095}
-    Joint: {fileID: 3998755906961454589}
+    Joint: {fileID: 4202117339764966615}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556067}
     ConnectedParticle: {fileID: 8028811985460556081}
-    Joint: {fileID: 8299845946159325358}
+    Joint: {fileID: 9019870365525480853}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -6116,7 +6116,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &8936780911030249325
+--- !u!153 &2094653128610078697
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6169,7 +6169,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6197,7 +6197,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6211,7 +6211,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &3998755906961454589
+--- !u!153 &4202117339764966615
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6264,7 +6264,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6292,7 +6292,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6306,7 +6306,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &8299845946159325358
+--- !u!153 &9019870365525480853
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6359,7 +6359,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6387,7 +6387,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6414,8 +6414,8 @@ GameObject:
   - component: {fileID: 1913202710456274275}
   - component: {fileID: 1913202710456274277}
   - component: {fileID: 8028811985460556057}
-  - component: {fileID: 8729086377316545289}
-  - component: {fileID: 6243864431681078163}
+  - component: {fileID: 2228469693583641443}
+  - component: {fileID: 3484291303543952670}
   m_Layer: 0
   m_Name: bone017
   m_TagString: Untagged
@@ -6464,7 +6464,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274277
 MonoBehaviour:
@@ -6496,11 +6496,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556057}
     ConnectedParticle: {fileID: 8028811985460556059}
-    Joint: {fileID: 8729086377316545289}
+    Joint: {fileID: 2228469693583641443}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556057}
     ConnectedParticle: {fileID: 8028811985460556083}
-    Joint: {fileID: 6243864431681078163}
+    Joint: {fileID: 3484291303543952670}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -6508,7 +6508,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &8729086377316545289
+--- !u!153 &2228469693583641443
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6561,7 +6561,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6589,7 +6589,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6603,7 +6603,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &6243864431681078163
+--- !u!153 &3484291303543952670
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6656,7 +6656,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6684,7 +6684,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6798,8 +6798,8 @@ GameObject:
   - component: {fileID: 1913202710456274198}
   - component: {fileID: 1913202710456274184}
   - component: {fileID: 8028811985460556091}
-  - component: {fileID: 442257439559787974}
-  - component: {fileID: 585166258900091409}
+  - component: {fileID: 605919297483023538}
+  - component: {fileID: 3000381436353283457}
   m_Layer: 0
   m_Name: bone002
   m_TagString: Untagged
@@ -6848,7 +6848,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274184
 MonoBehaviour:
@@ -6880,11 +6880,11 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556091}
     ConnectedParticle: {fileID: 8028811985460556089}
-    Joint: {fileID: 442257439559787974}
+    Joint: {fileID: 605919297483023538}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556091}
     ConnectedParticle: {fileID: 8028811985460556093}
-    Joint: {fileID: 585166258900091409}
+    Joint: {fileID: 3000381436353283457}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -6892,7 +6892,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &442257439559787974
+--- !u!153 &605919297483023538
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6945,7 +6945,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -6973,7 +6973,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -6987,7 +6987,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &585166258900091409
+--- !u!153 &3000381436353283457
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7040,7 +7040,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7068,7 +7068,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7183,9 +7183,9 @@ GameObject:
   - component: {fileID: 1913202710456274292}
   - component: {fileID: 1913202710456274294}
   - component: {fileID: 8028811985460556079}
-  - component: {fileID: 863968224231017959}
-  - component: {fileID: 1680455451491492301}
-  - component: {fileID: 571151136155843329}
+  - component: {fileID: 8186846374682134523}
+  - component: {fileID: 6540992222625925855}
+  - component: {fileID: 5304399828898870557}
   m_Layer: 0
   m_Name: bone012
   m_TagString: Untagged
@@ -7234,7 +7234,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274294
 MonoBehaviour:
@@ -7266,15 +7266,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556079}
     ConnectedParticle: {fileID: 8028811985460556065}
-    Joint: {fileID: 863968224231017959}
+    Joint: {fileID: 8186846374682134523}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556079}
     ConnectedParticle: {fileID: 8028811985460556093}
-    Joint: {fileID: 1680455451491492301}
+    Joint: {fileID: 6540992222625925855}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556079}
     ConnectedParticle: {fileID: 8028811985460556095}
-    Joint: {fileID: 571151136155843329}
+    Joint: {fileID: 5304399828898870557}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -7282,7 +7282,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &863968224231017959
+--- !u!153 &8186846374682134523
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7335,7 +7335,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7363,7 +7363,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7377,7 +7377,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &1680455451491492301
+--- !u!153 &6540992222625925855
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7430,7 +7430,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7458,7 +7458,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7472,7 +7472,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &571151136155843329
+--- !u!153 &5304399828898870557
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7525,7 +7525,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7553,7 +7553,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7580,9 +7580,9 @@ GameObject:
   - component: {fileID: 1913202710456274278}
   - component: {fileID: 1913202710456274264}
   - component: {fileID: 8028811985460556059}
-  - component: {fileID: 7117718571685130046}
-  - component: {fileID: 538057518644136848}
-  - component: {fileID: 4045900575608873670}
+  - component: {fileID: 1677690217747518980}
+  - component: {fileID: 6539693822433166850}
+  - component: {fileID: 3187758895630606182}
   m_Layer: 0
   m_Name: bone018
   m_TagString: Untagged
@@ -7631,7 +7631,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913202710456274264
 MonoBehaviour:
@@ -7663,15 +7663,15 @@ MonoBehaviour:
   Connections:
   - OwnerParticle: {fileID: 8028811985460556059}
     ConnectedParticle: {fileID: 8028811985460556061}
-    Joint: {fileID: 7117718571685130046}
+    Joint: {fileID: 1677690217747518980}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556059}
     ConnectedParticle: {fileID: 8028811985460556083}
-    Joint: {fileID: 538057518644136848}
+    Joint: {fileID: 6539693822433166850}
     isAlreadyRegisteredAsBroken: 0
   - OwnerParticle: {fileID: 8028811985460556059}
     ConnectedParticle: {fileID: 8028811985460556085}
-    Joint: {fileID: 4045900575608873670}
+    Joint: {fileID: 3187758895630606182}
     isAlreadyRegisteredAsBroken: 0
   CheckForBrokenJoints: 0
   OnJointBroken:
@@ -7679,7 +7679,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!153 &7117718571685130046
+--- !u!153 &1677690217747518980
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7732,7 +7732,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7760,7 +7760,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7774,7 +7774,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &538057518644136848
+--- !u!153 &6539693822433166850
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7827,7 +7827,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7855,7 +7855,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
@@ -7869,7 +7869,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &4045900575608873670
+--- !u!153 &3187758895630606182
 ConfigurableJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7922,7 +7922,7 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 50
+    positionSpring: 100
     positionDamper: 0.9
     maximumForce: 3.4028233e+38
   m_YDrive:
@@ -7950,7 +7950,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.03
+    positionSpring: 0.05
     positionDamper: 0.001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1

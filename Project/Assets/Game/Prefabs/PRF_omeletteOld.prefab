@@ -244,19 +244,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &378679173973901587
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,19 +688,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &429872641581347375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,19 +1036,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &499334813327112863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,19 +1288,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1460761561740216794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,19 +1732,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1673013813873830461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,19 +2176,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2656693775983167617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,19 +2524,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2746352777811163808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,19 +2872,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &3528099418873981329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,19 +3124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &4365459655605318086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,19 +3472,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &4403141626594420970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,19 +3724,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &4476791532200549021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,19 +4072,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &4513392685103999132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,19 +4420,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &5539002955210533647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,7 +4455,7 @@ Transform:
   m_GameObject: {fileID: 5539002955210533647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.07, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1686043805877673042}
   - {fileID: 1287311867492706546}
@@ -5052,19 +4987,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &6614006553830185743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,19 +5451,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &7621656123203134839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,19 +6375,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &7662487403449408357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,19 +6627,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &8079451994050485342
 GameObject:
   m_ObjectHideFlags: 0
@@ -7137,19 +7052,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &8326617879440013593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7394,19 +7304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &8758542559111890033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7651,19 +7556,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &8814691139787360414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7908,16 +7808,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
