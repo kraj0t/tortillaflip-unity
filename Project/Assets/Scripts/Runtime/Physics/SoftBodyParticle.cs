@@ -1,6 +1,5 @@
 ﻿using NaughtyAttributes;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,29 +9,20 @@ using UnityEditor;
 #endif
 
 
-/// <summary>
-/// DISCLAIMER: the 'breakForce' will sometimes not correspond to the joint.
-/// 
-/// Joints are destroyed by Unity after breaking. Additionally, the callback does not include
-/// the reference to the Joint. That's why we need this class.
-/// 
-/// More info on SoftBodyParticle.OnJointBreak()
-/// 
-/// Seriously, Unity...
-/// </summary>
+// DISCLAIMER: because of a bug in Unity's OnJointBreak(), the breakForce cannot be used.
 [Serializable]
 public class SoftBodyJointBreakEventData
 {
     public readonly SoftBodyParticle JointOwner;
     public readonly SoftBodyParticle JointConnectedBody;
-    public readonly float BreakForce;
+    //public readonly float BreakForce;
     public readonly ConfigurableJoint DestroyedJointReference;
 
-    public SoftBodyJointBreakEventData(SoftBodyParticle jointOwner, SoftBodyParticle jointConnectedBody, float breakForce, ConfigurableJoint destroyedJoint)
+    public SoftBodyJointBreakEventData(SoftBodyParticle jointOwner, SoftBodyParticle jointConnectedBody, /*float breakForce,*/ ConfigurableJoint destroyedJoint)
     {
         JointOwner = jointOwner;
         JointConnectedBody = jointConnectedBody;
-        BreakForce = breakForce;
+        //BreakForce = breakForce;
         DestroyedJointReference = destroyedJoint;
     }
 }
@@ -48,19 +38,6 @@ public class SoftBodyJointBreakEvent : UnityEvent<SoftBodyJointBreakEventData>
 }
 
 
-[Serializable]
-public class SoftBodyConnection
-{
-    [HideInInspector] public SoftBodyParticle OwnerParticle;
-    public SoftBodyParticle ConnectedParticle;
-    [ReadOnly] public ConfigurableJoint Joint;
-    [ReadOnly] public bool isAlreadyRegisteredAsBroken;
-
-
-    public bool isBroken { get => Joint == null; }
-}
-
-
 [RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class SoftBodyParticle : MonoBehaviour
@@ -72,7 +49,22 @@ public class SoftBodyParticle : MonoBehaviour
     [ReorderableList]
     public List<SoftBodyConnection> Connections = new List<SoftBodyConnection>();
     private HashSet<SoftBodyParticle> _connectedParticlesSet;
-    public IEnumerable<SoftBodyParticle> ConnectedParticles { get => _connectedParticlesSet; }
+
+    public IEnumerable<SoftBodyParticle> ConnectedParticles
+    {
+        get
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                _connectedParticlesSet = new HashSet<SoftBodyParticle>();
+                foreach (var conn in Connections)
+                    _connectedParticlesSet.Add(conn.ConnectedParticle);
+            }
+#endif
+            return _connectedParticlesSet;
+        }
+    }
 
     public bool CheckForBrokenJoints = true;
 
@@ -101,7 +93,8 @@ public class SoftBodyParticle : MonoBehaviour
         if (OnJointBroken == null)
             OnJointBroken = new SoftBodyJointBreakEvent();
 
-        SkinnedRenderer.rootBone = this.transform;
+        if (SkinnedRenderer)
+            SkinnedRenderer.rootBone = this.transform;
     }
 
 
@@ -117,6 +110,7 @@ public class SoftBodyParticle : MonoBehaviour
     }
 
 
+    // Searches locally (only connections that this particle owns) and returns it if found.
     public SoftBodyConnection GetConnection(SoftBodyParticle connectedParticle)
     {
         foreach (var conn in Connections)
@@ -215,8 +209,6 @@ public class SoftBodyParticle : MonoBehaviour
         if (!CheckForBrokenJoints)
             return;
 
-        float fakeBreakForce = -1;
-
         var wereAlreadyRegisteredAsBrokenAtBreakFrame = new bool[Connections.Count];
         for (int i = 0; i < wereAlreadyRegisteredAsBrokenAtBreakFrame.Length; i++)
             wereAlreadyRegisteredAsBrokenAtBreakFrame[i] = Connections[i].isAlreadyRegisteredAsBroken;
@@ -228,7 +220,7 @@ public class SoftBodyParticle : MonoBehaviour
         for (int i = Connections.Count - 1; i >= 0; i--)
         {
             var conn = Connections[i];
-            if (conn.isBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
+            if (conn.IsBroken && !wereAlreadyRegisteredAsBrokenAtBreakFrame[i])
             {
                 foundIndices.Add(i);
                 conn.isAlreadyRegisteredAsBroken = true;
@@ -242,7 +234,7 @@ public class SoftBodyParticle : MonoBehaviour
             //Debug.Log("Broken joint from <b>" + conn.OwnerParticle.name + "</b> to <b>" + conn.ConnectedParticle.name + "</b>, breakForce <b>" + breakForce.ToString() + "</b>", this);
 
             // So much work... just for sending what should have been passed as an event argument... -_-
-            OnJointBroken.Invoke(new SoftBodyJointBreakEventData(conn.OwnerParticle, conn.ConnectedParticle, fakeBreakForce, conn.Joint));
+            OnJointBroken.Invoke(new SoftBodyJointBreakEventData(conn.OwnerParticle, conn.ConnectedParticle, conn.Joint));
         }
     }
 
@@ -280,7 +272,7 @@ public class SoftBodyParticle : MonoBehaviour
             var dir = AtoB.normalized;
             var dist = Vector3.Dot(AtoB, dir);
 
-            Handles.color = conn.isBroken ? brokenColor : connectedColor;
+            Handles.color = conn.IsBroken ? brokenColor : connectedColor;
             Handles.ArrowHandleCap(0, pos, Quaternion.LookRotation(dir), dist*.85f, EventType.Repaint);
         }
     }

@@ -16,6 +16,8 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("TODO: You need to check that there are no duplicate connections!");
+
         _softBody = GetComponent<SoftBody>();
 
         foreach (var p in _softBody.Particles)
@@ -76,11 +78,13 @@ public class TEST_SoftBodyBreakerByDeactivatingBones : MonoBehaviour
     public static bool DeactivateBonesIfDisconnected(SoftBody softBody, SoftBodyParticle a, SoftBodyParticle b)
     {
         var anyBoneDeactivated = false;
-        if (!softBody.AreParticlesJoinedRecursive(a, b))
+
+        if (!softBody.AreParticlesJoinedAndInSameTree(a, b))
         {
             anyBoneDeactivated = anyBoneDeactivated || DeactivateBoneByReplacingWithDummy(a.SkinnedRenderer, b.transform, a.transform);
             anyBoneDeactivated = anyBoneDeactivated || DeactivateBoneByReplacingWithDummy(b.SkinnedRenderer, a.transform, b.transform);
         }
+
         return anyBoneDeactivated;
     }
 

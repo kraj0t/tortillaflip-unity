@@ -12,6 +12,7 @@ public class TEST_DeactivateSkinBone : MonoBehaviour
     public SoftBodyParticle ParticleA;
     public SoftBodyParticle ParticleB;
 
+
     void Start()
     {
         if (!Skin)

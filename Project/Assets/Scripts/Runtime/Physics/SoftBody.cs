@@ -6,7 +6,224 @@ using UnityEngine;
 
 public class SoftBody : MonoBehaviour
 {
+    [BoxGroup("Particles")]
+    [Label("(Expand to see the particle array)")]
     public List<SoftBodyParticle> Particles = new List<SoftBodyParticle>();
+    
+
+    #region Connections
+
+    [ShowNativeProperty]
+    public int TotalNumberOfConnections
+    {
+        get
+        {
+            if (Particles == null)
+                return 0;
+            var total = 0;
+            foreach (var p in Particles)
+                total += p.Connections.Count;
+            return total;
+        }
+    }
+
+
+    // TODO: documentation
+    public bool AreParticlesJoinedAndInSameTree(SoftBodyParticle a, SoftBodyParticle b)
+    {
+        if (a == b)
+            throw new InvalidOperationException("Received the same particle in both arguments!");
+
+        // Check one side of the tree.
+        var treeA = new HashSet<SoftBodyParticle>();
+        if (FindParticleWhileCollectingTree(a, b, ref treeA))
+            return true;
+
+        // Check the other side of the tree.
+        var treeB = new HashSet<SoftBodyParticle>();
+        if (FindParticleWhileCollectingTree(b, a, ref treeB))
+            return true;
+
+        // If the intersection of both trees is not empty, it means they live in the same tree.
+        treeA.IntersectWith(treeB);
+        return treeA.Count != 0;
+    }
+
+
+    // Returns true if b was found in a valid connection.
+    private bool FindParticleWhileCollectingTree(SoftBodyParticle a, SoftBodyParticle b, ref HashSet<SoftBodyParticle> alreadyCollectedTreeNodes)
+    {
+        if (!alreadyCollectedTreeNodes.Contains(a))
+        {
+            var conn = a.GetConnection(b);
+            if (conn != null && !conn.IsBroken)
+                return true;
+            alreadyCollectedTreeNodes.Add(a);
+        }
+
+        foreach (var connectedParticle in a.ConnectedParticles)
+        {
+            if (!alreadyCollectedTreeNodes.Contains(connectedParticle))
+            {
+                if (FindParticleWhileCollectingTree(connectedParticle, b, ref alreadyCollectedTreeNodes))
+                    return true;
+                alreadyCollectedTreeNodes.Add(connectedParticle);
+            }
+        }
+
+        return false;
+    }
+
+
+    /*
+    // Convenience method that simply calls GetConnection() and queries IsBroken.
+    // Returns true if the particles are connected AND their joint is alive.
+    public bool AreParticlesJoined(SoftBodyParticle a, SoftBodyParticle b, bool fullTreeSearch)
+    {
+        var conn = GetConnection(a, b, fullTreeSearch);
+        if (conn == null || conn.isBroken)
+            return false;
+        return true;
+    }
+    */
+
+
+    /*
+    // Returns null if the bodies are not connected to one another.
+    // The order in which the arguments are passed does not matter.
+    // If fullTreeSearch is true, only the first connection found will be returned. See GetConnections().
+    // But take into account that there may be more than one connection between both particles, even though it should be disallowed.
+    public SoftBodyConnection GetConnection(SoftBodyParticle a, SoftBodyParticle b, bool fullTreeSearch)
+    {
+        if (!fullTreeSearch)
+            return GetDirectConnection(a, b);
+
+        var connectionsFound = GetConnectionsRecursively(a, b, false, true);
+        if (connectionsFound.Count > 0)
+            return connectionsFound[0];
+
+        return null;
+    }
+    */
+
+
+    /*
+    // Performs a tree search and returns all the connections found that link 
+    // The order in which the arguments are passed does not matter.
+    // If fullTreeSearch is true, only the first connection found will be returned. See GetConnections().
+    // But take into account that there may be more than one connection between both particles, even though it should be disallowed.
+    public SoftBodyConnection[] GetConnections(SoftBodyParticle a, SoftBodyParticle b)
+    {
+        if (!fullTreeSearch)
+            return GetDirectConnection(a, b);
+
+        var connectionsFound = GetConnectionsRecursively(a, b, false, true);
+        if (connectionsFound.Count > 0)
+            return connectionsFound[0];
+
+        return null;
+        TO BE IMPLEMENTED
+    }
+    */
+
+
+    /*
+    // Returns null if the bodies are not directly connected to one another (without searching recursively).
+    // The order of the arguments does not matter.
+    private SoftBodyConnection GetDirectConnection(SoftBodyParticle a, SoftBodyParticle b)
+    {
+        var conn = a.GetConnection(b);
+        if (conn != null)
+            return conn;
+        return b.GetConnection(a);
+    }
+    */
+
+
+    /*
+    // The order of the arguments does not matter.
+    private IList<SoftBodyConnection> GetConnectionsRecursively(SoftBodyParticle a, SoftBodyParticle b, bool acceptBrokenJoints, bool stopWhenFirstIsFound)
+    {
+        if (a == b)
+            throw new InvalidOperationException("Received the same particle in both arguments!");
+
+        var connectionsFound = new List<SoftBodyConnection>();
+
+        // Check one side of the tree.
+        var treeA = new HashSet<SoftBodyParticle>();
+        TreeSearchConnections(a, b, ref connectionsFound, ref treeA, acceptBrokenJoints, stopWhenFirstIsFound);
+        if (stopWhenFirstIsFound && connectionsFound.Count != 0)
+            return connectionsFound;
+
+        // Check the other side of the tree.
+        var treeB = new HashSet<SoftBodyParticle>();
+        TreeSearchConnections(b, a, ref connectionsFound, ref treeB, acceptBrokenJoints, stopWhenFirstIsFound);
+
+        return connectionsFound;
+    }
+    */
+
+
+    /*
+    private void TreeSearchConnections(SoftBodyParticle a, SoftBodyParticle b, ref List<SoftBodyConnection> connectionsFound, ref HashSet<SoftBodyParticle> nodesAlreadyChecked, bool acceptBrokenJoints, bool stopWhenFirstIsFound)
+    {
+        if (!nodesAlreadyChecked.Contains(a))
+        {
+            var conn = a.GetConnection(b);
+            if (conn != null && (acceptBrokenJoints || !conn.isBroken))
+            {
+                connectionsFound.Add(conn);
+                if (stopWhenFirstIsFound)
+                    return;
+            }
+            else
+                nodesAlreadyChecked.Add(a);
+        }
+
+        foreach (var aConn in a.ConnectedParticles)
+        {
+            if (!nodesAlreadyChecked.Contains(aConn))
+            {
+                var conn = aConn.GetConnection(b);
+                if (conn != null && (acceptBrokenJoints || !conn.isBroken))
+                {
+                    connectionsFound.Add(conn);
+                    if (stopWhenFirstIsFound)
+                        return;
+                }
+                else
+                {
+                    nodesAlreadyChecked.Add(aConn);
+                    TreeSearchConnections(aConn, b, ref connectionsFound, ref nodesAlreadyChecked, acceptBrokenJoints, stopWhenFirstIsFound);
+                    if (stopWhenFirstIsFound && connectionsFound.Count != 0)
+                        return;
+                }
+            }
+        }
+    }
+    */
+
+    #endregion Connections
+
+
+    /// <summary>
+    /// Creates a new softbody with the given subset of the softbody's particles. The original SoftBody will still exist and will contain the rest of particles.
+    /// - Check that the subset is not empty or that it does not contain all the particles in the softbody.
+    /// - Check that all the particles in the subset belong to the softbody. 
+    /// - Check that all the particles in the subset are connected among themselves. InvalidOperationException is thrown if not. _(how many particles do we have to query to build the hashset? if a particle has no connections, then skip it, right?)
+    /// - Parent the new softbody to the original one's parent.
+    /// - Move the subset particles to their new softbody's transform.
+    /// - Destroy Joints as needed.
+    /// </summary>
+    /// <param name="subset">The particles that the new SoftBody will contain. They must all be connected among themselves, otherwise an InvalidOperationException will be thrown.</param>
+    /// <returns>A new SoftBody that owns the particles in the passed subset.</returns>
+    public SoftBody Split(IEnumerable<SoftBodyParticle> subset)
+    {
+        throw new NotImplementedException();
+    }
+
+
+    #region SoftBodyCreator
 
     [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderRadius = 0.025f;
     [BoxGroup("Shape")] [MinValue(.0001f)] public float ColliderHeight = 0.075f;
@@ -28,21 +245,6 @@ public class SoftBody : MonoBehaviour
     [BoxGroup("Joints")] [MinValue(0)] public float HardAngularLimit = 60f;
     [BoxGroup("Joints")] [MinValue(0.01f)] public float BreakForce = Mathf.Infinity;
     [BoxGroup("Joints")] [MinValue(0.01f)] public float BreakTorque = Mathf.Infinity;
-
-
-    [ShowNativeProperty]
-    public int TotalNumberOfConnections
-    {
-        get
-        {
-            if (Particles == null)
-                return 0;
-            var total = 0;
-            foreach (var p in Particles)
-                total += p.Connections.Count;
-            return total;
-        }
-    }
 
 
     // Editor code that updates the component according to the changes in the inspector.
@@ -67,7 +269,7 @@ public class SoftBody : MonoBehaviour
         }
     }
 
-           
+
     private void FixedUpdate()
     {
         if (!DEBUG_LiveUpdate)
@@ -82,75 +284,6 @@ public class SoftBody : MonoBehaviour
     }
 #endif
 
-
-    public bool AreParticlesJoinedDirectly(SoftBodyParticle a, SoftBodyParticle b)
-    {
-        if (a.IsConnectedTo(b))
-            return true;
-        return b.IsConnectedTo(a);
-    }
-
-
-    // Returns false if all the joints between the two particles have broken.
-    public bool AreParticlesJoinedRecursive(SoftBodyParticle a, SoftBodyParticle b)
-    {
-        if (a == b)
-            throw new InvalidOperationException("Received the same particle in both arguments!");
-
-        var conn = GetConnectionRecursive(a, b, false);
-        return conn != null && !conn.isBroken;
-    }
-
-
-    public SoftBodyConnection GetConnectionRecursive(SoftBodyParticle a, SoftBodyParticle b, bool acceptBrokenJoints)
-    {
-        if (a == b)
-            throw new InvalidOperationException("Received the same particle in both arguments!");
-
-        var alreadyChecked = new HashSet<SoftBodyParticle>();
-        var conn = GetConnectionRecursion(a, b, acceptBrokenJoints, ref alreadyChecked);
-        if (conn != null)
-            return conn;
-        return GetConnectionRecursion(b, a, acceptBrokenJoints, ref alreadyChecked);
-    }
-
-
-    //private bool AreParticlesJoinedRecursion(SoftBodyParticle a, SoftBodyParticle b, ref HashSet<SoftBodyParticle> alreadyChecked)
-    private SoftBodyConnection GetConnectionRecursion(SoftBodyParticle a, SoftBodyParticle b, bool acceptBrokenJoints, ref HashSet<SoftBodyParticle> alreadyChecked)
-    {
-        if (!alreadyChecked.Contains(a))
-        {
-            var conn = a.GetConnection(b);
-            if (conn != null && (acceptBrokenJoints || !conn.isBroken))
-                return conn;
-            else
-                alreadyChecked.Add(a);
-        }
-
-        foreach (var aConn in a.ConnectedParticles)
-        {
-            if (!alreadyChecked.Contains(aConn))
-            {
-                var conn = aConn.GetConnection(b);
-                if (conn != null && (acceptBrokenJoints || !conn.isBroken))
-                {
-                    return conn;
-                }
-                else
-                {
-                    alreadyChecked.Add(aConn);
-                    conn = GetConnectionRecursion(aConn, b, acceptBrokenJoints, ref alreadyChecked);
-                    if (conn != null && (acceptBrokenJoints || !conn.isBroken))
-                        return conn;
-                }
-            }
-        }
-
-        return null;
-    }
-
-
-    #region Joints and connections
 
     [Button("Recreate All Joints")]
     public void RecreateJoints()
@@ -263,6 +396,6 @@ public class SoftBody : MonoBehaviour
         j.projectionAngle = HardAngularLimit;
     }
 
-    #endregion Joints and connections
+    #endregion SoftBodyCreator
 }
 
