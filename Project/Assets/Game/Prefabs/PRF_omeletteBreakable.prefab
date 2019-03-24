@@ -223,37 +223,37 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.051961508
+    limit: 0.05773501
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: -125
+    limit: -90
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 200
-    positionDamper: 5
+    positionSpring: 20
+    positionDamper: 0.02
     maximumForce: 3.4028233e+38
   m_YDrive:
     serializedVersion: 3
@@ -280,16 +280,16 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.05
-    positionDamper: 0.002
+    positionSpring: 0.004
+    positionDamper: 0.0001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
-  m_ProjectionDistance: 0.06350851
-  m_ProjectionAngle: 140
+  m_ProjectionDistance: 0.06928202
+  m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakForce: 10
+  m_BreakTorque: 0.2
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -318,37 +318,37 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.051961515
+    limit: 0.05773502
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: -125
+    limit: -90
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 125
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 200
-    positionDamper: 5
+    positionSpring: 20
+    positionDamper: 0.02
     maximumForce: 3.4028233e+38
   m_YDrive:
     serializedVersion: 3
@@ -375,16 +375,16 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0.05
-    positionDamper: 0.002
+    positionSpring: 0.004
+    positionDamper: 0.0001
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 1
-  m_ProjectionDistance: 0.06350852
-  m_ProjectionAngle: 140
+  m_ProjectionDistance: 0.069282025
+  m_ProjectionAngle: 120
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
-  m_BreakForce: 40
-  m_BreakTorque: 0.03
+  m_BreakForce: 10
+  m_BreakTorque: 0.2
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
   m_MassScale: 1
@@ -16116,21 +16116,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: SoftBodySplitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  ColliderRadius: 0.03
-  ColliderHeight: 0.075
-  EnablePreprocessing: 0
-  LinearSpring: 30
-  LinearDamper: 1
-  LinearLimitFactor: 0.9
-  AngularSpring: 0.0125
-  AngularDamper: 0.0001
-  AngularLimit: 145
-  HardLinearLimitFactor: 1.2
-  HardAngularLimit: 160
-  BreakForce: 10
-  BreakTorque: 0.2
-  DEBUG_LiveUpdate: 0
-  DEBUG_UpdateFrameSkip: 120
 --- !u!114 &79925007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16159,10 +16144,10 @@ MonoBehaviour:
   ColliderRadius: 0.03
   ColliderHeight: 0.075
   EnablePreprocessing: 0
-  LinearSpring: 30
-  LinearDamper: 1
-  LinearLimitFactor: 0.9
-  AngularSpring: 0.0125
+  LinearSpring: 20
+  LinearDamper: 0.02
+  LinearLimitFactor: 1
+  AngularSpring: 0.004
   AngularDamper: 0.0001
   AngularLimit: 90
   HardLinearLimitFactor: 1.2
