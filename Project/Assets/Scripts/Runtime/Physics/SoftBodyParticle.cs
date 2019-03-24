@@ -40,6 +40,7 @@ public class SoftBodyJointBreakEvent : UnityEvent<SoftBodyJointBreakEventData>
 
 [RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
+[AddComponentMenu("Tortilla Flip/Physics/Soft Body Particle", -1000)]
 public class SoftBodyParticle : MonoBehaviour
 {
     // TODO: refactor this class, renderer should go in another component.

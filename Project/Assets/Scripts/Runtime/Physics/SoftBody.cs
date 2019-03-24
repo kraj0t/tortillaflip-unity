@@ -2,14 +2,39 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
+[Serializable]
+public class SoftBodySplitEventData
+{
+    public readonly SoftBody OriginalSoftBody;
+    public readonly SoftBody NewSoftBody;
+    public SoftBodySplitEventData(SoftBody originalSoftBody, SoftBody newSoftBody)
+    {
+        OriginalSoftBody = originalSoftBody;
+        NewSoftBody = newSoftBody;
+    }
+}
+
+
+[Serializable]
+public class SoftBodySplitEvent : UnityEvent<SoftBodySplitEventData>
+{
+}
+
+
+
+[AddComponentMenu("Tortilla Flip/Physics/Soft Body", -1000)]
+[DisallowMultipleComponent]
 public class SoftBody : MonoBehaviour
 {
     [BoxGroup("Particles")]
     [Label("(Expand to see the particle array)")]
     public List<SoftBodyParticle> Particles = new List<SoftBodyParticle>();
-    
+
+    public SoftBodySplitEvent OnSplit;
+
 
     #region Connections
 
@@ -219,7 +244,31 @@ public class SoftBody : MonoBehaviour
     /// <returns>A new SoftBody that owns the particles in the passed subset.</returns>
     public SoftBody Split(IEnumerable<SoftBodyParticle> subset)
     {
+        ///////////////OnSplit.Invoke(new SoftBodySplitEventData(this, newSoftBody);
         throw new NotImplementedException();
+    }
+
+
+    // Helper method that finds the particles to each side of a plane and then calls Split().
+    // Returns null if all the particles are on the same side of the plane, and therefore no new softbody is created.
+    // On a successful split, returns the new softbody that remains on the negative side of the plane.
+    public SoftBody SplitByPlane(Plane plane)
+    {
+        var positiveSide = new List<SoftBodyParticle>(Particles.Count);
+        var negativeSide = new List<SoftBodyParticle>(Particles.Count);
+        
+        foreach (var p in Particles)
+        {
+            if (plane.GetSide(p.Rigidbody.position))
+                positiveSide.Add(p);
+            else
+                negativeSide.Add(p);
+        }
+
+        if (positiveSide.Count == 0 || negativeSide.Count == 0)
+            return null;
+
+        return Split(negativeSide);
     }
 
 
@@ -260,6 +309,9 @@ public class SoftBody : MonoBehaviour
 
     private void Start()
     {
+        if (OnSplit == null)
+            OnSplit = new SoftBodySplitEvent();
+
         _startPositions = new Vector3[Particles.Count];
         _startRotations = new Quaternion[Particles.Count];
         for (int i = 0; i < Particles.Count; i++)

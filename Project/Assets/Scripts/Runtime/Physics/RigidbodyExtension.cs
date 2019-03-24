@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
+[AddComponentMenu("Tortilla Flip/Physics/Rigidbody Extension", -1000)]
 public class RigidbodyExtension : MonoBehaviour
 {
     [Required]

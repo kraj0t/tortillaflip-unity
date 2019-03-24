@@ -407,13 +407,14 @@ GameObject:
   - component: {fileID: 2583706545048939154}
   - component: {fileID: 5571278917318920168}
   - component: {fileID: 9089400835784314703}
+  - component: {fileID: 751811920747762222}
   m_Layer: 0
   m_Name: PRF_omeletteUnbreakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2583706545048939154
 Transform:
   m_ObjectHideFlags: 0
@@ -518,6 +519,11 @@ MonoBehaviour:
   - {fileID: 8028811985460556057}
   - {fileID: 8028811985460556059}
   - {fileID: 8028811985460556061}
+  OnSplit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodySplitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   ColliderRadius: 0.025
   ColliderHeight: 0.075
   EnablePreprocessing: 0
@@ -529,6 +535,33 @@ MonoBehaviour:
   AngularLimit: 140
   HardLinearLimitFactor: 1.2
   HardAngularLimit: 155
+  BreakForce: Infinity
+  BreakTorque: Infinity
+  DEBUG_LiveUpdate: 0
+  DEBUG_UpdateFrameSkip: 120
+--- !u!114 &751811920747762222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549364376533244033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4402e3173393d24998b1178a78ca401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColliderRadius: 0.03
+  ColliderHeight: 0.075
+  EnablePreprocessing: 0
+  LinearSpring: 100
+  LinearDamper: 0.9
+  LinearLimitFactor: 1
+  AngularSpring: 0.05
+  AngularDamper: 0.001
+  AngularLimit: 90
+  HardLinearLimitFactor: 1.2
+  HardAngularLimit: 120
   BreakForce: Infinity
   BreakTorque: Infinity
   DEBUG_LiveUpdate: 0

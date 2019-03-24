@@ -94,7 +94,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.05000002, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0, y: -0.05000005, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 1
@@ -280,19 +280,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!54 &2514138273576739170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -452,19 +447,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!54 &1283397120829065827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -559,7 +549,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.050000004, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0, y: -0.05000005, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 1
@@ -745,19 +735,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!54 &2027394576269773598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -852,7 +837,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.04999999, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0, y: -0.04999996, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 1
@@ -1012,6 +997,26 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2909730864198671451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181463873670428397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &4297199103202122674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,31 +1031,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
---- !u!114 &2909730864198671451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4181463873670428397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
-  OnJointBroken:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &5378941883409358272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1050,11 @@ MonoBehaviour:
   - {fileID: 1069533543426715023}
   - {fileID: 2909730864198671451}
   - {fileID: 6214792271094481178}
+  OnSplit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodySplitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   ColliderRadius: 0.025
   ColliderHeight: 0.075
   EnablePreprocessing: 0
@@ -1079,6 +1064,33 @@ MonoBehaviour:
   AngularSpring: 6
   AngularDamper: 0.05
   AngularLimit: 100
+  HardLinearLimitFactor: 1.1
+  HardAngularLimit: 120
+  BreakForce: 20
+  BreakTorque: 0.02
+  DEBUG_LiveUpdate: 0
+  DEBUG_UpdateFrameSkip: 120
+--- !u!114 &2404106328794911125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459188556105643272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4402e3173393d24998b1178a78ca401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColliderRadius: 0.025
+  ColliderHeight: 0.075
+  EnablePreprocessing: 1
+  LinearSpring: 1000
+  LinearDamper: 50
+  LinearLimitFactor: 0.8
+  AngularSpring: 6
+  AngularDamper: 0.05
+  AngularLimit: 90
   HardLinearLimitFactor: 1.1
   HardAngularLimit: 120
   BreakForce: 20
@@ -1339,19 +1351,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
   OnJointBroken:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!54 &5960460795317345003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1446,7 +1453,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.05000002, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0, y: -0.04999999, z: -0.000000007450581}
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 1
@@ -1606,6 +1613,26 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &454334153946841563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399921520722601758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkinnedRenderer: {fileID: 0}
+  Connections: []
+  CheckForBrokenJoints: 1
+  OnJointBroken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoftBodyJointBreakEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &2748686286290959872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,31 +1647,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Profile: {fileID: 11400000, guid: d3b89798cb1eef541ad89293c0c88f5d, type: 2}
   ApplyProfileOnStart: 1
---- !u!114 &454334153946841563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8399921520722601758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab722dc30b172247bc314b94fb1a7e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConnectedParticlesAndJoints:
-    m_keys: []
-    m_values: []
-  OnJointBroken:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMeshChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: SoftBodyParticle+JointBreakEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &8513762592890646603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,17 +1662,17 @@ PrefabInstance:
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.108
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.305
+      value: -0.058
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.113
+      value: 1.475
       objectReference: {fileID: 0}
     - target: {fileID: 846469136398317392, guid: ff195ebd233418240be41515ef4424c3,
         type: 3}
@@ -1719,9 +1721,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff195ebd233418240be41515ef4424c3, type: 3}
---- !u!1 &8399921520722601758 stripped
+--- !u!1 &140012480293069976 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 194905917153941333, guid: ff195ebd233418240be41515ef4424c3,
+  m_CorrespondingSourceObject: {fileID: 8635539463348163795, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7513803538222673033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2188909374164212930, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5381120871764733369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4362687403869822450, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
@@ -1737,21 +1751,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4029245557265053590 stripped
+--- !u!1 &8399921520722601758 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4741222253060671453, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5381120871764733369 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4362687403869822450, guid: ff195ebd233418240be41515ef4424c3,
+  m_CorrespondingSourceObject: {fileID: 194905917153941333, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &342635230569258153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8279794338622090466, guid: ff195ebd233418240be41515ef4424c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8513762592890646603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4029245557265053590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4741222253060671453, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
@@ -1776,18 +1790,6 @@ GameObject:
 --- !u!4 &9080484495590426153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586217207115904610, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &140012480293069976 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8635539463348163795, guid: ff195ebd233418240be41515ef4424c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8513762592890646603}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7513803538222673033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2188909374164212930, guid: ff195ebd233418240be41515ef4424c3,
     type: 3}
   m_PrefabInstance: {fileID: 8513762592890646603}
   m_PrefabAsset: {fileID: 0}
